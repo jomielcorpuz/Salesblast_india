@@ -1,14 +1,13 @@
 // /pages/projects.tsx
 "use client";
-import React from 'react';
-import Link from 'next/link';
+import React, { useState } from 'react';
 import ThemeToggle from '@/components/ui/theme-toggle';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import Image from 'next/image'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { motion, useAnimation } from 'framer-motion';
-import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowLeft, ArrowUpRight, Github, Loader2 } from 'lucide-react';
 
 import {
     Dialog,
@@ -17,6 +16,7 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog";
 import AnimatedContent from '@/components/ui/animatedcontent';
+import { useRouter } from 'next/navigation';
 
 const projects = [
     {
@@ -92,42 +92,56 @@ const projects = [
     // Add more projects here...
 ];
 
-const fadeUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: (i = 1) => ({
-        opacity: 1,
-        y: 0,
-        transition: { delay: i * 0.2, duration: 0.6, ease: 'easeOut' },
-    }),
-};
-
 const Projects = () => {
+    const router = useRouter();
+    const [isClicked, setIsClicked] = useState(false);
+
+    const handleClick = () => {
+        setIsClicked(true);
+
+        // Delay navigation until after animation
+        setTimeout(() => {
+            router.push("/");
+        }, 600); // Match this to animation duration
+    };
+
+
+
+
     return (
-        <div className="max-w-2xl mx-auto px-4 py-24">
+        <div className="max-w-2xl mx-auto px-4 py-20">
             {/* HEADER */}
-            <header className="bg-background/30 shadow-xs fixed inset-x-0 top-4 z-40 mx-auto flex h-[60px] max-w-[40rem] items-center justify-between rounded-2xl px-2 saturate-100 backdrop-blur-[10px] transition-colors">
+            <header className="bg-background/30 shadow-xs fixed inset-x-0 top-0 z-40 mx-auto flex h-[60px] max-w-[40rem] items-center justify-between rounded-sm px-2 saturate-100 backdrop-blur-[10px] transition-colors">
                 <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, rotate: 180 }}
                     transition={{ duration: 0.6 }}
                 >
-                    <Link
-                        href="/"
-                        className="flex items-center text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors"
+
+                    <motion.button
+                        onClick={handleClick}
+                        disabled={isClicked}
+                        className="flex items-center text-sm text-zinc-500 dark:text-zinc-300 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors"
+                        whileTap={{ scale: 0.95, opacity: 0.6 }}
                     >
-                        <ArrowLeft size={16} className="mr-2" />
-                        Back
-                    </Link>
+                        {isClicked ? (
+                            <Loader2 size={18} className="animate-spin" />
+                        ) : (
+                            <>
+                                <ArrowLeft size={16} className="mr-2" />
+                                Back
+                            </>
+                        )}
+                    </motion.button>
                 </motion.div>
                 <ThemeToggle />
             </header>
 
             <AnimatedContent
                 distance={100}
-                direction="vertical"
-                reverse={true}
-                config={{ tension: 50, friction: 20 }}
+                direction="horizontal"
+                reverse={false}
                 initialOpacity={0}
                 animateOpacity
                 scale={1.0}
@@ -140,17 +154,16 @@ const Projects = () => {
                 </h2>
             </AnimatedContent>
             {/* PROJECT LIST */}
+
             <div className="space-y-8">
                 {projects.map((project, index) => (
                     <motion.div
-                        key={project.title}
-                        variants={fadeUp}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.3 }}
-                        custom={index}
-                        className="p-2"
-                    >
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}>
+
                         <Card className="rounded-xl shadow-md transition hover:shadow-lg">
                             <CardHeader className="p-0">
                                 <Dialog>
@@ -211,8 +224,9 @@ const Projects = () => {
                                         href={project.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center bg-gray-50 py-2 px-3 rounded-md gap-1 text-sm font-medium text-gray-800 dark:text-white hover:bg-gray-100 transition group"
+                                        className="inline-flex items-center bg-gray-50 py-2 px-3 rounded-md gap-1 text-sm font-medium text-gray-800 dark:text-black hover:bg-gray-100 transition group"
                                     >
+                                        <Github size={16} />
                                         GitHub
                                         <ArrowUpRight
                                             size={16}
@@ -225,6 +239,7 @@ const Projects = () => {
                     </motion.div>
                 ))}
             </div>
+
         </div>
     );
 };

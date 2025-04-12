@@ -1,25 +1,25 @@
 import {
     useRef,
-    useEffect,
-    useState,
     ReactNode,
     forwardRef,
     useImperativeHandle,
-    HTMLProps,
 } from "react";
-import { useSpring, animated, SpringConfig } from "@react-spring/web";
+import { motion, useInView } from "framer-motion";
 
-interface AnimatedContentProps extends HTMLProps<HTMLDivElement> {
+interface AnimatedContentProps {
     children: ReactNode;
     distance?: number;
     direction?: "vertical" | "horizontal";
     reverse?: boolean;
-    config?: SpringConfig;
+    duration?: number;
     initialOpacity?: number;
     animateOpacity?: boolean;
     scale?: number;
     threshold?: number;
     delay?: number;
+    className?: string;
+    style?: React.CSSProperties;
+    // Add any other specific props you need here
 }
 
 const AnimatedContent = forwardRef<HTMLDivElement, AnimatedContentProps>(
@@ -29,66 +29,55 @@ const AnimatedContent = forwardRef<HTMLDivElement, AnimatedContentProps>(
             distance = 100,
             direction = "vertical",
             reverse = false,
-            config = { tension: 50, friction: 25 },
+            duration = 0.5,
             initialOpacity = 0,
             animateOpacity = true,
             scale = 1,
             threshold = 0.1,
             delay = 0,
-            ...rest // spread extra props to pass to animated.div
+            className,
+            style,
         },
         forwardedRef
     ) => {
-        const [inView, setInView] = useState(false);
         const localRef = useRef<HTMLDivElement>(null);
+        const isInView = useInView(localRef, {
+            once: true,
+            amount: threshold,
+        });
 
         useImperativeHandle(forwardedRef, () => localRef.current as HTMLDivElement);
 
-        useEffect(() => {
-            const element = localRef.current;
-            if (!element) return;
-
-            const observer = new IntersectionObserver(
-                ([entry]) => {
-                    if (entry.isIntersecting) {
-                        observer.unobserve(element);
-                        setTimeout(() => {
-                            setInView(true);
-                        }, delay);
-                    }
-                },
-                { threshold }
-            );
-
-            observer.observe(element);
-
-            return () => observer.disconnect();
-        }, [threshold, delay]);
-
-        const directions: Record<"vertical" | "horizontal", string> = {
-            vertical: "Y",
-            horizontal: "X",
-        };
-
-        const springProps = useSpring({
-            from: {
-                transform: `translate${directions[direction]}(${reverse ? `-${distance}px` : `${distance}px`
-                    }) scale(${scale})`,
-                opacity: animateOpacity ? initialOpacity : 1,
-            },
-            to: inView
-                ? {
-                    transform: `translate${directions[direction]}(0px) scale(1)`,
-                    opacity: 1,
-                }
-                : undefined,
-            config,
-        });
+        const directionKey = direction === "vertical" ? "y" : "x";
+        const initialOffset = reverse ? -distance : distance;
 
         return (
-            <animated.div ref={localRef} style={springProps} {...(rest as any)}>
+            <motion.div
+                ref={localRef}
+                initial={{
+                    [directionKey]: initialOffset,
+                    opacity: animateOpacity ? initialOpacity : 1,
+                    scale: scale,
+                }}
+                animate={
+                    isInView
+                        ? {
+                            [directionKey]: 0,
+                            opacity: 1,
+                            scale: 1,
+                        }
+                        : undefined
+                }
+                transition={{
+                    duration: duration,
+                    delay: delay / 1000, // Convert ms to s for framer-motion
+                    ease: "easeOut",
+                }}
+                className={className}
+                style={style}
+            >
                 {children}
-            </animated.div>
+            </motion.div>
         );
     }
 );

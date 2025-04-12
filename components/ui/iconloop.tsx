@@ -1,4 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 interface TechStackItem {
@@ -56,7 +57,7 @@ function TechIconLoop({
                         className="w-4 h-4 flex items-center justify-center flex-shrink-0"
                     >
                         {mounted && (
-                            <img
+                            <Image
                                 src={
                                     resolvedTheme === "dark" &&
                                         ["MySQL", "PHP", "Android", "Git", "GitHub"].includes(name)
@@ -64,6 +65,8 @@ function TechIconLoop({
                                         : icon
                                 }
                                 alt={name}
+                                width={16}
+                                height={16}
                                 className="w-full h-full object-contain aspect-square"
                             />
                         )}

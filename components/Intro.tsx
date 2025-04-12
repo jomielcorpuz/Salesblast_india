@@ -1,7 +1,6 @@
 "use client"
 import { Github, Linkedin } from 'lucide-react'
 import React from 'react'
-import { motion } from 'framer-motion'
 import AnimatedContent from './ui/animatedcontent'
 import Image from 'next/image'
 
@@ -12,7 +11,6 @@ function Intro() {
             distance={100}
             direction="vertical"
             reverse={true}
-            config={{ tension: 50, friction: 20 }}
             initialOpacity={0}
             animateOpacity
             scale={1.0}
@@ -21,9 +19,7 @@ function Intro() {
 
             <div className='mb-8 flex items-center gap-6 animate-fade-down'>
                 <div className='relative mb-5'>
-                    <div className='absolute inset-[-4px] rounded-full'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="104" height="104" viewBox="0 0 104 104" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle transition-all transition: stroke-dashoffset 1.5s ease-in-out"><circle cx="52" cy="52" r="50" strokeDasharray="314" ></circle></svg>
-                    </div>
+
                     <div className='relative w-24 h-24 rounded-full overflow-hidden cursor-pointer'>
                         <Image
                             src="/images/miel.jpg"
@@ -39,7 +35,7 @@ function Intro() {
                 <div className='text-justify'>
 
                     <h2 className="text-md md:text-2xl font-bold bg-gradient-to-br from-black from-30% to-black/50 dark:from-white dark:from-30% dark:to-white/50 bg-clip-text text-transparent">
-                        Hello, I'm Miel</h2>
+                        Hello, I&apos;m Miel</h2>
                     <p className="font-light text-black-400 dark:text-zinc-300 text-xs md:text-sm">
                         A Full-Stack Developer with a specialization in backend development, leveraging expertise in Laravel, React, TypeScript, Node.js, and Android development. My work focuses on creating high-performance websites, dynamic web applications, and intuitive mobile solutions. Committed to continuous learning and innovative problem-solving, I stay updated with industry trends to deliver scalable and cutting-edge applications that exceed client expectations.</p>
 

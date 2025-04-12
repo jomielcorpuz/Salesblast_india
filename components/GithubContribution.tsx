@@ -1,7 +1,5 @@
 'use client';
 import GitHubCalendar from 'react-github-calendar';
-
-import { motion } from 'framer-motion';
 import AnimatedContent from './ui/animatedcontent';
 
 export default function GitHubContributions() {
@@ -10,7 +8,6 @@ export default function GitHubContributions() {
             distance={100}
             direction="horizontal"
             reverse={false}
-            config={{ tension: 50, friction: 25 }}
             initialOpacity={0}
             animateOpacity
             scale={1.0}

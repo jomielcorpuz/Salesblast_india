@@ -9,11 +9,11 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs"
-import { Card, CardContent } from './ui/card';
+import { Card } from './ui/card';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
-import { cn } from '@/lib/utils';
 import AnimatedContent from './ui/animatedcontent';
+import Image from 'next/image';
 
 function Techstacks() {
     const [activeTab, setActiveTab] = useState('All');
@@ -66,20 +66,11 @@ function Techstacks() {
         },
     };
 
-
-    const ball = {
-        width: 100,
-        height: 100,
-        backgroundColor: "#dd00ee",
-        borderRadius: "50%",
-    }
-
     return (
         <AnimatedContent
             distance={100}
             direction="vertical"
             reverse={false}
-            config={{ tension: 50, friction: 25 }}
             initialOpacity={0}
             animateOpacity
             scale={1.0}
@@ -164,11 +155,14 @@ function Techstacks() {
                                         <Card className='h-full rounded-lg'>
                                             <div className='group flex aspect-square flex-col items-center justify-center p-3 cursor-pointer hover:scale-105 transition-transform'>
                                                 {mounted ? (
-                                                    <img src={
+                                                    <Image src={
                                                         (resolvedTheme === "dark" && (name === "MySQL" || name === "PHP" || name === "Android" || name === "Git" || name === "GitHub"))
                                                             ? `/icons/${name.toLowerCase()}-white.png`
                                                             : svg
-                                                    } alt={name} className="w-6 h-6" />
+                                                    } alt={name}
+                                                        width={16}
+                                                        height={16}
+                                                        className="w-6 h-6" />
                                                 ) : null}
 
 
@@ -199,7 +193,7 @@ function Techstacks() {
                                     >
                                         <Card className='h-full rounded-lg'>
                                             <div className='group flex aspect-square flex-col items-center justify-center p-3 cursor-pointer hover:scale-105 transition-transform'>
-                                                <img src={svg} alt={name} className="w-6 h-6" />
+                                                <Image src={svg} alt={name} width={16} height={16} className="w-6 h-6" />
                                                 <p className='text-xs font-medium mt-2 p-2'>{name}</p>
                                             </div>
                                         </Card>
@@ -231,11 +225,11 @@ function Techstacks() {
 
 
                                             <div className='group flex aspect-square flex-col items-center justify-center p-3 cursor-pointer hover:scale-105 transition-transform'>
-                                                <img src={
+                                                <Image src={
                                                     (resolvedTheme === "dark" && (name === "PHP"))
                                                         ? `/icons/${name.toLowerCase()}-white.png`
                                                         : svg
-                                                } alt={name} className="w-6 h-6" />
+                                                } alt={name} width={16} height={16} className="w-6 h-6" />
                                                 <p className='text-xs font-medium mt-2'>{name}</p>
                                             </div>
                                         </Card>
@@ -268,11 +262,14 @@ function Techstacks() {
 
                                         <Card key={name} className='rounded-md animate-bounceIn'>
                                             <div className='group flex aspect-square flex-col items-center justify-center p-3 cursor-pointer hover:scale-105 transition-transform'>
-                                                <img src={
+                                                <Image src={
                                                     (resolvedTheme === "dark" && (name === "Android" || name === "Git" || name === "GitHub"))
                                                         ? `/icons/${name.toLowerCase()}-white.png`
                                                         : svg
-                                                } alt={name} className="w-6 h-6" />
+                                                } alt={name}
+                                                    width={16}
+                                                    height={16}
+                                                    className="w-6 h-6" />
                                                 <p className='text-xs font-medium mt-2'>{name}</p>
                                             </div>
                                         </Card>

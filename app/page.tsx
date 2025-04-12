@@ -5,12 +5,11 @@ import Head from "@/components/Headnav";
 import Intro from "@/components/Intro";
 import RecentProj from "@/components/RecentProj";
 import Techstacks from "@/components/Techstacks";
-import ThemeToggle from "@/components/ui/theme-toggle";
 export default function Home() {
   return (
     <div>
 
-      <main className="mx-auto max-w-2xl px-4 py-24 ">
+      <main className="mx-auto max-w-2xl px-4 pt-20 ">
 
         <Head />
         <Intro />

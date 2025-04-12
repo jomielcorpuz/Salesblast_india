@@ -1,8 +1,7 @@
 import { useEffect, useState, useRef, JSX } from "react";
-import { motion, PanInfo, useMotionValue, useTransform } from "framer-motion";
+import { motion, PanInfo, useMotionValue } from "framer-motion";
 // replace icons with your own if needed
 import React from "react";
-
 import {
     FiCircle,
     FiCode,
@@ -86,6 +85,16 @@ export default function CarouselAnimated({
     const [isHovered, setIsHovered] = useState<boolean>(false);
     const [isResetting, setIsResetting] = useState<boolean>(false);
 
+    // Instead of using useTransform, we'll manually calculate the rotation
+    // in the render function based on the current value of x
+    const [xValue, setXValue] = useState(0);
+
+    // Subscribe to x motion value changes
+    useEffect(() => {
+        const unsubscribe = x.onChange(setXValue);
+        return unsubscribe;
+    }, [x]);
+
     const containerRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
         if (pauseOnHover && containerRef.current) {
@@ -167,6 +176,19 @@ export default function CarouselAnimated({
             },
         };
 
+    // Function to calculate rotation angle based on index and current x position
+    const calculateRotation = (index: number): number => {
+        const maxRotation = 90;
+        const centerPos = -index * trackItemOffset;
+        const distance = xValue - centerPos;
+
+        // Normalize to range -1 to 1 within the item width
+        const normalizedDistance = Math.max(-1, Math.min(1, distance / trackItemOffset));
+
+        // Calculate rotation (negative when moving right, positive when moving left)
+        return -normalizedDistance * maxRotation;
+    };
+
     return (
         <div
             ref={containerRef}
@@ -192,44 +214,34 @@ export default function CarouselAnimated({
                 transition={effectiveTransition}
                 onAnimationComplete={handleAnimationComplete}
             >
-                {carouselItems.map((item, index) => {
-                    const range = [
-                        -(index + 1) * trackItemOffset,
-                        -index * trackItemOffset,
-                        -(index - 1) * trackItemOffset,
-                    ];
-                    const outputRange = [90, 0, -90];
-                    const rotateY = useTransform(x, range, outputRange, { clamp: false });
-                    return (
-                        <motion.div
-                            key={index}
-                            className={`carousel-item ${round ? "round" : ""}`}
-                            style={{
-                                width: itemWidth,
-                                height: round ? itemWidth : "100%",
-                                rotateY: rotateY,
-                                ...(round && { borderRadius: "50%" }),
-                            }}
-                            transition={effectiveTransition}
-                        >
-                            <div className={`carousel-item-header ${round ? "round" : ""}`}>
-                                <span className="carousel-icon-container">{item.icon}</span>
-                            </div>
-                            <div className="carousel-item-content">
-                                <div className="carousel-item-title">{item.title}</div>
-                                <p className="carousel-item-description">{item.description}</p>
-                            </div>
-                        </motion.div>
-                    );
-                })}
+                {carouselItems.map((item, index) => (
+                    <motion.div
+                        key={index}
+                        className={`carousel-item ${round ? "round" : ""}`}
+                        style={{
+                            width: itemWidth,
+                            height: round ? itemWidth : "100%",
+                            rotateY: calculateRotation(index),
+                            ...(round && { borderRadius: "50%" }),
+                        }}
+                        transition={effectiveTransition}
+                    >
+                        <div className={`carousel-item-header ${round ? "round" : ""}`}>
+                            <span className="carousel-icon-container">{item.icon}</span>
+                        </div>
+                        <div className="carousel-item-content">
+                            <div className="carousel-item-title">{item.title}</div>
+                            <p className="carousel-item-description">{item.description}</p>
+                        </div>
+                    </motion.div>
+                ))}
             </motion.div>
             <div className={`carousel-indicators-container ${round ? "round" : ""}`}>
                 <div className="carousel-indicators">
                     {items.map((_, index) => (
                         <motion.div
                             key={index}
-                            className={`carousel-indicator ${currentIndex % items.length === index ? "active" : "inactive"
-                                }`}
+                            className={`carousel-indicator ${currentIndex % items.length === index ? "active" : "inactive"}`}
                             animate={{
                                 scale: currentIndex % items.length === index ? 1.2 : 1,
                             }}

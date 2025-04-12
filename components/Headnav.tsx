@@ -1,16 +1,12 @@
 "use client";
 
 import React from 'react'
-import { Button } from './ui/button'
-import { useTheme } from 'next-themes'
-import { ArrowLeft, Moon, Sun } from 'lucide-react'
 import ThemeToggle from './ui/theme-toggle';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 function Head() {
 
-    const { resolvedTheme, setTheme } = useTheme();
     return (
         <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -19,7 +15,7 @@ function Head() {
             transition={{ duration: 0.1 }}>
             <div className="mx-auto max-w-2xl">
 
-                <header className='bg-background/30 shadow-xs fixed inset-x-0 top-4 z-40 mx-auto flex h-[60px] max-w-2xl items-center justify-between rounded-2xl px-8 saturate-100 backdrop-blur-[10px] transition-colors'>
+                <header className='bg-background/30 shadow-xs fixed inset-x-0 top-0 z-40 mx-auto flex h-[60px] max-w-[40rem] items-center justify-between rounded-sm px-2 saturate-100 backdrop-blur-[10px] transition-colors'>
                     <Link
                         href="/"
                         className="flex justify-center items-center text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors"

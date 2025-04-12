@@ -1,8 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
-import { ChevronRight, Eye, FolderGit2 } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { Card, CardContent, CardHeader } from './ui/card'
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import {
     Dialog,
@@ -22,7 +20,6 @@ import {
 import AnimatedContent from './ui/animatedcontent'
 import { ScrollArea } from './ui/scroll-area'
 import { useTheme } from 'next-themes'
-import TechIconLoop from './ui/iconloop'
 import Image from 'next/image'
 
 const projects = [
@@ -111,13 +108,13 @@ function RecentProj() {
     return (
         <AnimatedContent
             distance={100}
-            direction="vertical"
-            reverse={false}
-            config={{ tension: 50, friction: 25 }}
+            direction="horizontal"
+            reverse={true}
             initialOpacity={0}
             animateOpacity
             scale={1.0}
             threshold={0.1}
+            className=''
         >
             <div className='mb-8'>
                 <h5 className="mb-3 text-xs font-medium uppercase tracking-wider text-black-400 dark:text-black-400">
@@ -201,7 +198,19 @@ function RecentProj() {
                                                     <div className="pt-2">
                                                         <div className="flex gap-2 flex-nowrap justify-start">
                                                             {project.techStack.map(({ icon, name }) => (
-                                                                <img key={name} src={icon} alt={name} className="w-4 h-4" />
+                                                                <div className='flex' key={name}>
+                                                                    {mounted ? (
+                                                                        <Image src={
+                                                                            (resolvedTheme === "dark" && (name === "MySQL" || name === "PHP" || name === "Android" || name === "Git" || name === "GitHub"))
+                                                                                ? `/icons/${name.toLowerCase()}-white.png`
+                                                                                : icon
+                                                                        } alt={name}
+                                                                            width={16}
+                                                                            height={16}
+                                                                            className="w-4 h-4" />
+                                                                    ) : null}
+
+                                                                </div>
                                                             ))}
                                                         </div>
                                                     </div>

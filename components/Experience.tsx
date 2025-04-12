@@ -1,20 +1,17 @@
 'use client';
 
 import { ChevronLeft } from 'lucide-react'
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
-import GitHubContributions from './GithubContribution';
 import AnimatedContent from './ui/animatedcontent';
 
 function Experience() {
     const [isOpen, setIsOpen] = useState(false);
-    const contentRef = useRef(null);
     return (
         <AnimatedContent
             distance={100}
             direction="horizontal"
             reverse={true}
-            config={{ tension: 50, friction: 25 }}
             initialOpacity={0}
             animateOpacity
             scale={1.0}

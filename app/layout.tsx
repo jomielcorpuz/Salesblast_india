@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Miel Corpuz Banogbanog",
   description: "Miel Corpuz Banogbanog's Portfolio",
+  icons: {
+    icon: "/public/favicon.ico", // Make sure your favicon file is in the 'public' folder
+  },
 };
 
 export default function RootLayout({

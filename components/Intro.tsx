@@ -3,6 +3,7 @@ import { Github, Linkedin } from 'lucide-react'
 import React from 'react'
 import { motion } from 'framer-motion'
 import AnimatedContent from './ui/animatedcontent'
+import Image from 'next/image'
 
 function Intro() {
     return (
@@ -11,7 +12,7 @@ function Intro() {
             distance={100}
             direction="vertical"
             reverse={true}
-            config={{ tension: 60, friction: 20 }}
+            config={{ tension: 50, friction: 20 }}
             initialOpacity={0}
             animateOpacity
             scale={1.0}
@@ -24,7 +25,14 @@ function Intro() {
                         <svg xmlns="http://www.w3.org/2000/svg" width="104" height="104" viewBox="0 0 104 104" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle transition-all transition: stroke-dashoffset 1.5s ease-in-out"><circle cx="52" cy="52" r="50" strokeDasharray="314" ></circle></svg>
                     </div>
                     <div className='relative w-24 h-24 rounded-full overflow-hidden cursor-pointer'>
-                        <img src="images/avatar.png" alt="Profile" className="absolute inset-0 h-full w-full text-transparent" />
+                        <Image
+                            src="/images/miel.jpg"
+                            width={800}
+                            height={450}
+                            alt="Profile"
+                            className="absolute inset-0 h-full w-full text-transparent"
+                        />
+
                     </div>
                 </div>
 

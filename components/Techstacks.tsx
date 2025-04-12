@@ -146,6 +146,7 @@ function Techstacks() {
                                     { name: 'Laravel', svg: 'https://www.svgrepo.com/show/353985/laravel.svg' },
                                     { name: 'PHP', svg: 'https://www.svgrepo.com/show/508931/php01.svg' },
                                     { name: 'MySQL', svg: 'https://www.svgrepo.com/show/89893/database.svg' },
+                                    { name: "SQLite", svg: "https://www.svgrepo.com/show/374094/sqlite.svg" },
                                     { name: 'Firebase', svg: 'https://www.svgrepo.com/show/373595/firebase.svg' },
                                     { name: 'Git', svg: 'https://www.svgrepo.com/show/535422/git-merge.svg' },
                                     { name: 'GitHub', svg: 'https://www.svgrepo.com/show/512317/github-142.svg' },
@@ -153,6 +154,7 @@ function Techstacks() {
                                     { name: 'C#', svg: 'https://www.svgrepo.com/show/452184/csharp.svg' },
                                     { name: 'Python', svg: 'https://www.svgrepo.com/show/452091/python.svg' },
                                     { name: 'Colab', svg: 'https://www.svgrepo.com/show/349325/colaboratory.svg' },
+                                    { name: 'Tensorflow', svg: 'https://www.svgrepo.com/show/354440/tensorflow.svg' },
                                     { name: 'Android', svg: '/icons/android-white.png' },
                                     { name: 'VS Code', svg: 'https://www.svgrepo.com/show/452129/vs-code.svg' },
                                 ].map(({ name, svg }) => (
@@ -218,6 +220,7 @@ function Techstacks() {
                                     { name: 'Laravel', svg: 'https://www.svgrepo.com/show/353985/laravel.svg' },
                                     { name: 'PHP', svg: 'https://www.svgrepo.com/show/508931/php01.svg' },
                                     { name: 'MySQL', svg: 'https://www.svgrepo.com/show/303251/mysql-logo.svg' },
+                                    { name: "SQLite", svg: "https://www.svgrepo.com/show/374094/sqlite.svg" },
                                     { name: 'Firebase', svg: 'https://www.svgrepo.com/show/373595/firebase.svg' },
                                 ].map(({ name, svg }) => (
                                     <motion.div key={name} variants={item}
@@ -257,6 +260,7 @@ function Techstacks() {
                                     { name: 'C#', svg: 'https://www.svgrepo.com/show/452184/csharp.svg' },
                                     { name: 'Python', svg: 'https://www.svgrepo.com/show/452091/python.svg' },
                                     { name: 'Colab', svg: 'https://www.svgrepo.com/show/349325/colaboratory.svg' },
+                                    { name: 'Tensorflow', svg: 'https://www.svgrepo.com/show/354440/tensorflow.svg' },
                                     { name: 'Android', svg: '/icons/android-white.png' },
                                     { name: 'VS Code', svg: 'https://www.svgrepo.com/show/452129/vs-code.svg' },
                                 ].map(({ name, svg }) => (

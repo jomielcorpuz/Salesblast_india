@@ -158,7 +158,7 @@ function Techstacks() {
                                                 } alt={name}
                                                     width={512}
                                                     height={512}
-                                                    className={`w-6 h-6 ${name === 'Git' || name === 'GitHub' ? 'dark:invert' : ''}`} />
+                                                    className={`w-6 h-6 ${name === 'Git' || name === 'GitHub' || name === 'PHP' || name === 'MySQL' ? 'dark:invert' : ''}`} />
                                                 <p className='text-xs font-medium mt-2 p-2'>{name}</p>
                                             </div>
                                         </Card>

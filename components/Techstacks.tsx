@@ -139,7 +139,7 @@ function Techstacks() {
                                     { name: 'MySQL', svg: 'https://www.svgrepo.com/show/89893/database.svg' },
                                     { name: "SQLite", svg: "https://www.svgrepo.com/show/374094/sqlite.svg" },
                                     { name: 'Firebase', svg: 'https://www.svgrepo.com/show/373595/firebase.svg' },
-                                    { name: 'Git', svg: 'https://www.svgrepo.com/show/535422/git-merge.svg' },
+                                    { name: 'Git', svg: 'https://www.svgrepo.com/show/473619/git.svg' },
                                     { name: 'GitHub', svg: 'https://www.svgrepo.com/show/512317/github-142.svg' },
                                     { name: 'Java', svg: 'https://www.svgrepo.com/show/452234/java.svg' },
                                     { name: 'C#', svg: 'https://www.svgrepo.com/show/452184/csharp.svg' },
@@ -154,18 +154,11 @@ function Techstacks() {
                                     >
                                         <Card className='h-full rounded-lg'>
                                             <div className='group flex aspect-square flex-col items-center justify-center p-3 cursor-pointer hover:scale-105 transition-transform'>
-                                                {mounted ? (
-                                                    <Image src={
-                                                        (resolvedTheme === "dark" && (name === "MySQL" || name === "PHP" || name === "Android" || name === "Git" || name === "GitHub"))
-                                                            ? `/icons/${name.toLowerCase()}-white.png`
-                                                            : svg
-                                                    } alt={name}
-                                                        width={16}
-                                                        height={16}
-                                                        className="w-6 h-6" />
-                                                ) : null}
-
-
+                                                <Image src={svg
+                                                } alt={name}
+                                                    width={512}
+                                                    height={512}
+                                                    className={`w-6 h-6 ${name === 'Git' || name === 'GitHub' ? 'dark:invert' : ''}`} />
                                                 <p className='text-xs font-medium mt-2 p-2'>{name}</p>
                                             </div>
                                         </Card>
@@ -193,7 +186,7 @@ function Techstacks() {
                                     >
                                         <Card className='h-full rounded-lg'>
                                             <div className='group flex aspect-square flex-col items-center justify-center p-3 cursor-pointer hover:scale-105 transition-transform'>
-                                                <Image src={svg} alt={name} width={16} height={16} className="w-6 h-6" />
+                                                <Image src={svg} alt={name} width={512} height={512} className="w-6 h-6" />
                                                 <p className='text-xs font-medium mt-2 p-2'>{name}</p>
                                             </div>
                                         </Card>
@@ -213,7 +206,7 @@ function Techstacks() {
                                     { name: 'Node.js', svg: 'https://www.svgrepo.com/show/355140/node.svg' },
                                     { name: 'Laravel', svg: 'https://www.svgrepo.com/show/353985/laravel.svg' },
                                     { name: 'PHP', svg: 'https://www.svgrepo.com/show/508931/php01.svg' },
-                                    { name: 'MySQL', svg: 'https://www.svgrepo.com/show/303251/mysql-logo.svg' },
+                                    { name: 'MySQL', svg: 'https://www.svgrepo.com/show/498954/database.svg' },
                                     { name: "SQLite", svg: "https://www.svgrepo.com/show/374094/sqlite.svg" },
                                     { name: 'Firebase', svg: 'https://www.svgrepo.com/show/373595/firebase.svg' },
                                 ].map(({ name, svg }) => (
@@ -226,10 +219,12 @@ function Techstacks() {
 
                                             <div className='group flex aspect-square flex-col items-center justify-center p-3 cursor-pointer hover:scale-105 transition-transform'>
                                                 <Image src={
-                                                    (resolvedTheme === "dark" && (name === "PHP"))
-                                                        ? `/icons/${name.toLowerCase()}-white.png`
-                                                        : svg
-                                                } alt={name} width={16} height={16} className="w-6 h-6" />
+                                                    svg
+                                                } alt={name}
+                                                    width={512}
+                                                    height={512}
+                                                    className={`w-6 h-6 ${name === 'MySQL' || name === 'PHP' ? 'dark:invert' : ''}`}
+                                                />
                                                 <p className='text-xs font-medium mt-2'>{name}</p>
                                             </div>
                                         </Card>
@@ -248,7 +243,7 @@ function Techstacks() {
                                 className='grid grid-cols-4 gap-2 sm:grid-cols-6 md:grid-cols-6'>
 
                                 {[
-                                    { name: 'Git', svg: 'https://www.svgrepo.com/show/535422/git-merge.svg' },
+                                    { name: 'Git', svg: 'https://www.svgrepo.com/show/473619/git.svg' },
                                     { name: 'GitHub', svg: 'https://www.svgrepo.com/show/512317/github-142.svg' },
                                     { name: 'Java', svg: 'https://www.svgrepo.com/show/452234/java.svg' },
                                     { name: 'C#', svg: 'https://www.svgrepo.com/show/452184/csharp.svg' },
@@ -262,14 +257,11 @@ function Techstacks() {
 
                                         <Card key={name} className='rounded-md animate-bounceIn'>
                                             <div className='group flex aspect-square flex-col items-center justify-center p-3 cursor-pointer hover:scale-105 transition-transform'>
-                                                <Image src={
-                                                    (resolvedTheme === "dark" && (name === "Android" || name === "Git" || name === "GitHub"))
-                                                        ? `/icons/${name.toLowerCase()}-white.png`
-                                                        : svg
+                                                <Image src={svg
                                                 } alt={name}
-                                                    width={16}
-                                                    height={16}
-                                                    className="w-6 h-6" />
+                                                    width={512}
+                                                    height={512}
+                                                    className={`w-6 h-6 ${name === 'Git' || name === 'GitHub' ? 'dark:invert' : ''}`} />
                                                 <p className='text-xs font-medium mt-2'>{name}</p>
                                             </div>
                                         </Card>

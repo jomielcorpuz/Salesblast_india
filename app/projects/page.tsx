@@ -1,6 +1,6 @@
 // /pages/projects.tsx
 "use client";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ThemeToggle from '@/components/ui/theme-toggle';
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import Image from 'next/image'
@@ -95,19 +95,19 @@ const projects = [
 const Projects = () => {
     const router = useRouter();
     const [isClicked, setIsClicked] = useState(false);
+    // Prefetch the homepage route on component mount
+    useEffect(() => {
+        router.prefetch("/");
+    }, [router]);
 
     const handleClick = () => {
         setIsClicked(true);
 
-        // Delay navigation until after animation
+        // Delay navigation to allow animation to complete
         setTimeout(() => {
             router.push("/");
-        }, 600); // Match this to animation duration
+        }, 600); // Match with animation duration
     };
-
-
-
-
     return (
         <div className="max-w-2xl mx-auto px-4 py-20">
             {/* HEADER */}

@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowUpRight, Github, Loader2 } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Github } from 'lucide-react';
 import Link from 'next/link';
 
 import {
@@ -16,7 +16,6 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog";
 import AnimatedContent from '@/components/ui/animatedcontent';
-import { useRouter } from 'next/navigation';
 
 const projects = [
     {

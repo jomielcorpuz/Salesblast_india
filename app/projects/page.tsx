@@ -1,6 +1,5 @@
 // /pages/projects.tsx
 "use client";
-import React, { useEffect, useState } from 'react';
 import ThemeToggle from '@/components/ui/theme-toggle';
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import Image from 'next/image'
@@ -8,6 +7,7 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowUpRight, Github, Loader2 } from 'lucide-react';
+import Link from 'next/link';
 
 import {
     Dialog,
@@ -93,25 +93,11 @@ const projects = [
 ];
 
 const Projects = () => {
-    const router = useRouter();
-    const [isClicked, setIsClicked] = useState(false);
-    // Prefetch the homepage route on component mount
-    useEffect(() => {
-        router.prefetch("/");
-    }, [router]);
 
-    const handleClick = () => {
-        setIsClicked(true);
-
-        // Delay navigation to allow animation to complete
-        setTimeout(() => {
-            router.push("/");
-        }, 600); // Match with animation duration
-    };
     return (
         <div className="max-w-2xl mx-auto px-4 py-20">
             {/* HEADER */}
-            <header className="bg-background/30 shadow-xs fixed inset-x-0 top-0 z-40 mx-auto flex h-[60px] max-w-[40rem] items-center justify-between  px-2 saturate-100 backdrop-blur-[10px] transition-colors">
+            <header className="bg-background/30 shadow-xs fixed inset-x-0 top-0 z-40 mx-auto flex h-[60px] max-w-[40rem] items-center justify-between  px-3 sm:px-2 saturate-100 backdrop-blur-[10px] transition-colors">
                 <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -119,21 +105,12 @@ const Projects = () => {
                     transition={{ duration: 0.6 }}
                 >
 
-                    <motion.button
-                        onClick={handleClick}
-                        disabled={isClicked}
-                        className="flex items-center text-sm text-zinc-500 dark:text-zinc-300 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors"
-                        whileTap={{ scale: 0.95, opacity: 0.6 }}
-                    >
-                        {isClicked ? (
-                            <Loader2 size={18} className="animate-spin" />
-                        ) : (
-                            <>
-                                <ArrowLeft size={16} className="mr-2" />
-                                Back
-                            </>
-                        )}
-                    </motion.button>
+
+                    <Link href="/" className="flex items-center text-sm text-zinc-500 dark:text-zinc-300 hover:text-zinc-700 dark:hover:text-zinc-300 transition-all active:scale-95">
+                        <ArrowLeft size={16} className="mr-2" />
+                        Back
+
+                    </Link>
                 </motion.div>
                 <ThemeToggle />
             </header>

@@ -40,11 +40,15 @@ function Intro() {
                         A Full-Stack Developer with a specialization in backend development, leveraging expertise in Laravel, React, TypeScript, Node.js, and Android development. My work focuses on creating high-performance websites, dynamic web applications, and intuitive mobile solutions. Committed to continuous learning and innovative problem-solving, I stay updated with industry trends to deliver scalable and cutting-edge applications that exceed client expectations.</p>
 
                     <div className='flex pt-5 gap-2'>
-                        <a href="https://github.com/jomielcorpuz"
+                        <a
+                            href="https://github.com/jomielcorpuz"
+                            target="_blank"
                             className='rounded-full border flex justify-center bg-gray-100 dark:bg-transparent p-2 hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer'>
                             <Github className='text-black dark:text-white' size={15} />
                         </a>
-                        <a href="https://www.linkedin.com/in/jomiel-banogbanog/"
+                        <a
+                            href="https://www.linkedin.com/in/jomiel-banogbanog/"
+                            target="_blank"
                             className='rounded-full border flex justify-center bg-gray-100 dark:bg-transparent p-2 hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer'>
                             <Linkedin className='text-black dark:text-white' size={15} />
                         </a>

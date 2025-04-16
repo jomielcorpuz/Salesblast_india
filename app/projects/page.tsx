@@ -15,8 +15,6 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog";
 import AnimatedContent from '@/components/ui/animatedcontent';
-import ExpandableText from '@/components/ExpandableText';
-
 const projects = [
     {
         title: "Water Quality Data Monitoring System",

@@ -3,7 +3,6 @@
 import ThemeToggle from '@/components/ui/theme-toggle';
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import Image from 'next/image'
-import { ScrollArea } from '@/components/ui/scroll-area'
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowUpRight, Github } from 'lucide-react';
@@ -16,6 +15,7 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog";
 import AnimatedContent from '@/components/ui/animatedcontent';
+import ExpandableText from '@/components/ExpandableText';
 
 const projects = [
     {
@@ -174,11 +174,10 @@ const Projects = () => {
                                     <h3 className="text-base font-semibold text-zinc-800 dark:text-zinc-200">
                                         {project.title}
                                     </h3>
-                                    <ScrollArea className="h-14">
-                                        <p className="text-xs text-muted-foreground">
-                                            {project.description}
-                                        </p>
-                                    </ScrollArea>
+                                    <p className='text-xs text-muted-foreground'>
+                                        {project.description}
+                                    </p>
+
                                 </div>
 
                                 {/* TECH STACK */}

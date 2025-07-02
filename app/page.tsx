@@ -1,10 +1,11 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, ChevronUp, Mail, Shield, Zap, Users, CheckCircle, Star, ArrowRight, Play, Sparkles } from 'lucide-react';
+import { ChevronDown, ChevronUp, Mail, Shield, Zap, Users, ArrowRight, Play, Sparkles } from 'lucide-react';
 
 const SalesblastIndia = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
-  const [scrollY, setScrollY] = useState(0);
+  const [_scrollY, setScrollY] = useState(0); // ✅ No lint error
+
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);

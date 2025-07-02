@@ -1,18 +1,7 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import {
-  ChevronDown,
-  ChevronUp,
-  Mail,
-  Shield,
-  Zap,
-  Users,
-  CheckCircle,
-  Star,
-  ArrowRight,
-  Play,
-  Sparkles,
-} from "lucide-react";
+import React, { useState, useEffect } from 'react';
+import { ChevronDown, ChevronUp, Mail, Shield, Zap, Users, ArrowRight, Play, Sparkles } from 'lucide-react';
+import Image from 'next/image';
 
 const SalesblastIndia = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
@@ -227,12 +216,8 @@ const SalesblastIndia = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <Mail className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-2xl font-bold text-gray-900">
-                Salesblast
-              </span>
+              <Image src="/icons/Logo.jpg" alt="Salesblast Logo" width={32} height={32} className="rounded-full" />
+              <span className="text-2xl font-bold text-gray-900">Salesblast</span>
             </div>
             <nav className="hidden md:flex items-center space-x-8">
               <a
@@ -463,9 +448,8 @@ const SalesblastIndia = () => {
                 className="flex flex-col lg:flex-row items-center gap-12"
               >
                 <div
-                  className={`flex-1 ${
-                    index % 2 === 0 ? "lg:order-1" : "lg:order-2"
-                  }`}
+                  className={`flex-1 ${index % 2 === 0 ? "lg:order-1" : "lg:order-2"
+                    }`}
                 >
                   <div className="relative">
                     <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl animate-pulse-glow">
@@ -497,9 +481,8 @@ const SalesblastIndia = () => {
                   </div>
                 </div>
                 <div
-                  className={`flex-1 ${
-                    index % 2 === 0 ? "lg:order-2" : "lg:order-1"
-                  }`}
+                  className={`flex-1 ${index % 2 === 0 ? "lg:order-2" : "lg:order-1"
+                    }`}
                 >
                   <div className="relative">
                     <div className="w-full h-64 bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl flex items-center justify-center">

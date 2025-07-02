@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp, Mail, Shield, Zap, Users, ArrowRight, Play, Sparkles } from 'lucide-react';
 
 const SalesblastIndia = () => {
-  const [openFAQ, setOpenFAQ] = useState(null);
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [_scrollY, setScrollY] = useState(0); // ✅ No lint error
 
 

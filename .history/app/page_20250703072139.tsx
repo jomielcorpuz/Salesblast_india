@@ -55,11 +55,6 @@ const SalesblastIndia = () => {
       answer:
         "This depends on the platform and the warm-up stage. We’ll help optimize the sending gradually so you can scale safely.",
     },
-    {
-      question: "How does your deliverability compare to others?",
-      answer:
-        "We follow deliverability best practices from day one, SPF, DKIM, DMARC, warm-up, and ongoing monitoring, so your emails land in the inbox, not spam.",
-    },
   ];
 
   const steps = [

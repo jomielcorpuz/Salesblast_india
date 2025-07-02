@@ -51,14 +51,9 @@ const SalesblastIndia = () => {
         "Yes! We set up both Google Workspace and Microsoft 365 accounts, depending on what fits your needs best.",
     },
     {
-      question: "How many emails can I send per account per day?",
+      question: "Does Salesblast offer Google and Microsoft accounts?",
       answer:
-        "This depends on the platform and the warm-up stage. We’ll help optimize the sending gradually so you can scale safely.",
-    },
-    {
-      question: "How does your deliverability compare to others?",
-      answer:
-        "We follow deliverability best practices from day one, SPF, DKIM, DMARC, warm-up, and ongoing monitoring, so your emails land in the inbox, not spam.",
+        "Yes, we do. We provide both Google and Microsoft accounts to ensure a diversified and stable cold email infrastructure.",
     },
   ];
 

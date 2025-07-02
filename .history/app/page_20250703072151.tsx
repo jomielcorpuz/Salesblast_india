@@ -56,9 +56,9 @@ const SalesblastIndia = () => {
         "This depends on the platform and the warm-up stage. We’ll help optimize the sending gradually so you can scale safely.",
     },
     {
-      question: "How does your deliverability compare to others?",
+      question: "How many emails can I send per account per day?",
       answer:
-        "We follow deliverability best practices from day one, SPF, DKIM, DMARC, warm-up, and ongoing monitoring, so your emails land in the inbox, not spam.",
+        "This depends on the platform and the warm-up stage. We’ll help optimize the sending gradually so you can scale safely.",
     },
   ];
 

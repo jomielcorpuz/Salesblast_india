@@ -46,19 +46,14 @@ const SalesblastIndia = () => {
         "Platforms like Google and Microsoft have built-in limits to help prevent abuse. We follow the best practices to make sure your sending reputation stays clean.",
     },
     {
-      question: "Do you support Google and Microsoft accounts?",
+      question: "Why do we use 49 users per domain with Microsoft accounts?",
       answer:
-        "Yes! We set up both Google Workspace and Microsoft 365 accounts, depending on what fits your needs best.",
+        "This approach balances volume and safety. By sending just 2–5 emails per day per inbox, we rely on more inboxes per domain to increase overall capacity. This setup outperforms the traditional 2–3 inboxes per domain. While some competitors use 99+ inboxes per domain, this burns domains faster. We've found 49 inboxes to be the perfect balance.",
     },
     {
-      question: "How many emails can I send per account per day?",
+      question: "Does Salesblast offer Google and Microsoft accounts?",
       answer:
-        "This depends on the platform and the warm-up stage. We’ll help optimize the sending gradually so you can scale safely.",
-    },
-    {
-      question: "How does your deliverability compare to others?",
-      answer:
-        "We follow deliverability best practices from day one, SPF, DKIM, DMARC, warm-up, and ongoing monitoring, so your emails land in the inbox, not spam.",
+        "Yes, we do. We provide both Google and Microsoft accounts to ensure a diversified and stable cold email infrastructure.",
     },
   ];
 

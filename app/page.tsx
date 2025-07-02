@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp, Mail, Shield, Zap, Users, CheckCircle, Star, ArrowRight, Play, Sparkles } from 'lucide-react';
 
-const ScaledMailClone = () => {
+const SalesblastIndia = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
   const [scrollY, setScrollY] = useState(0);
 
@@ -15,15 +15,15 @@ const ScaledMailClone = () => {
   const faqs = [
     {
       question: "Are domains included in the package, or do I need to buy them myself?",
-      answer: "You have 2 options on ScaledMail. You can purchase domains via ScaledMail and either use right away...or age them for use later. Aged domains have quite a few deliverability benefits! You can also use domains that you already own elsewhere on another registrar like GoDaddy or NameCheap. Our team can set up the DNS records for those domains for you and create your inboxes for sending!"
+      answer: "You have 2 options on Salesblast. You can purchase domains via Salesblast and either use right away...or age them for use later. Aged domains have quite a few deliverability benefits! You can also use domains that you already own elsewhere on another registrar like GoDaddy or NameCheap. Our team can set up the DNS records for those domains for you and create your inboxes for sending!"
     },
     {
-      question: "Do I still need to warm up with ScaledMail accounts?",
+      question: "Do I still need to warm up with Salesblast accounts?",
       answer: "Both yes and no. While many users start sending emails right away, we've seen better results when accounts are warmed up for two weeks. We recommend warming up your accounts before sending."
     },
     {
       question: "Can I start sending from day one without warming up?",
-      answer: "Yes, you can start sending 2 emails per day per ScaledMail account without warming up. However, we strongly recommend warming up your accounts for the best results."
+      answer: "Yes, you can start sending 2 emails per day per Salesblast account without warming up. However, we strongly recommend warming up your accounts for the best results."
     },
     {
       question: "Can I use domains I've previously used, or do I need new ones?",
@@ -34,7 +34,7 @@ const ScaledMailClone = () => {
       answer: "This approach balances volume and safety. By sending just 2–5 emails per day per inbox, we rely on more inboxes per domain to increase overall capacity. This setup outperforms the traditional 2–3 inboxes per domain. While some competitors use 99+ inboxes per domain, this burns domains faster. We've found 49 inboxes to be the perfect balance."
     },
     {
-      question: "Does ScaledMail offer Google and Microsoft accounts?",
+      question: "Does Salesblast offer Google and Microsoft accounts?",
       answer: "Yes, we do. We provide both Google and Microsoft accounts to ensure a diversified and stable cold email infrastructure."
     }
   ];
@@ -43,7 +43,7 @@ const ScaledMailClone = () => {
     {
       number: "01",
       title: "Register Your Domains",
-      description: "Use domains from any registrar you like: Porkbun, GoDaddy, etc. They all work seamlessly with ScaledMail's infrastructure.",
+      description: "Use domains from any registrar you like: Porkbun, GoDaddy, etc. They all work seamlessly with Salesblast's infrastructure.",
       highlight: "4 domains = 11,000 Cold Emails A Month",
       icon: <Shield className="w-8 h-8" />
     },
@@ -170,7 +170,7 @@ const ScaledMailClone = () => {
               <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
                 <Mail className="w-5 h-5 text-white" />
               </div>
-              <span className="text-2xl font-bold text-gray-900">ScaledMail</span>
+              <span className="text-2xl font-bold text-gray-900">Salesblast</span>
             </div>
             <nav className="hidden md:flex items-center space-x-8">
               <a href="#features" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Features</a>
@@ -270,7 +270,7 @@ const ScaledMailClone = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Why Choose <span className="text-gradient">ScaledMail?</span>
+              Why Choose <span className="text-gradient">Salesblast?</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our precision-engineered infrastructure delivers unmatched performance and reliability for your cold email campaigns.
@@ -311,7 +311,7 @@ const ScaledMailClone = () => {
             </div>
             <div className="glass-morphism p-8 rounded-2xl hover-lift bg-gradient-to-r from-green-500/20 to-blue-500/20">
               <div className="text-4xl font-bold text-green-400 mb-4">15%+</div>
-              <div className="text-gray-200 font-semibold">ScaledMail Average</div>
+              <div className="text-gray-200 font-semibold">Salesblast Average</div>
             </div>
             <div className="glass-morphism p-8 rounded-2xl hover-lift">
               <div className="text-4xl font-bold text-blue-400 mb-4">10x</div>
@@ -378,7 +378,7 @@ const ScaledMailClone = () => {
             <h2 className="text-5xl font-bold text-gray-900 mb-6">
               <span className="text-gradient">Frequently Asked</span> Questions
             </h2>
-            <p className="text-xl text-gray-600">Everything you need to know about ScaledMail</p>
+            <p className="text-xl text-gray-600">Everything you need to know about Salesblast</p>
           </div>
 
           <div className="space-y-6">
@@ -416,7 +416,7 @@ const ScaledMailClone = () => {
             Ready to <span className="text-gradient animate-gradient">Scale?</span>
           </h2>
           <p className="text-2xl text-blue-100 mb-12 max-w-3xl mx-auto">
-            Join thousands of businesses generating predictable revenue with ScaledMail
+            Join thousands of businesses generating predictable revenue with Salesblast
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-12 py-6 rounded-2xl text-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow">
@@ -438,7 +438,7 @@ const ScaledMailClone = () => {
                 <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
                   <Mail className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-3xl font-bold">ScaledMail</span>
+                <span className="text-3xl font-bold">Salesblast</span>
               </div>
               <p className="text-gray-400 text-lg max-w-md leading-relaxed">
                 Precision-engineered cold email infrastructure for ambitious businesses ready to scale.
@@ -464,7 +464,7 @@ const ScaledMailClone = () => {
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400">&copy; 2025 ScaledMail. All rights reserved.</p>
+            <p className="text-gray-400">&copy; 2025 Salesblast. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy</a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms</a>
@@ -477,4 +477,4 @@ const ScaledMailClone = () => {
   );
 };
 
-export default ScaledMailClone;
+export default SalesblastIndia;

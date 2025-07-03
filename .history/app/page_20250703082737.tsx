@@ -502,7 +502,7 @@ const SalesblastIndia = () => {
                   }`}
                 >
                   <div className="relative">
-                    <div className="w-full h-64 bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl flex items-center justify-center bg-[url('/icons/regdom.gif')] bg-cover bg-center">
+                    <div className="w-full h-64 bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl flex items-center justify-center">
                       <div className="text-6xl opacity-20"></div>
                     </div>
                   </div>

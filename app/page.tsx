@@ -576,7 +576,7 @@ const SalesblastIndia = () => {
                 </div>
               </div>
               <div className="glass-morphism p-8 rounded-2xl hover-lift">
-                <div className="text-4xl font-bold text-blue-400 mb-4">10x</div>
+                <div className="text-4xl font-bold text-blue-400 mb-4">8x</div>
                 <div className="text-gray-300">More Opportunities</div>
               </div>
             </div>

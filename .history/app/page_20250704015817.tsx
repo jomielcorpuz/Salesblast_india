@@ -326,10 +326,10 @@ const SalesblastIndia = () => {
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-2">
               <Image
-                src="/icons/logo1.png"
+                src="/icons/logo.png"
                 alt="Salesblast Logo"
-                width={29}
-                height={29}
+                width={50}
+                height={50}
                 className="rounded-full"
               />
               <span className="text-2xl font-bold text-gray-900">
@@ -691,10 +691,10 @@ const SalesblastIndia = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-12 py-6 rounded-2xl text-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow">
-              Buy Now
+              Start Your Journey Today
             </button>
             <button className="glass-morphism text-white px-12 py-6 rounded-2xl text-xl font-semibold hover:bg-white/20 transition-all duration-300">
-              Book a call
+              Schedule Demo
             </button>
           </div>
         </div>

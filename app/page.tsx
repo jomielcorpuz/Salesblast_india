@@ -393,11 +393,8 @@ const SalesblastIndia = () => {
               <span className="text-gray-900">Get </span>
               <AuroraText>Reliable</AuroraText>
               <br />
-              <span className="text-gray-900">Inboxes,</span>
-              {" "}
-              <AuroraText
-                colors={["#8206D4", "#8E2DCF", "#FCB045", "#FCB045"]}
-              >
+              <span className="text-gray-900">Inboxes,</span>{" "}
+              <AuroraText colors={["#8206D4", "#FF0000", "#FCB045", "#FCB045"]}>
                 FAST
               </AuroraText>
             </h1>

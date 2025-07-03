@@ -73,6 +73,7 @@ const SalesblastIndia = () => {
     { name: "", imgSrc: "/icons/sl.png" },
     { name: "", imgSrc: "/icons/outlook.png" },
     { name: "", imgSrc: "/icons/googleg.png" },
+    { name: "", imgSrc: "/icons/bison.png" },
   ];
 
   const steps = [
@@ -81,7 +82,7 @@ const SalesblastIndia = () => {
       title: "Register Your Domains",
       description:
         "Use domains from any registrar you like: Porkbun, GoDaddy, etc. They all work seamlessly with Salesblast's infrastructure.",
-      highlight: "4 domains = 11,000 Cold Emails A Month",
+
       icon: <Shield className="w-8 h-8" />,
     },
     {
@@ -89,7 +90,7 @@ const SalesblastIndia = () => {
       title: "White Glove Setup",
       description:
         "Our expert team handles the complete configuration of your domains with Google and Microsoft inboxes, including all technical DNS settings.",
-      highlight: "Ready to send in just 4 days",
+
       icon: <Users className="w-8 h-8" />,
     },
     {
@@ -103,7 +104,7 @@ const SalesblastIndia = () => {
       number: "04",
       title: "Scale with Precision",
       description:
-        "From boutique agencies to enterprise campaigns, our infrastructure scales intelligently with advanced routing and monitoring.",
+        "From boutique agencies to enterprise campaigns, our infrastructure grows with your needs, fast and reliable.",
       icon: <Mail className="w-8 h-8" />,
     },
   ];
@@ -113,26 +114,28 @@ const SalesblastIndia = () => {
       icon: <Shield className="w-12 h-12" />,
       title: "Universal Platform Mastery",
       subtitle:
-        "Optimized accounts across Google, Microsoft, and emerging platforms",
+        "As an authorized indirect reseller of Google Workspace and Microsoft 365, we help you launch on trusted platforms with properly configured accounts.",
       gradient: "from-blue-500 to-cyan-500",
     },
     {
       icon: <Users className="w-12 h-12" />,
       title: "White-Glove Excellence",
-      subtitle: "Complete DNS configuration with DKIM, DMARC, and SPF setup",
+      subtitle:
+        "Full DNS setup including DKIM, DMARC, and SPF, handled for you, so you don't have to worry about the technical details.",
       gradient: "from-purple-500 to-pink-500",
     },
     {
       icon: <Zap className="w-12 h-12" />,
-      title: "Lightning Deployment",
-      subtitle: "From zero to sending in just 4 days with expert configuration",
+      title: "Reliable Deployment",
+      subtitle:
+        "We configure your accounts and warm them up properly, so you're ready to start sending once everything is verified and stable.",
       gradient: "from-yellow-500 to-orange-500",
     },
     {
       icon: <Mail className="w-12 h-12" />,
-      title: "Inbox Optimization",
+      title: "Inbox Placement Guidance",
       subtitle:
-        "Advanced deliverability engineering for maximum inbox placement",
+        "We follow proven deliverability practices to help improve inbox rates, but results can vary based on usage, content, and sending behavior.",
       gradient: "from-green-500 to-emerald-500",
     },
   ];
@@ -382,12 +385,12 @@ const SalesblastIndia = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Transform your outreach from hit-or-miss to a
+            Transform your outreach from hit-or-miss to
             <span className="font-semibold text-blue-600">
               {" "}
-              predictable revenue machine
+              a more consistent results
             </span>{" "}
-            with precision-engineered email infrastructure.
+            with reliable email infrastructure.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -450,7 +453,7 @@ const SalesblastIndia = () => {
                   <img
                     src={logo.imgSrc}
                     alt={logo.name}
-                    className="max-h-12 max-w-full object-contain transition-all duration-300"
+                    className="max-h-12 max-w-full object-contain transition-all duration-5000"
                   />
                 </div>
               </div>
@@ -466,7 +469,7 @@ const SalesblastIndia = () => {
                   <img
                     src={logo.imgSrc}
                     alt={logo.name}
-                    className="max-h-12 max-w-full object-contain transition-all duration-300"
+                    className="max-h-12 max-w-full object-contain transition-all duration-5000"
                   />
                 </div>
               </div>
@@ -493,8 +496,8 @@ const SalesblastIndia = () => {
                 <span className="text-gradient">Salesblast India?</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Our precision-engineered infrastructure delivers unmatched
-                performance and reliability for your cold email campaigns.
+                We focus on what matters: stable email systems, deliverability
+                best practices, and support you can count on.
               </p>
             </div>
 
@@ -570,14 +573,14 @@ const SalesblastIndia = () => {
               </div>
               <div className="glass-morphism p-8 rounded-2xl hover-lift bg-gradient-to-r from-green-500/20 to-blue-500/20">
                 <div className="text-4xl font-bold text-green-400 mb-4">
-                  15%+
+                  8%+
                 </div>
                 <div className="text-gray-200 font-semibold">
                   Salesblast Average
                 </div>
               </div>
               <div className="glass-morphism p-8 rounded-2xl hover-lift">
-                <div className="text-4xl font-bold text-blue-400 mb-4">10x</div>
+                <div className="text-4xl font-bold text-blue-400 mb-4">8x</div>
                 <div className="text-gray-300">More Opportunities</div>
               </div>
             </div>
@@ -620,13 +623,6 @@ const SalesblastIndia = () => {
                     <p className="text-gray-600 text-lg leading-relaxed mb-6">
                       {step.description}
                     </p>
-                    {step.highlight && (
-                      <div className="p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border border-blue-200">
-                        <p className="text-blue-700 font-semibold">
-                          {step.highlight}
-                        </p>
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>
@@ -716,7 +712,7 @@ const SalesblastIndia = () => {
                 <span className="text-3xl font-bold">Salesblast India</span>
               </div>
               <p className="text-gray-400 text-lg max-w-md leading-relaxed">
-                Precision-engineered cold email infrastructure for ambitious
+                Fast and reliable cold email infrastructure for ambitious
                 businesses ready to scale.
               </p>
             </div>

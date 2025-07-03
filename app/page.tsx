@@ -622,13 +622,6 @@ const SalesblastIndia = () => {
                     <p className="text-gray-600 text-lg leading-relaxed mb-6">
                       {step.description}
                     </p>
-                    {step.highlight && (
-                      <div className="p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border border-blue-200">
-                        <p className="text-blue-700 font-semibold">
-                          {step.highlight}
-                        </p>
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>

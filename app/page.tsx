@@ -397,7 +397,7 @@ const SalesblastIndia = () => {
               Buy Now
               <ArrowRight className="inline ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-5 rounded-2xl text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow">
+            <button className="group bg-white text-black px-10 py-5 rounded-2xl text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow">
               Book a call
               <ArrowRight className="inline ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
@@ -556,32 +556,65 @@ const SalesblastIndia = () => {
         >
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-              Tired of{" "}
-              <span className="text-red-400">ignored emails and chats?</span>
+              Speed that Satisfies. Service that Delivers.
+
             </h2>
             <p className="text-2xl text-blue-100 mb-12 max-w-4xl mx-auto">
-              Start more conversations and close more deals with infrastructure
-              built for high-performance outbound.
+              Designed for businesses that move fast and serve better — where every conversation counts.
+
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               <div className="glass-morphism p-8 rounded-2xl hover-lift">
-                <div className="text-4xl font-bold text-red-400 mb-4">5MIN</div>
-                <div className="text-gray-300">Answering chats in under</div>
+                <div className="text-4xl font-bold  mb-4">Instant Response</div>
+                <div className="relative w-[150px] h-[150px] mt-4 mx-auto">
+                  <Image
+                    src="/icons/iconreply6.png"
+                    width={150}
+                    height={150}
+                    alt=""
+                    className="my-8 mx-auto "
+                  // Adjust hue-rotate and saturate to shift black to your preferred tint
+                  />
+
+
+                </div>
+
               </div>
               <div className="glass-morphism p-8 rounded-2xl hover-lift bg-gradient-to-r from-green-500/20 to-blue-500/20">
-                <div className="text-4xl font-bold text-green-400 mb-4">
-                  Excellent
+                <div className="text-4xl font-bold  mb-4">
+                  Outstanding Service
                 </div>
-                <div className="text-gray-200 font-semibold">
-                  Customer Service
+                <div className="relative w-[150px] h-[150px] mt-4 mx-auto">
+                  <Image
+                    src="/icons/outstandingicon.png"
+                    width={150}
+                    height={150}
+                    alt=""
+                    className="my-8 mx-auto filter invert"
+                  />
+
+
+
                 </div>
+
               </div>
               <div className="glass-morphism p-8 rounded-2xl hover-lift">
-                <div className="text-4xl font-bold text-blue-400 mb-4">
-                  More
+                <div className="text-4xl font-bold mb-4">
+                  Consistency that build Trust
                 </div>
-                <div className="text-gray-300">Opportunities</div>
+                <div className="relative w-[150px] h-[150px] mt-4 mx-auto">
+                  <Image
+                    src="/icons/handshakeicon.png"
+                    width={150}
+                    height={150}
+                    alt=""
+                    className="my-8 mx-auto filter invert"
+                  />
+
+
+
+                </div>
               </div>
             </div>
           </div>

@@ -94,13 +94,6 @@ const SalesblastIndia = () => {
     },
     {
       number: "03",
-      title: "Smart Warmup Strategy",
-      description:
-        "Choose between immediate sending for urgent campaigns or strategic 2-week warmup for maximum deliverability and volume.",
-      icon: <Zap className="w-8 h-8" />,
-    },
-    {
-      number: "04",
       title: "Scale with Precision",
       description:
         "From boutique agencies to enterprise campaigns, our infrastructure grows with your needs, fast and reliable.",
@@ -405,7 +398,7 @@ const SalesblastIndia = () => {
 
           <div className="mt-16 grid grid-cols-3 gap-8  max-w-full mx-auto">
             <div className="text-center">
-              <div className="text-lg md:text-3xl font-bold text-blue-600 mb-2">Fast</div>
+              <div className="text-lg md:text-3xl font-bold text-blue-600 mb-2">Quick</div>
               <div className="text-sm text-gray-600">Response</div>
             </div>
             <div className="text-center">
@@ -661,17 +654,16 @@ const SalesblastIndia = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              <span className="text-gradient">4 Simple Steps</span> to Success
+              <span className="text-gradient">3 Simple Steps</span> to Success
             </h2>
             <p className="text-xl text-gray-600 mb-4">
-              Get to 10,000+ emails per month in just days
+              Get more emails per month in just days
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* //MAPPING STEPS */}
+          <div className="flex flex-col items-center gap-8">
             {steps.map((step, index) => (
-              <div key={index} className="relative">
+              <div key={index} className="relative w-full max-w-xl">
                 <div className="relative">
                   <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl animate-pulse-glow z-10">
                     {step.number}

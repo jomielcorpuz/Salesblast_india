@@ -576,11 +576,11 @@ const SalesblastIndia = () => {
                 </div>
                 <div className="relative w-[150px] h-[150px] mt-4 mx-auto">
                   <Image
-                    src="/icons/outstandingicon.png"
+                    src="/icons/outstandingicon2.png"
                     width={150}
                     height={150}
                     alt=""
-                    className="my-8 mx-auto filter invert"
+                    className="my-8 mx-auto "
                   />
                 </div>
               </div>
@@ -590,11 +590,11 @@ const SalesblastIndia = () => {
                 </div>
                 <div className="relative w-[150px] h-[150px] mt-4 mx-auto">
                   <Image
-                    src="/icons/handshakeicon.png"
+                    src="/icons/handshake1.png"
                     width={150}
                     height={150}
                     alt=""
-                    className="my-8 mx-auto filter invert"
+                    className="my-8 mx-auto "
                   />
                 </div>
               </div>

@@ -467,19 +467,18 @@ const SalesblastIndia = () => {
             </p>
           </div>
 
-          <div className="space-y-16">
+          <div className="space-y-16 ">
             //MAPPING STEPS
             {steps.map((step, index) => (
               //MAIN CONTA
               <div
                 key={index}
-                className="flex flex-col lg:flex-row items-center gap-12"
+                className="flex flex-col lg:flex-row items-center justify-center gap-12 text-center lg:text-left"
               >
                 // STEPS
                 <div
-                  className={`flex-1 ${
-                    index % 2 === 0 ? "lg:order-1" : "lg:order-2"
-                  }`}
+                  className={`flex-1 ${index % 2 === 0 ? "lg:order-1" : "lg:order-2"
+                    }`}
                 >
                   <div className="relative">
                     <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl animate-pulse-glow">
@@ -509,14 +508,11 @@ const SalesblastIndia = () => {
                 </div>
                 //WHITESPACE
                 <div
-                  className={`flex-1 ${
-                    index % 2 === 0 ? "lg:order-2" : "lg:order-1"
-                  }`}
+                  className={`flex-1 ${index % 2 === 0 ? "lg:order-2" : "lg:order-1"
+                    }`}
                 >
-                  <div className="relative">
-                    <div
-                      className={`w-full h-64 rounded-3xl overflow-hidden shadow-xl ${step.bgClass}`}
-                    >
+                  <div className={`flex-1 flex items-center justify-center ${index % 2 === 0 ? "lg:order-2" : "lg:order-1"}`}>
+                    <div className={`w-full h-64 rounded-3xl overflow-hidden shadow-xl ${step.bgClass}`}>
                       <img
                         src={step.gif}
                         alt={`Step ${step.number} illustration`}

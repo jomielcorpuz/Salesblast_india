@@ -449,7 +449,7 @@ const SalesblastIndia = () => {
                   <img
                     src={logo.imgSrc}
                     alt={logo.name}
-                    className="max-h-12 max-w-full object-contain transition-all duration-300"
+                    className="max-h-12 max-w-full object-contain transition-all duration-5000"
                   />
                 </div>
               </div>
@@ -465,7 +465,7 @@ const SalesblastIndia = () => {
                   <img
                     src={logo.imgSrc}
                     alt={logo.name}
-                    className="max-h-12 max-w-full object-contain transition-all duration-300"
+                    className="max-h-12 max-w-full object-contain transition-all duration-5000"
                   />
                 </div>
               </div>

@@ -80,7 +80,7 @@ const SalesblastIndia = () => {
       title: "Register Your Domains",
       description:
         "Use domains from any registrar you like: Porkbun, GoDaddy, etc. They all work seamlessly with Salesblast's infrastructure.",
-      highlight: "4 domains = 11,000 Cold Emails A Month",
+
       icon: <Shield className="w-8 h-8" />,
     },
     {
@@ -88,7 +88,7 @@ const SalesblastIndia = () => {
       title: "White Glove Setup",
       description:
         "Our expert team handles the complete configuration of your domains with Google and Microsoft inboxes, including all technical DNS settings.",
-      highlight: "Ready to send in just 4 days",
+
       icon: <Users className="w-8 h-8" />,
     },
     {
@@ -569,7 +569,7 @@ const SalesblastIndia = () => {
               </div>
               <div className="glass-morphism p-8 rounded-2xl hover-lift bg-gradient-to-r from-green-500/20 to-blue-500/20">
                 <div className="text-4xl font-bold text-green-400 mb-4">
-                  15%+
+                  8%+
                 </div>
                 <div className="text-gray-200 font-semibold">
                   Salesblast Average

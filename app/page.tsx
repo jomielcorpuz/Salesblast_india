@@ -445,7 +445,7 @@ const SalesblastIndia = () => {
                 className="flex items-center justify-center flex-shrink-0 px-8"
                 style={{ minWidth: "12rem" }} // Fixed width for consistency
               >
-                <div className="w-24 h-16 flex items-center justify-center hover-lift">
+                <div className="w-32 h-18 flex items-center justify-center hover-lift">
                   <img
                     src={logo.imgSrc}
                     alt={logo.name}
@@ -461,7 +461,7 @@ const SalesblastIndia = () => {
                 className="flex items-center justify-center flex-shrink-0 px-8"
                 style={{ minWidth: "12rem" }}
               >
-                <div className="w-24 h-16 flex items-center justify-center hover-lift">
+                <div className="w-32 h-18 flex items-center justify-center hover-lift">
                   <img
                     src={logo.imgSrc}
                     alt={logo.name}

@@ -556,8 +556,8 @@ const SalesblastIndia = () => {
         >
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-              Tired of{" "}
-              <span className="text-red-400">ignored emails and chats?</span>
+              Tired of getting
+              <span className="text-red-400"> ignored</span>?
             </h2>
             <p className="text-2xl text-blue-100 mb-12 max-w-4xl mx-auto">
               Start more conversations and close more deals with infrastructure
@@ -566,22 +566,25 @@ const SalesblastIndia = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="glass-morphism p-8 rounded-2xl hover-lift">
-                <div className="text-4xl font-bold text-red-400 mb-4">5MIN</div>
-                <div className="text-gray-300">Answering chats in under</div>
+                <div className="text-gray-300 text-3xl">
+                  Answering chats in under
+                  <span className="text-red-400 text-3xl font-bold"> 5min</span>
+                </div>
               </div>
               <div className="glass-morphism p-8 rounded-2xl hover-lift bg-gradient-to-r from-green-500/20 to-blue-500/20">
-                <div className="text-4xl font-bold text-green-400 mb-4">
+                <div className="text-green-300 text-3xl font-bold">
                   Excellent
-                </div>
-                <div className="text-gray-200 font-semibold">
-                  Customer Service
+                  <span className="text-gray-200 text-2xl">
+                    {" "}
+                    Customer Service
+                  </span>
                 </div>
               </div>
               <div className="glass-morphism p-8 rounded-2xl hover-lift">
-                <div className="text-4xl font-bold text-blue-400 mb-4">
+                <div className="text-blue-300 text-3xl font-bold">
                   More
+                  <span className="text-gray-200 text-2xl"> Opportunities</span>
                 </div>
-                <div className="text-gray-300">Opportunities</div>
               </div>
             </div>
           </div>

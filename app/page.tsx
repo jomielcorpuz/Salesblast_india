@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import AnimatedContent from "@/components/ui/animatedcontent";
+import { AuroraText } from "@/components/magicui/aurora-text";
 
 const SalesblastIndia = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
@@ -392,7 +393,7 @@ const SalesblastIndia = () => {
 
             <h1 className="text-6xl md:text-8xl font-extrabold font-sans mb-8 leading-tight tracking-wide">
               <span className="text-gray-900">Get </span>
-              <span className="text-gray-900">Reliable</span>
+              <AuroraText>Reliable</AuroraText>
               <br />
               <span className="text-gray-900">Inboxes,</span>
               <span className="text-gradient  animate-gradient tracking-tight">

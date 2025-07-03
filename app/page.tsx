@@ -557,11 +557,10 @@ const SalesblastIndia = () => {
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
               Speed that Satisfies. Service that Delivers.
-
             </h2>
             <p className="text-2xl text-blue-100 mb-12 max-w-4xl mx-auto">
-              Designed for businesses that move fast and serve better — where every conversation counts.
-
+              Designed for businesses that move fast and serve better — where
+              every conversation counts.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -574,12 +573,9 @@ const SalesblastIndia = () => {
                     height={150}
                     alt=""
                     className="my-8 mx-auto "
-                  // Adjust hue-rotate and saturate to shift black to your preferred tint
+                    // Adjust hue-rotate and saturate to shift black to your preferred tint
                   />
-
-
                 </div>
-
               </div>
               <div className="glass-morphism p-8 rounded-2xl hover-lift bg-gradient-to-r from-green-500/20 to-blue-500/20">
                 <div className="text-4xl font-bold  mb-4">
@@ -593,15 +589,11 @@ const SalesblastIndia = () => {
                     alt=""
                     className="my-8 mx-auto filter invert"
                   />
-
-
-
                 </div>
-
               </div>
               <div className="glass-morphism p-8 rounded-2xl hover-lift">
                 <div className="text-4xl font-bold mb-4">
-                  Consistency that build Trust
+                  Consistency that builds Trust
                 </div>
                 <div className="relative w-[150px] h-[150px] mt-4 mx-auto">
                   <Image
@@ -611,9 +603,6 @@ const SalesblastIndia = () => {
                     alt=""
                     className="my-8 mx-auto filter invert"
                   />
-
-
-
                 </div>
               </div>
             </div>

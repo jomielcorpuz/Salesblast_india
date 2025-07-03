@@ -468,14 +468,14 @@ const SalesblastIndia = () => {
           </div>
 
           <div className="space-y-16 ">
-            //MAPPING STEPS
+            {/* //MAPPING STEPS */}
             {steps.map((step, index) => (
               //MAIN CONTA
               <div
                 key={index}
                 className="flex flex-col lg:flex-row items-center justify-center gap-12 text-center lg:text-left"
               >
-                // STEPS
+                {/* // STEPS */}
                 <div
                   className={`flex-1 ${index % 2 === 0 ? "lg:order-1" : "lg:order-2"
                     }`}
@@ -506,7 +506,7 @@ const SalesblastIndia = () => {
                     </div>
                   </div>
                 </div>
-                //WHITESPACE
+                {/* //WHITESPACE */}
                 <div
                   className={`flex-1 ${index % 2 === 0 ? "lg:order-2" : "lg:order-1"
                     }`}

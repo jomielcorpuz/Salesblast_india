@@ -97,7 +97,7 @@ const SalesblastIndia = () => {
       description:
         "From boutique agencies to enterprise campaigns, our infrastructure scales intelligently with advanced routing and monitoring.",
       icon: <Mail className="w-8 h-8" />,
-      gif: "/icons/domrout.gif",
+      gif: "/gifs/scale.gif",
       bgClass: "bg-gradient-to-br from-pink-100 to-red-100",
     },
   ];

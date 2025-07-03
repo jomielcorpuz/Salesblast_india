@@ -65,8 +65,7 @@ const SalesblastIndia = () => {
     {
       number: "01",
       title: "Register Your Domains",
-      description:
-        "Use domains from any registrar you like: Porkbun, GoDaddy, etc. They all work seamlessly with Salesblast's infrastructure.",
+      description: "Use domains from any registrar you like...",
       highlight: "4 domains = 11,000 Cold Emails A Month",
       icon: <Shield className="w-8 h-8" />,
       gif: "/icons/regdom.gif",
@@ -75,29 +74,26 @@ const SalesblastIndia = () => {
     {
       number: "02",
       title: "White Glove Setup",
-      description:
-        "Our expert team handles the complete configuration of your domains with Google and Microsoft inboxes, including all technical DNS settings.",
+      description: "Our expert team handles the complete configuration...",
       highlight: "Ready to send in just 4 days",
       icon: <Users className="w-8 h-8" />,
-      gif: "/icons/domconfig.gif",
+      gif: "/gifs/setup.gif",
       bgClass: "bg-gradient-to-br from-green-100 to-teal-100",
     },
     {
       number: "03",
       title: "Smart Warmup Strategy",
-      description:
-        "Choose between immediate sending for urgent campaigns or strategic 2-week warmup for maximum deliverability and volume.",
+      description: "Choose between immediate sending...",
       icon: <Zap className="w-8 h-8" />,
-      gif: "/icons/domwarm.gif",
+      gif: "/gifs/warmup.gif",
       bgClass: "bg-gradient-to-br from-yellow-100 to-orange-100",
     },
     {
       number: "04",
       title: "Scale with Precision",
-      description:
-        "From boutique agencies to enterprise campaigns, our infrastructure scales intelligently with advanced routing and monitoring.",
+      description: "Our infrastructure scales intelligently...",
       icon: <Mail className="w-8 h-8" />,
-      gif: "/icons/domrout.gif",
+      gif: "/gifs/scale.gif",
       bgClass: "bg-gradient-to-br from-pink-100 to-red-100",
     },
   ];

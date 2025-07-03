@@ -88,7 +88,7 @@ const SalesblastIndia = () => {
       description:
         "Choose between immediate sending for urgent campaigns or strategic 2-week warmup for maximum deliverability and volume.",
       icon: <Zap className="w-8 h-8" />,
-      gif: "/icons/domwarm.gif",
+      gif: "/gifs/warmup.gif",
       bgClass: "bg-gradient-to-br from-yellow-100 to-orange-100",
     },
     {
@@ -97,7 +97,7 @@ const SalesblastIndia = () => {
       description:
         "From boutique agencies to enterprise campaigns, our infrastructure scales intelligently with advanced routing and monitoring.",
       icon: <Mail className="w-8 h-8" />,
-      gif: "/icons/domrout.gif",
+      gif: "/gifs/scale.gif",
       bgClass: "bg-gradient-to-br from-pink-100 to-red-100",
     },
   ];

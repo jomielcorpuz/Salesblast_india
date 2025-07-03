@@ -378,30 +378,28 @@ const SalesblastIndia = () => {
 
           <h1 className="text-6xl md:text-8xl font-black mb-8 leading-tight">
             <span className="text-gray-900">Get </span>
-            <span className="text-gradient animate-gradient">Reliable</span>
+            <span className="text-gray-900">Reliable</span>
             <br />
-            <span className="text-gray-900"> Inboxes Fast</span>
+            <span className="text-gray-900"> Inboxes,</span>
+            <span className="text-gradient animate-gradient"> FAST</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Transform your outreach from hit-or-miss to
+            Scale up your outreach with a reseller
             <span className="font-semibold text-blue-600">
               {" "}
-              a more consistent results
+              you can trust.
             </span>{" "}
-            with reliable email infrastructure.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <button className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-5 rounded-2xl text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow">
-              Start Scaling Today
+              Buy Now
               <ArrowRight className="inline ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="group flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition-colors">
-              <div className="w-12 h-12 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
-                <Play className="w-5 h-5 ml-1" />
-              </div>
-              <span className="font-semibold">Watch Demo</span>
+            <button className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-5 rounded-2xl text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow">
+              Book a call
+              <ArrowRight className="inline ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
@@ -558,29 +556,32 @@ const SalesblastIndia = () => {
         >
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-              Tired of <span className="text-red-400">1% Reply Rates?</span>
+              Tired of{" "}
+              <span className="text-red-400">ignored emails and chats?</span>
             </h2>
             <p className="text-2xl text-blue-100 mb-12 max-w-4xl mx-auto">
-              Transform your cold outreach into a predictable revenue engine
-              with infrastructure that actually works.
+              Start more conversations and close more deals with infrastructure
+              built for high-performance outbound.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="glass-morphism p-8 rounded-2xl hover-lift">
-                <div className="text-4xl font-bold text-red-400 mb-4">1%</div>
-                <div className="text-gray-300">Industry Average Reply Rate</div>
+                <div className="text-4xl font-bold text-red-400 mb-4">5MIN</div>
+                <div className="text-gray-300">Answering chats in under</div>
               </div>
               <div className="glass-morphism p-8 rounded-2xl hover-lift bg-gradient-to-r from-green-500/20 to-blue-500/20">
                 <div className="text-4xl font-bold text-green-400 mb-4">
-                  8%+
+                  Excellent
                 </div>
                 <div className="text-gray-200 font-semibold">
-                  Salesblast Average
+                  Customer Service
                 </div>
               </div>
               <div className="glass-morphism p-8 rounded-2xl hover-lift">
-                <div className="text-4xl font-bold text-blue-400 mb-4">8x</div>
-                <div className="text-gray-300">More Opportunities</div>
+                <div className="text-4xl font-bold text-blue-400 mb-4">
+                  More
+                </div>
+                <div className="text-gray-300">Opportunities</div>
               </div>
             </div>
           </div>

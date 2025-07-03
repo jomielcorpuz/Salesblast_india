@@ -247,7 +247,7 @@ const SalesblastIndia = () => {
                 className="rounded-full"
               />
               <span className="text-2xl font-bold text-gray-900">
-                Salesblast
+                Salesblast India
               </span>
             </div>
             <nav className="hidden md:flex items-center space-x-8">

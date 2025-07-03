@@ -64,14 +64,14 @@ const SalesblastIndia = () => {
 
   // Logo content array
   const logos = [
-    { name: "Company 1" },
-    { name: "Company 2" },
-    { name: "Company 3" },
-    { name: "Company 4" },
-    { name: "Company 5" },
-    { name: "Company 6" },
-    { name: "Company 7" },
-    { name: "Company 8" },
+    { name: "", imgSrc: "/icons/cf.png" },
+    { name: "", imgSrc: "/icons/google.png" },
+    { name: "", imgSrc: "/icons/instantly.png" },
+    { name: "", imgSrc: "/icons/daddy.png" },
+    { name: "", imgSrc: "/icons/pb.png" },
+    { name: "", imgSrc: "/icons/sl.png" },
+    { name: "", imgSrc: "/icons/outlook.png" },
+    { name: "", imgSrc: "/icons/googleg.png" },
   ];
 
   const steps = [
@@ -367,11 +367,11 @@ const SalesblastIndia = () => {
                     key={`${loopIndex}-${index}`}
                     className="mx-12 flex items-center justify-center"
                   >
-                    <div className="w-32 h-16 bg-white rounded-xl shadow-sm flex items-center justify-center hover-lift border border-gray-100">
-                      <span className="text-gray-400 font-semibold text-sm">
-                        {logo.name}
-                      </span>
-                    </div>
+                    <img
+                      src={logo.imgSrc}
+                      alt={logo.name}
+                      className="max-h-12 object-contain"
+                    />
                   </div>
                 ))}
                 {/* Another spacer to maintain loop separation */}
@@ -441,7 +441,6 @@ const SalesblastIndia = () => {
         </section>
       </AnimatedContent>
 
-
       {/* Problem Statement with Modern Design */}
 
       <section className="py-32 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
@@ -466,8 +465,8 @@ const SalesblastIndia = () => {
               Tired of <span className="text-red-400">1% Reply Rates?</span>
             </h2>
             <p className="text-2xl text-blue-100 mb-12 max-w-4xl mx-auto">
-              Transform your cold outreach into a predictable revenue engine with
-              infrastructure that actually works.
+              Transform your cold outreach into a predictable revenue engine
+              with infrastructure that actually works.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -476,7 +475,9 @@ const SalesblastIndia = () => {
                 <div className="text-gray-300">Industry Average Reply Rate</div>
               </div>
               <div className="glass-morphism p-8 rounded-2xl hover-lift bg-gradient-to-r from-green-500/20 to-blue-500/20">
-                <div className="text-4xl font-bold text-green-400 mb-4">15%+</div>
+                <div className="text-4xl font-bold text-green-400 mb-4">
+                  15%+
+                </div>
                 <div className="text-gray-200 font-semibold">
                   Salesblast Average
                 </div>
@@ -488,11 +489,7 @@ const SalesblastIndia = () => {
             </div>
           </div>
         </AnimatedContent>
-
-
       </section>
-
-
 
       {/* Modern 4 Steps Section */}
       <section

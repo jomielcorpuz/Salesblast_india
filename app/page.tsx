@@ -365,13 +365,16 @@ const SalesblastIndia = () => {
                 {logos.map((logo, index) => (
                   <div
                     key={`${loopIndex}-${index}`}
-                    className="mx-12 flex items-center justify-center"
+                    className="flex items-center justify-center px-6"
+                    style={{ minWidth: "9rem" }} // Ensures consistent spacing per logo
                   >
-                    <img
-                      src={logo.imgSrc}
-                      alt={logo.name}
-                      className="max-h-12 object-contain"
-                    />
+                    <div className="w-36 h-20  flex items-center justify-center hover-lift">
+                      <img
+                        src={logo.imgSrc}
+                        alt={logo.name}
+                        className="max-h-12 object-contain"
+                      />
+                    </div>
                   </div>
                 ))}
                 {/* Another spacer to maintain loop separation */}

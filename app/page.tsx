@@ -376,12 +376,12 @@ const SalesblastIndia = () => {
             </div>
           </div>
 
-          <h1 className="text-6xl md:text-8xl font-black mb-8 leading-tight">
+          <h1 className="text-6xl md:text-8xl font-extrabold font-sans mb-8 leading-tight tracking-wide">
             <span className="text-gray-900">Get </span>
             <span className="text-gray-900">Reliable</span>
             <br />
-            <span className="text-gray-900"> Inboxes,</span>
-            <span className="text-gradient animate-gradient"> FAST</span>
+            <span className="text-gray-900">Inboxes,</span>
+            <span className="text-gradient  animate-gradient tracking-tight"> FAST</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
@@ -403,24 +403,25 @@ const SalesblastIndia = () => {
             </button>
           </div>
 
-          <div className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+          <div className="mt-16 grid grid-cols-3 gap-8  max-w-full mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">Fast</div>
+              <div className="text-lg md:text-3xl font-bold text-blue-600 mb-2">Fast</div>
               <div className="text-sm text-gray-600">Response</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600 mb-2">
+              <div className="text-lg md:text-3xl font-bold text-purple-600 mb-2">
                 Industry Best
               </div>
-              <div className="text-sm text-gray-600">Customer Service</div>
+              <div className="text-sm text-gray-600 text-wrap">Customer Service</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-600 mb-2">
+            <div className="text-center w-full">
+              <div className="text-lg md:text-3xl font-bold text-green-600 mb-2">
                 24 Hours
               </div>
               <div className="text-sm text-gray-600">Setup Time</div>
             </div>
           </div>
+
         </div>
 
         {/* Floating Elements */}
@@ -564,48 +565,90 @@ const SalesblastIndia = () => {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              <div className="glass-morphism p-8 rounded-2xl hover-lift">
-                <div className="text-4xl font-bold  mb-4">Instant Response</div>
-                <div className="relative w-[150px] h-[150px] mt-4 mx-auto">
-                  <Image
-                    src="/icons/iconreply6.png"
-                    width={150}
-                    height={150}
-                    alt=""
-                    className="my-8 mx-auto "
+              <AnimatedContent
+                distance={100}
+                direction="vertical"
+                reverse={false}
+                initialOpacity={0}
+                animateOpacity
+                scale={1.0}
+                threshold={0.1}
+              >
+
+                <div className="glass-morphism p-8 rounded-2xl hover-lift">
+                  <div className="text-4xl font-bold  mb-4">Instant Response</div>
+                  <div className="relative w-[150px] h-[150px] mt-4 mx-auto">
+                    <Image
+                      src="/icons/iconreply6.png"
+                      width={150}
+                      height={150}
+                      alt=""
+                      className="my-8 mx-auto "
                     // Adjust hue-rotate and saturate to shift black to your preferred tint
-                  />
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="glass-morphism p-8 rounded-2xl hover-lift bg-gradient-to-r from-green-500/20 to-blue-500/20">
-                <div className="text-4xl font-bold  mb-4">
-                  Outstanding Service
+
+              </AnimatedContent>
+
+              <AnimatedContent
+                distance={100}
+                direction="vertical"
+                reverse={false}
+                initialOpacity={0}
+                animateOpacity
+                scale={1.0}
+                threshold={0.1}
+                delay={160}
+              >
+
+                <div className="glass-morphism p-8 rounded-2xl hover-lift bg-gradient-to-r from-green-500/20 to-blue-500/20">
+                  <div className="text-4xl font-bold  mb-4">
+                    Outstanding Service
+                  </div>
+                  <div className="relative w-[150px] h-[150px] mt-4 mx-auto">
+                    <Image
+                      src="/icons/outstandingicon2.png"
+                      width={150}
+                      height={150}
+                      alt=""
+                      className="my-8 mx-auto "
+                    />
+                  </div>
                 </div>
-                <div className="relative w-[150px] h-[150px] mt-4 mx-auto">
-                  <Image
-                    src="/icons/outstandingicon2.png"
-                    width={150}
-                    height={150}
-                    alt=""
-                    className="my-8 mx-auto "
-                  />
+
+              </AnimatedContent>
+
+
+              <AnimatedContent
+                distance={100}
+                direction="vertical"
+                reverse={false}
+                initialOpacity={0}
+                animateOpacity
+                scale={1.0}
+                threshold={0.1}
+                delay={210}
+              >
+
+                <div className="glass-morphism p-8 rounded-2xl hover-lift">
+                  <div className="text-4xl font-bold mb-4">
+                    Consistency that builds Trust
+                  </div>
+                  <div className="relative w-[150px] h-[150px] mt-4 mx-auto">
+                    <Image
+                      src="/icons/handshake1.png"
+                      width={150}
+                      height={150}
+                      alt=""
+                      className="my-8 mx-auto "
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="glass-morphism p-8 rounded-2xl hover-lift">
-                <div className="text-4xl font-bold mb-4">
-                  Consistency that builds Trust
-                </div>
-                <div className="relative w-[150px] h-[150px] mt-4 mx-auto">
-                  <Image
-                    src="/icons/handshake1.png"
-                    width={150}
-                    height={150}
-                    alt=""
-                    className="my-8 mx-auto "
-                  />
-                </div>
-              </div>
+
+              </AnimatedContent>
             </div>
+
           </div>
         </AnimatedContent>
       </section>
@@ -665,37 +708,48 @@ const SalesblastIndia = () => {
             </p>
           </div>
 
+
           <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300"
-              >
-                <button
-                  className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-white/50 transition-colors rounded-2xl"
-                  onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
+            {faqs.map((faq, index) => {
+              const isOpen = openFAQ === index;
+
+              return (
+                <div
+                  key={index}
+                  className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300"
                 >
-                  <span className="font-semibold text-gray-900 text-lg">
-                    {faq.question}
-                  </span>
-                  <div className="ml-4 flex-shrink-0">
-                    {openFAQ === index ? (
-                      <ChevronUp className="w-6 h-6 text-blue-600" />
-                    ) : (
-                      <ChevronDown className="w-6 h-6 text-gray-400" />
-                    )}
+                  <button
+                    className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-white/50 transition-colors rounded-2xl"
+                    onClick={() => setOpenFAQ(isOpen ? null : index)}
+                  >
+                    <span className="font-semibold text-gray-900 text-lg">
+                      {faq.question}
+                    </span>
+                    <div className="ml-4 flex-shrink-0">
+                      {isOpen ? (
+                        <ChevronUp className="w-6 h-6 text-blue-600 transition-transform duration-300 ease-in-out" />
+                      ) : (
+                        <ChevronDown className="w-6 h-6 text-gray-400 transition-transform duration-300 ease-in-out" />
+                      )}
+                    </div>
+                  </button>
+
+                  {/* Animated Answer Block */}
+                  <div
+                    className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100 pb-6' : 'grid-rows-[0fr] opacity-0 pb-0'
+                      } px-8 overflow-hidden`}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="text-gray-600 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
                   </div>
-                </button>
-                {openFAQ === index && (
-                  <div className="px-8 pb-6">
-                    <p className="text-gray-600 leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                )}
-              </div>
-            ))}
+                </div>
+              );
+            })}
           </div>
+
         </div>
       </section>
 

@@ -360,60 +360,115 @@ const SalesblastIndia = () => {
       <section className="relative min-h-screen flex items-center justify-center mesh-gradient">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/90 to-purple-50/90"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
-          <div className="animate-float">
-            <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-8">
-              <Sparkles className="w-4 h-4 text-blue-600 mr-2" />
-              <span className="text-sm font-medium text-gray-700">
-                Trusted by multiple businesses worldwide
-              </span>
-            </div>
-          </div>
-
-          <h1 className="text-6xl md:text-8xl font-extrabold font-sans mb-8 leading-tight tracking-wide">
-            <span className="text-gray-900">Get </span>
-            <span className="text-gray-900">Reliable</span>
-            <br />
-            <span className="text-gray-900">Inboxes,</span>
-            <span className="text-gradient  animate-gradient tracking-tight"> FAST</span>
-          </h1>
-
-          <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Scale up your outreach with a reseller
-            <span className="font-semibold text-blue-600">
-              {" "}
-              you can trust.
-            </span>{" "}
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <button className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-5 rounded-2xl text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow">
-              Buy Now
-              <ArrowRight className="inline ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="group bg-white text-black px-10 py-5 rounded-2xl text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow">
-              Book a call
-              <ArrowRight className="inline ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
-
-          <div className="mt-16 grid grid-cols-3 gap-8  max-w-full mx-auto">
-            <div className="text-center">
-              <div className="text-lg md:text-3xl font-bold text-blue-600 mb-2">Quick</div>
-              <div className="text-sm text-gray-600">Response</div>
-            </div>
-            <div className="text-center">
-              <div className="text-lg md:text-3xl font-bold text-purple-600 mb-2">
-                Industry Best
+          <AnimatedContent
+            distance={100}
+            direction="vertical"
+            reverse={true}
+            initialOpacity={0}
+            animateOpacity
+            scale={1.0}
+            threshold={0.1}
+          >
+            <div className="animate-float">
+              <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-8">
+                <Sparkles className="w-4 h-4 text-blue-600 mr-2" />
+                <span className="text-sm font-medium text-gray-700">
+                  Trusted by multiple businesses worldwide
+                </span>
               </div>
-              <div className="text-sm text-gray-600 text-wrap">Customer Service</div>
             </div>
-            <div className="text-center w-full">
-              <div className="text-lg md:text-3xl font-bold text-green-600 mb-2">
-                24 Hours
+          </AnimatedContent>
+
+
+          <AnimatedContent
+            distance={100}
+            direction="vertical"
+            reverse={false}
+            initialOpacity={0}
+            animateOpacity
+            scale={1.0}
+            threshold={0.1}
+          >
+
+            <h1 className="text-6xl md:text-8xl font-extrabold font-sans mb-8 leading-tight tracking-wide">
+              <span className="text-gray-900">Get </span>
+              <span className="text-gray-900">Reliable</span>
+              <br />
+              <span className="text-gray-900">Inboxes,</span>
+              <span className="text-gradient  animate-gradient tracking-tight"> FAST</span>
+            </h1>
+          </AnimatedContent>
+          <AnimatedContent
+            distance={100}
+            direction="vertical"
+            reverse={false}
+            initialOpacity={0}
+            animateOpacity
+            scale={1.0}
+            threshold={0.3}
+            delay={130}
+          >
+            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+              Scale up your outreach with a reseller
+              <span className="font-semibold text-blue-600">
+                {" "}
+                you can trust.
+              </span>{" "}
+            </p>
+          </AnimatedContent>
+
+          <AnimatedContent
+            distance={100}
+            direction="vertical"
+            reverse={false}
+            initialOpacity={0}
+            animateOpacity
+            scale={1.0}
+            threshold={0.3}
+            delay={160}
+          >
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <button className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-5 rounded-2xl text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow">
+                Buy Now
+                <ArrowRight className="inline ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button className="group bg-white text-black px-10 py-5 rounded-2xl text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow">
+                Book a call
+                <ArrowRight className="inline ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
+          </AnimatedContent>
+
+          <AnimatedContent
+            distance={100}
+            direction="vertical"
+            reverse={false}
+            initialOpacity={0}
+            animateOpacity
+            scale={1.0}
+            threshold={0.3}
+            delay={190}
+          >
+            <div className="mt-16 grid grid-cols-3 gap-8  max-w-full mx-auto">
+              <div className="text-center">
+                <div className="text-lg md:text-3xl font-bold text-blue-600 mb-2">Quick</div>
+                <div className="text-sm text-gray-600">Response</div>
               </div>
-              <div className="text-sm text-gray-600">Setup Time</div>
+              <div className="text-center">
+                <div className="text-lg md:text-3xl font-bold text-purple-600 mb-2">
+                  Industry Best
+                </div>
+                <div className="text-sm text-gray-600 text-wrap">Customer Service</div>
+              </div>
+              <div className="text-center w-full">
+                <div className="text-lg md:text-3xl font-bold text-green-600 mb-2">
+                  24 Hours
+                </div>
+                <div className="text-sm text-gray-600">Setup Time</div>
+              </div>
             </div>
-          </div>
+          </AnimatedContent>
+
 
         </div>
 

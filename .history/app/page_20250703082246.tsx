@@ -467,7 +467,7 @@ const SalesblastIndia = () => {
               >
                 <div
                   className={`flex-1 ${
-                    index % 2 === 0 ? "lg:order-1" : "lg:order-2"
+                    index % 2 === 0 ? "lg:order-1" : "lg:order-1"
                   }`}
                 >
                   <div className="relative">

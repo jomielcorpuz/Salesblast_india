@@ -12,6 +12,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import Image from "next/image";
+import AnimatedContent from "@/components/ui/animatedcontent";
 
 const SalesblastIndia = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
@@ -59,6 +60,18 @@ const SalesblastIndia = () => {
       answer:
         "We follow deliverability best practices from day one, SPF, DKIM, DMARC, warm-up, and ongoing monitoring, so your emails land in the inbox, not spam.",
     },
+  ];
+
+  // Logo content array
+  const logos = [
+    { name: "Company 1" },
+    { name: "Company 2" },
+    { name: "Company 3" },
+    { name: "Company 4" },
+    { name: "Company 5" },
+    { name: "Company 6" },
+    { name: "Company 7" },
+    { name: "Company 8" },
   ];
 
   const steps = [
@@ -338,71 +351,99 @@ const SalesblastIndia = () => {
         ></div>
       </section>
 
-      {/* Auto-scrolling Logo Section */}
+      {/* // Auto-scrolling Logo Section */}
       <section className="py-20 bg-gray-50 overflow-hidden">
         <div className="relative">
-          <div className="flex animate-scroll">
-            {Array.from({ length: 2 }).map((_, setIndex) => (
+          <div className="flex animate-scroll whitespace-nowrap">
+            {Array.from({ length: 2 }).map((_, loopIndex) => (
               <div
-                key={setIndex}
+                key={loopIndex}
                 className="flex items-center justify-around min-w-full"
               >
-                {Array.from({ length: 8 }).map((_, logoIndex) => (
+                {/* Optional spacer to prevent visual merging */}
+                <div className="w-12" />
+                {logos.map((logo, index) => (
                   <div
-                    key={logoIndex}
+                    key={`${loopIndex}-${index}`}
                     className="mx-12 flex items-center justify-center"
                   >
                     <div className="w-32 h-16 bg-white rounded-xl shadow-sm flex items-center justify-center hover-lift border border-gray-100">
                       <span className="text-gray-400 font-semibold text-sm">
-                        COMPANY {logoIndex + 1}
+                        {logo.name}
                       </span>
                     </div>
                   </div>
                 ))}
+                {/* Another spacer to maintain loop separation */}
+                <div className="w-12" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Modern Features Section */}
-      <section id="features" className="py-32 bg-white relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Why Choose <span className="text-gradient">Salesblast?</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our precision-engineered infrastructure delivers unmatched
-              performance and reliability for your cold email campaigns.
-            </p>
-          </div>
+      <AnimatedContent
+        distance={100}
+        direction="vertical"
+        reverse={false}
+        initialOpacity={0}
+        animateOpacity
+        scale={1.0}
+        threshold={0.1}
+      >
+        {/* Modern Features Section */}
+        <section id="features" className="py-32 bg-white relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                Why Choose <span className="text-gradient">Salesblast?</span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Our precision-engineered infrastructure delivers unmatched
+                performance and reliability for your cold email campaigns.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <div key={index} className="group relative">
-                <div
-                  className={`relative p-8 rounded-3xl border border-gray-100 hover:border-transparent hover:shadow-2xl transition-all duration-500 hover-lift bg-white`}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {features.map((feature, index) => (
+                <AnimatedContent
+                  key={index}
+                  distance={100}
+                  direction="vertical"
+                  reverse={false}
+                  initialOpacity={0}
+                  animateOpacity
+                  scale={1.0}
+                  threshold={0.1}
+                  delay={index * 100} // ← Add delay for staggered animation
                 >
-                  <div
-                    className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${feature.gradient} text-white mb-6`}
-                  >
-                    {feature.icon}
+                  <div className="group relative">
+                    <div
+                      className={`relative p-8 rounded-3xl border border-gray-100 hover:border-transparent hover:shadow-2xl transition-all duration-500 hover-lift bg-white`}
+                    >
+                      <div
+                        className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${feature.gradient} text-white mb-6`}
+                      >
+                        {feature.icon}
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        {feature.subtitle}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {feature.subtitle}
-                  </p>
-                </div>
-              </div>
-            ))}
+                </AnimatedContent>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </AnimatedContent>
+
 
       {/* Problem Statement with Modern Design */}
+
       <section className="py-32 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-20"
@@ -411,33 +452,47 @@ const SalesblastIndia = () => {
               'url(\'data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')',
           }}
         ></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-            Tired of <span className="text-red-400">1% Reply Rates?</span>
-          </h2>
-          <p className="text-2xl text-blue-100 mb-12 max-w-4xl mx-auto">
-            Transform your cold outreach into a predictable revenue engine with
-            infrastructure that actually works.
-          </p>
+        <AnimatedContent
+          distance={100}
+          direction="vertical"
+          reverse={false}
+          initialOpacity={0}
+          animateOpacity
+          scale={1.0}
+          threshold={0.1}
+        >
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
+              Tired of <span className="text-red-400">1% Reply Rates?</span>
+            </h2>
+            <p className="text-2xl text-blue-100 mb-12 max-w-4xl mx-auto">
+              Transform your cold outreach into a predictable revenue engine with
+              infrastructure that actually works.
+            </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="glass-morphism p-8 rounded-2xl hover-lift">
-              <div className="text-4xl font-bold text-red-400 mb-4">1%</div>
-              <div className="text-gray-300">Industry Average Reply Rate</div>
-            </div>
-            <div className="glass-morphism p-8 rounded-2xl hover-lift bg-gradient-to-r from-green-500/20 to-blue-500/20">
-              <div className="text-4xl font-bold text-green-400 mb-4">15%+</div>
-              <div className="text-gray-200 font-semibold">
-                Salesblast Average
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <div className="glass-morphism p-8 rounded-2xl hover-lift">
+                <div className="text-4xl font-bold text-red-400 mb-4">1%</div>
+                <div className="text-gray-300">Industry Average Reply Rate</div>
+              </div>
+              <div className="glass-morphism p-8 rounded-2xl hover-lift bg-gradient-to-r from-green-500/20 to-blue-500/20">
+                <div className="text-4xl font-bold text-green-400 mb-4">15%+</div>
+                <div className="text-gray-200 font-semibold">
+                  Salesblast Average
+                </div>
+              </div>
+              <div className="glass-morphism p-8 rounded-2xl hover-lift">
+                <div className="text-4xl font-bold text-blue-400 mb-4">10x</div>
+                <div className="text-gray-300">More Opportunities</div>
               </div>
             </div>
-            <div className="glass-morphism p-8 rounded-2xl hover-lift">
-              <div className="text-4xl font-bold text-blue-400 mb-4">10x</div>
-              <div className="text-gray-300">More Opportunities</div>
-            </div>
           </div>
-        </div>
+        </AnimatedContent>
+
+
       </section>
+
+
 
       {/* Modern 4 Steps Section */}
       <section

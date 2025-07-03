@@ -591,7 +591,7 @@ const SalesblastIndia = () => {
                     width={150}
                     height={150}
                     alt=""
-                    className="my-8 mx-auto filter invert"
+                    className="my-8 mx-auto "
                   />
 
 
@@ -609,7 +609,7 @@ const SalesblastIndia = () => {
                     width={150}
                     height={150}
                     alt=""
-                    className="my-8 mx-auto filter invert"
+                    className="my-8 mx-auto "
                   />
 
 

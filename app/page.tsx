@@ -618,10 +618,9 @@ const SalesblastIndia = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* //MAPPING STEPS */}
+          <div className="flex flex-col items-center gap-8">
             {steps.map((step, index) => (
-              <div key={index} className="relative">
+              <div key={index} className="relative w-full max-w-xl">
                 <div className="relative">
                   <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl animate-pulse-glow z-10">
                     {step.number}

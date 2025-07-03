@@ -102,7 +102,7 @@ const SalesblastIndia = () => {
       number: "04",
       title: "Scale with Precision",
       description:
-        "From boutique agencies to enterprise campaigns, our infrastructure scales intelligently with advanced routing and monitoring.",
+        "From boutique agencies to enterprise campaigns, our infrastructure grows with your needs, fast and reliable.",
       icon: <Mail className="w-8 h-8" />,
     },
   ];

@@ -516,7 +516,7 @@ const SalesblastIndia = () => {
                       <img
                         src={step.gif}
                         alt={`Step ${step.number} illustration`}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-center"
                       />
                     </div>
                   </div>

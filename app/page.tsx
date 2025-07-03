@@ -708,36 +708,77 @@ const SalesblastIndia = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              <span className="text-gradient">3 Simple Steps</span> to Success
-            </h2>
-            <p className="text-xl text-gray-600 mb-4">
-              Get more emails per month in just days
-            </p>
+            <AnimatedContent
+              distance={100}
+              direction="vertical"
+              reverse={false}
+              initialOpacity={0}
+              animateOpacity
+              scale={1.0}
+              threshold={0.1}
+              delay={100}
+            >
+
+              <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                <span className="text-gradient">3 Simple Steps</span> to Success
+              </h2>
+
+            </AnimatedContent>
+            <AnimatedContent
+              distance={100}
+              direction="vertical"
+              reverse={false}
+              initialOpacity={0}
+              animateOpacity
+              scale={1.0}
+              threshold={0.1}
+              delay={160}
+            >
+
+              <p className="text-xl text-gray-600 mb-4">
+                Get more emails per month in just days
+              </p>
+
+            </AnimatedContent>
           </div>
 
           <div className="flex flex-col items-center gap-8">
             {steps.map((step, index) => (
+
               <div key={index} className="relative w-full max-w-xl">
-                <div className="relative">
-                  <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl animate-pulse-glow z-10">
-                    {step.number}
-                  </div>
-                  <div className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover-lift border border-gray-100 h-full">
-                    <div className="flex items-center mb-6 mt-4">
-                      <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl text-white mr-4">
-                        {step.icon}
-                      </div>
-                      <h3 className="text-2xl font-bold text-gray-900">
-                        {step.title}
-                      </h3>
+                <AnimatedContent
+                  distance={100}
+                  direction="vertical"
+                  reverse={false}
+                  initialOpacity={0}
+                  animateOpacity
+                  scale={1.0}
+                  threshold={0.1}
+                  delay={210}
+                >
+
+                  <div className="relative">
+                    <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl animate-pulse-glow z-10">
+                      {step.number}
                     </div>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                      {step.description}
-                    </p>
+                    <div className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover-lift border border-gray-100 h-full">
+                      <div className="flex items-center mb-6 mt-4">
+                        <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl text-white mr-4">
+                          {step.icon}
+                        </div>
+                        <h3 className="text-2xl font-bold text-gray-900">
+                          {step.title}
+                        </h3>
+                      </div>
+                      <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
+
+                </AnimatedContent>
               </div>
+
             ))}
           </div>
         </div>
@@ -747,12 +788,37 @@ const SalesblastIndia = () => {
       <section id="faq" className="py-32 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">
-              <span className="text-gradient">Frequently Asked</span> Questions
-            </h2>
-            <p className="text-xl text-gray-600">
-              Everything you need to know about Salesblast India
-            </p>
+            <AnimatedContent
+              distance={100}
+              direction="vertical"
+              reverse={false}
+              initialOpacity={0}
+              animateOpacity
+              scale={1.0}
+              threshold={0.1}
+              delay={100}
+            >
+
+              <h2 className="text-5xl font-bold text-gray-900 mb-6">
+                <span className="text-gradient">Frequently Asked</span> Questions
+              </h2>
+            </AnimatedContent>
+            <AnimatedContent
+              distance={100}
+              direction="vertical"
+              reverse={false}
+              initialOpacity={0}
+              animateOpacity
+              scale={1.0}
+              threshold={0.1}
+              delay={160}
+            >
+
+              <p className="text-xl text-gray-600">
+                Everything you need to know about Salesblast India
+              </p>
+
+            </AnimatedContent>
           </div>
 
           <div className="space-y-6">
@@ -760,40 +826,58 @@ const SalesblastIndia = () => {
               const isOpen = openFAQ === index;
 
               return (
-                <div
-                  key={index}
-                  className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300"
+                <AnimatedContent
+                  distance={100}
+                  direction="vertical"
+                  reverse={false}
+                  initialOpacity={0}
+                  animateOpacity
+                  scale={1.0}
+                  threshold={0.1}
+                  delay={100}
                 >
-                  <button
-                    className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-white/50 transition-colors rounded-2xl"
-                    onClick={() => setOpenFAQ(isOpen ? null : index)}
-                  >
-                    <span className="font-semibold text-gray-900 text-lg">
-                      {faq.question}
-                    </span>
-                    <div className="ml-4 flex-shrink-0">
-                      {isOpen ? (
-                        <ChevronUp className="w-6 h-6 text-blue-600 transition-transform duration-300 ease-in-out" />
-                      ) : (
-                        <ChevronDown className="w-6 h-6 text-gray-400 transition-transform duration-300 ease-in-out" />
-                      )}
-                    </div>
-                  </button>
 
-                  {/* Animated Answer Block */}
                   <div
-                    className={`grid transition-all duration-500 ease-in-out ${isOpen
+                    key={index}
+                    className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300"
+                  >
+
+
+                    <button
+                      className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-white/50 transition-colors rounded-2xl"
+                      onClick={() => setOpenFAQ(isOpen ? null : index)}
+                    >
+                      <span className="font-semibold text-gray-900 text-lg">
+                        {faq.question}
+                      </span>
+                      <div className="ml-4 flex-shrink-0">
+                        {isOpen ? (
+                          <ChevronUp className="w-6 h-6 text-blue-600 transition-transform duration-300 ease-in-out" />
+                        ) : (
+                          <ChevronDown className="w-6 h-6 text-gray-400 transition-transform duration-300 ease-in-out" />
+                        )}
+                      </div>
+                    </button>
+
+                    {/* Animated Answer Block */}
+                    <div
+                      className={`grid transition-all duration-500 ease-in-out ${isOpen
                         ? "grid-rows-[1fr] opacity-100 pb-6"
                         : "grid-rows-[0fr] opacity-0 pb-0"
-                      } px-8 overflow-hidden`}
-                  >
-                    <div className="overflow-hidden">
-                      <p className="text-gray-600 leading-relaxed">
-                        {faq.answer}
-                      </p>
+                        } px-8 overflow-hidden`}
+                    >
+                      <div className="overflow-hidden">
+                        <p className="text-gray-600 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
                     </div>
+
+
                   </div>
-                </div>
+
+                </AnimatedContent>
+
               );
             })}
           </div>

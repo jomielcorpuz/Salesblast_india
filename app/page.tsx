@@ -827,6 +827,7 @@ const SalesblastIndia = () => {
 
               return (
                 <AnimatedContent
+                  key={index}
                   distance={100}
                   direction="vertical"
                   reverse={false}
@@ -838,7 +839,7 @@ const SalesblastIndia = () => {
                 >
 
                   <div
-                    key={index}
+
                     className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300"
                   >
 

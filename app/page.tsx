@@ -232,6 +232,89 @@ const SalesblastIndia = () => {
             radial-gradient(circle at 80% 20%, #764ba2 0%, transparent 50%),
             radial-gradient(circle at 40% 40%, #f093fb 0%, transparent 50%);
         }
+        /* Logo scroll improvements */
+        .logo-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 12rem;
+          height: 6rem;
+          padding: 0 1rem;
+          flex-shrink: 0;
+        }
+
+        .logo-wrapper {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .logo-wrapper:hover {
+          transform: scale(1.05);
+        }
+
+        .logo-image {
+          max-width: 100%;
+          max-height: 3rem;
+          object-fit: contain;
+          filter: grayscale(1) opacity(0.7);
+          transition: filter 0.3s ease;
+        }
+
+        .logo-wrapper:hover .logo-image {
+          filter: grayscale(0) opacity(1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+          .logo-item {
+            width: 10rem;
+          }
+
+          .animate-scroll {
+            animation-duration: 25s;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .logo-item {
+            width: 8rem;
+            height: 5rem;
+          }
+
+          .logo-image {
+            max-height: 2.5rem;
+          }
+
+          .animate-scroll {
+            animation-duration: 20s;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .logo-item {
+            width: 7rem;
+            height: 4rem;
+          }
+
+          .logo-image {
+            max-height: 2rem;
+          }
+
+          .animate-scroll {
+            animation-duration: 15s;
+          }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+          .animate-scroll {
+            animation: none;
+          }
+        }
       `}</style>
 
       {/* Modern Header */}
@@ -354,31 +437,37 @@ const SalesblastIndia = () => {
       {/* // Auto-scrolling Logo Section */}
       <section className="py-20 bg-gray-50 overflow-hidden">
         <div className="relative">
+          {/* First set of logos */}
           <div className="flex animate-scroll whitespace-nowrap">
-            {Array.from({ length: 2 }).map((_, loopIndex) => (
+            {logos.map((logo, index) => (
               <div
-                key={loopIndex}
-                className="flex items-center justify-around min-w-full"
+                key={`set1-${index}`}
+                className="flex items-center justify-center flex-shrink-0 px-8"
+                style={{ minWidth: "12rem" }} // Fixed width for consistency
               >
-                {/* Optional spacer to prevent visual merging */}
-                <div className="w-12" />
-                {logos.map((logo, index) => (
-                  <div
-                    key={`${loopIndex}-${index}`}
-                    className="flex items-center justify-center px-6"
-                    style={{ minWidth: "9rem" }} // Ensures consistent spacing per logo
-                  >
-                    <div className="w-36 h-20  flex items-center justify-center hover-lift">
-                      <img
-                        src={logo.imgSrc}
-                        alt={logo.name}
-                        className="max-h-12 object-contain"
-                      />
-                    </div>
-                  </div>
-                ))}
-                {/* Another spacer to maintain loop separation */}
-                <div className="w-12" />
+                <div className="w-24 h-16 flex items-center justify-center hover-lift">
+                  <img
+                    src={logo.imgSrc}
+                    alt={logo.name}
+                    className="max-h-12 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                </div>
+              </div>
+            ))}
+            {/* Duplicate for seamless loop */}
+            {logos.map((logo, index) => (
+              <div
+                key={`set2-${index}`}
+                className="flex items-center justify-center flex-shrink-0 px-8"
+                style={{ minWidth: "12rem" }}
+              >
+                <div className="w-24 h-16 flex items-center justify-center hover-lift">
+                  <img
+                    src={logo.imgSrc}
+                    alt={logo.name}
+                    className="max-h-12 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                </div>
               </div>
             ))}
           </div>

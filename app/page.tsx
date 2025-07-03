@@ -405,17 +405,17 @@ const SalesblastIndia = () => {
 
           <div className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">8%+</div>
-              <div className="text-sm text-gray-600">Avg Reply Rate</div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">Fast</div>
+              <div className="text-sm text-gray-600">Response</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-purple-600 mb-2">
-                Unlimited
+              <div className="text-3xl font-bold text-purple-600 mb-2">
+                Industry Best
               </div>
-              <div className="text-sm text-gray-600">Emails/Month</div>
+              <div className="text-sm text-gray-600">Customer Service</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-green-600 mb-2">
+              <div className="text-3xl font-bold text-green-600 mb-2">
                 24 Hours
               </div>
               <div className="text-sm text-gray-600">Setup Time</div>

@@ -227,10 +227,10 @@ const SalesblastIndia = () => {
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-2">
               <Image
-                src="/icons/logo.png"
+                src="/logo.jpg"
                 alt="Salesblast Logo"
-                width={50}
-                height={50}
+                width={32}
+                height={32}
                 className="rounded-full"
               />
               <span className="text-2xl font-bold text-gray-900">

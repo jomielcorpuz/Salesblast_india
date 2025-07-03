@@ -229,8 +229,8 @@ const SalesblastIndia = () => {
               <Image
                 src="/icons/logo.png"
                 alt="Salesblast Logo"
-                width={50}
-                height={50}
+                width={40}
+                height={40}
                 className="rounded-full"
               />
               <span className="text-2xl font-bold text-gray-900">

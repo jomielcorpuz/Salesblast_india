@@ -587,7 +587,7 @@ const SalesblastIndia = () => {
                 </div>
                 <div className="relative w-[150px] h-[150px] mt-4 mx-auto">
                   <Image
-                    src="/icons/outstandingicon.png"
+                    src="/icons/outstandingicon2.png"
                     width={150}
                     height={150}
                     alt=""
@@ -605,7 +605,7 @@ const SalesblastIndia = () => {
                 </div>
                 <div className="relative w-[150px] h-[150px] mt-4 mx-auto">
                   <Image
-                    src="/icons/handshakeicon.png"
+                    src="/icons/handshake1.png"
                     width={150}
                     height={150}
                     alt=""

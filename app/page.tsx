@@ -550,7 +550,7 @@ const SalesblastIndia = () => {
               <span className="text-gradient">Frequently Asked</span> Questions
             </h2>
             <p className="text-xl text-gray-600">
-              Everything you need to know about Salesblast
+              Everything you need to know about Salesblast India
             </p>
           </div>
 
@@ -598,7 +598,7 @@ const SalesblastIndia = () => {
           </h2>
           <p className="text-2xl text-blue-100 mb-12 max-w-3xl mx-auto">
             Join thousands of businesses generating predictable revenue with
-            Salesblast
+            Salesblast India
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-12 py-6 rounded-2xl text-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow">
@@ -620,7 +620,7 @@ const SalesblastIndia = () => {
                 <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
                   <Mail className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-3xl font-bold">Salesblast</span>
+                <span className="text-3xl font-bold">Salesblast India</span>
               </div>
               <p className="text-gray-400 text-lg max-w-md leading-relaxed">
                 Precision-engineered cold email infrastructure for ambitious
@@ -704,7 +704,7 @@ const SalesblastIndia = () => {
           </div>
           <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400">
-              &copy; 2025 Salesblast. All rights reserved.
+              &copy; 2025 Salesblast India. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a

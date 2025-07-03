@@ -460,15 +460,20 @@ const SalesblastIndia = () => {
           </div>
 
           <div className="space-y-16">
+
+            //MAPPING STEPS
             {steps.map((step, index) => (
+
+              //MAIN CONTA
               <div
                 key={index}
                 className="flex flex-col lg:flex-row items-center gap-12"
               >
+
+                // STEPS
                 <div
-                  className={`flex-1 ${
-                    index % 2 === 0 ? "lg:order-1" : "lg:order-2"
-                  }`}
+                  className={`flex-1 ${index % 2 === 0 ? "lg:order-1" : "lg:order-2"
+                    }`}
                 >
                   <div className="relative">
                     <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl animate-pulse-glow">
@@ -496,10 +501,11 @@ const SalesblastIndia = () => {
                     </div>
                   </div>
                 </div>
+
+                //WHITESPACE
                 <div
-                  className={`flex-1 ${
-                    index % 2 === 0 ? "lg:order-2" : "lg:order-1"
-                  }`}
+                  className={`flex-1 ${index % 2 === 0 ? "lg:order-2" : "lg:order-1"
+                    }`}
                 >
                   <div className="relative">
                     <div className="w-full h-64 bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl flex items-center justify-center bg-[url('/icons/regdom.gif')] bg-cover bg-center">
@@ -507,6 +513,7 @@ const SalesblastIndia = () => {
                     </div>
                   </div>
                 </div>
+
               </div>
             ))}
           </div>

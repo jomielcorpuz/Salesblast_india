@@ -396,10 +396,12 @@ const SalesblastIndia = () => {
               <AuroraText>Reliable</AuroraText>
               <br />
               <span className="text-gray-900">Inboxes,</span>
-              <span className="text-gradient  animate-gradient tracking-tight">
-                {" "}
+              {" "}
+              <AuroraText
+                colors={["#8206D4", "#8E2DCF", "#FCB045", "#FCB045"]}
+              >
                 FAST
-              </span>
+              </AuroraText>
             </h1>
           </AnimatedContent>
           <AnimatedContent

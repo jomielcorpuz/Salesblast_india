@@ -285,16 +285,16 @@ const SalesblastIndia = () => {
             <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-8">
               <Sparkles className="w-4 h-4 text-blue-600 mr-2" />
               <span className="text-sm font-medium text-gray-700">
-                Trusted by 10,000+ businesses worldwide
+                Trusted by multiple businesses worldwide
               </span>
             </div>
           </div>
 
           <h1 className="text-6xl md:text-8xl font-black mb-8 leading-tight">
-            <span className="text-gray-900">Unlock </span>
-            <span className="text-gradient animate-gradient">Unlimited</span>
+            <span className="text-gray-900">Get </span>
+            <span className="text-gradient animate-gradient">Reliable</span>
             <br />
-            <span className="text-gray-900">Cold Email</span>
+            <span className="text-gray-900"> Inboxes Fast</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
@@ -321,18 +321,18 @@ const SalesblastIndia = () => {
 
           <div className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">15%+</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">8%+</div>
               <div className="text-sm text-gray-600">Avg Reply Rate</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-purple-600 mb-2">
-                10K+
+                Unlimited
               </div>
               <div className="text-sm text-gray-600">Emails/Month</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-green-600 mb-2">
-                4 Days
+                24 Hours
               </div>
               <div className="text-sm text-gray-600">Setup Time</div>
             </div>

@@ -112,26 +112,28 @@ const SalesblastIndia = () => {
       icon: <Shield className="w-12 h-12" />,
       title: "Universal Platform Mastery",
       subtitle:
-        "Optimized accounts across Google, Microsoft, and emerging platforms",
+        "As an authorized indirect reseller of Google Workspace and Microsoft 365, we help you launch on trusted platforms with properly configured accounts.",
       gradient: "from-blue-500 to-cyan-500",
     },
     {
       icon: <Users className="w-12 h-12" />,
       title: "White-Glove Excellence",
-      subtitle: "Complete DNS configuration with DKIM, DMARC, and SPF setup",
+      subtitle:
+        "Full DNS setup including DKIM, DMARC, and SPF, handled for you, so you don't have to worry about the technical details.",
       gradient: "from-purple-500 to-pink-500",
     },
     {
       icon: <Zap className="w-12 h-12" />,
-      title: "Lightning Deployment",
-      subtitle: "From zero to sending in just 4 days with expert configuration",
+      title: "Reliable Deployment",
+      subtitle:
+        "We configure your accounts and warm them up properly, so you're ready to start sending once everything is verified and stable.",
       gradient: "from-yellow-500 to-orange-500",
     },
     {
       icon: <Mail className="w-12 h-12" />,
-      title: "Inbox Optimization",
+      title: "Inbox Placement Guidance",
       subtitle:
-        "Advanced deliverability engineering for maximum inbox placement",
+        "We follow proven deliverability practices to help improve inbox rates, but results can vary based on usage, content, and sending behavior.",
       gradient: "from-green-500 to-emerald-500",
     },
   ];
@@ -381,12 +383,12 @@ const SalesblastIndia = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Transform your outreach from hit-or-miss to a
+            Transform your outreach from hit-or-miss to
             <span className="font-semibold text-blue-600">
               {" "}
-              predictable revenue machine
+              a more consistent results
             </span>{" "}
-            with precision-engineered email infrastructure.
+            with reliable email infrastructure.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -492,8 +494,8 @@ const SalesblastIndia = () => {
                 <span className="text-gradient">Salesblast India?</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Our precision-engineered infrastructure delivers unmatched
-                performance and reliability for your cold email campaigns.
+                We focus on what matters: stable email systems, deliverability
+                best practices, and support you can count on.
               </p>
             </div>
 
@@ -715,7 +717,7 @@ const SalesblastIndia = () => {
                 <span className="text-3xl font-bold">Salesblast India</span>
               </div>
               <p className="text-gray-400 text-lg max-w-md leading-relaxed">
-                Precision-engineered cold email infrastructure for ambitious
+                Fast and reliable cold email infrastructure for ambitious
                 businesses ready to scale.
               </p>
             </div>

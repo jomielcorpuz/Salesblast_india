@@ -602,7 +602,7 @@ const SalesblastIndia = () => {
               <span className="text-gradient">4 Simple Steps</span> to Success
             </h2>
             <p className="text-xl text-gray-600 mb-4">
-              Get to 10,000+ emails per month in just days
+              Get more emails per month in just days
             </p>
           </div>
 

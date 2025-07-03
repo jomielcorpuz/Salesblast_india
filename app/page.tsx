@@ -94,13 +94,6 @@ const SalesblastIndia = () => {
     },
     {
       number: "03",
-      title: "Smart Warmup Strategy",
-      description:
-        "Choose between immediate sending for urgent campaigns or strategic 2-week warmup for maximum deliverability and volume.",
-      icon: <Zap className="w-8 h-8" />,
-    },
-    {
-      number: "04",
       title: "Scale with Precision",
       description:
         "From boutique agencies to enterprise campaigns, our infrastructure grows with your needs, fast and reliable.",
@@ -621,7 +614,7 @@ const SalesblastIndia = () => {
               <span className="text-gradient">4 Simple Steps</span> to Success
             </h2>
             <p className="text-xl text-gray-600 mb-4">
-              Get to 10,000+ emails per month in just days
+              Get more emails per month in just days
             </p>
           </div>
 

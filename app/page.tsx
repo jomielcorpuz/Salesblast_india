@@ -72,6 +72,7 @@ const SalesblastIndia = () => {
     { name: "", imgSrc: "/icons/sl.png" },
     { name: "", imgSrc: "/icons/outlook.png" },
     { name: "", imgSrc: "/icons/googleg.png" },
+    { name: "", imgSrc: "/icons/bison.png" },
   ];
 
   const steps = [

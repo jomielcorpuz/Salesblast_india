@@ -889,22 +889,59 @@ const SalesblastIndia = () => {
       <section className="py-32 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-20"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-5xl md:text-6xl font-bold mb-8">
-            Ready to{" "}
-            <span className="text-gradient animate-gradient">Scale?</span>
-          </h2>
-          <p className="text-2xl text-blue-100 mb-12 max-w-3xl mx-auto">
-            Join thousands of businesses generating predictable revenue with
-            Salesblast India
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-12 py-6 rounded-2xl text-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow">
-              Buy Now
-            </button>
-            <button className="glass-morphism text-white px-12 py-6 rounded-2xl text-xl font-semibold hover:bg-white/20 transition-all duration-300">
-              Book a call
-            </button>
-          </div>
+          <AnimatedContent
+            distance={100}
+            direction="vertical"
+            reverse={false}
+            initialOpacity={0}
+            animateOpacity
+            scale={1.0}
+            threshold={0.1}
+            delay={100}
+          >
+
+            <h2 className="text-5xl md:text-6xl font-bold mb-8">
+              Ready to{" "}
+              <span className="text-gradient animate-gradient">Scale?</span>
+            </h2>
+
+          </AnimatedContent>
+          <AnimatedContent
+            distance={100}
+            direction="vertical"
+            reverse={false}
+            initialOpacity={0}
+            animateOpacity
+            scale={1.0}
+            threshold={0.1}
+            delay={160}
+          >
+            <p className="text-2xl text-blue-100 mb-12 max-w-3xl mx-auto">
+              Join thousands of businesses generating predictable revenue with
+              Salesblast India
+            </p>
+          </AnimatedContent>
+          <AnimatedContent
+            distance={100}
+            direction="vertical"
+            reverse={false}
+            initialOpacity={0}
+            animateOpacity
+            scale={1.0}
+            threshold={0.1}
+            delay={160}
+          >
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-12 py-6 rounded-2xl text-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow">
+                Buy Now
+              </button>
+              <button className="glass-morphism text-white px-12 py-6 rounded-2xl text-xl font-semibold hover:bg-white/20 transition-all duration-300">
+                Book a call
+              </button>
+            </div>
+
+          </AnimatedContent>
         </div>
       </section>
 

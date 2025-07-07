@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   ChevronDown,
   ChevronUp,
@@ -8,22 +8,15 @@ import {
   Zap,
   Users,
   ArrowRight,
-  Play,
   Sparkles,
 } from "lucide-react";
 import Image from "next/image";
 import AnimatedContent from "@/components/ui/animatedcontent";
 import { AuroraText } from "@/components/magicui/aurora-text";
+import { TypingAnimation } from "@/components/magicui/typing-animation";
 
 const SalesblastIndia = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const faqs = [
     {
@@ -66,7 +59,6 @@ const SalesblastIndia = () => {
   // Logo content array
   const logos = [
     { name: "", imgSrc: "/icons/cf.png" },
-    { name: "", imgSrc: "/icons/google.png" },
     { name: "", imgSrc: "/icons/instantly.png" },
     { name: "", imgSrc: "/icons/daddy.png" },
     { name: "", imgSrc: "/icons/pb.png" },
@@ -176,7 +168,22 @@ const SalesblastIndia = () => {
         }
 
         .animate-scroll {
-          animation: scroll 40s linear infinite;
+          animation: scroll 40s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          will-change: transform;
+        }
+
+        .animate-scroll-reverse {
+          animation: scroll-reverse 40s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          will-change: transform;
+        }
+
+        @keyframes scroll-reverse {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(0);
+          }
         }
 
         .animate-float {
@@ -271,8 +278,9 @@ const SalesblastIndia = () => {
             width: 10rem;
           }
 
-          .animate-scroll {
-            animation-duration: 25s;
+          .animate-scroll,
+          .animate-scroll-reverse {
+            animation-duration: 35s;
           }
         }
 
@@ -286,8 +294,9 @@ const SalesblastIndia = () => {
             max-height: 2.5rem;
           }
 
-          .animate-scroll {
-            animation-duration: 20s;
+          .animate-scroll,
+          .animate-scroll-reverse {
+            animation-duration: 30s;
           }
         }
 
@@ -301,8 +310,9 @@ const SalesblastIndia = () => {
             max-height: 2rem;
           }
 
-          .animate-scroll {
-            animation-duration: 15s;
+          .animate-scroll,
+          .animate-scroll-reverse {
+            animation-duration: 25s;
           }
         }
 
@@ -358,9 +368,9 @@ const SalesblastIndia = () => {
       </header>
 
       {/* Hero Section with Mesh Gradient */}
-      <section className="relative min-h-screen flex items-center justify-center mesh-gradient">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/90 to-purple-50/90"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
+      <section className="relative min-h-screen flex items-center justify-center mesh-gradient pt-20">
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-50/90 via-purple-50/90 via-gray-50/70 to-white"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16">
           <AnimatedContent
             distance={100}
             direction="vertical"
@@ -369,11 +379,12 @@ const SalesblastIndia = () => {
             animateOpacity
             scale={1.0}
             threshold={0.1}
+            enableScrollUp={true}
           >
             <div className="animate-float">
-              <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-8">
-                <Sparkles className="w-4 h-4 text-blue-600 mr-2" />
-                <span className="text-sm font-medium text-gray-700">
+              <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-6 sm:mb-8">
+                <Sparkles className="w-3 sm:w-4 h-3 sm:h-4 text-blue-600 mr-2" />
+                <span className="text-xs sm:text-sm font-medium text-gray-700">
                   Trusted by multiple businesses worldwide
                 </span>
               </div>
@@ -385,18 +396,25 @@ const SalesblastIndia = () => {
             direction="vertical"
             reverse={false}
             initialOpacity={0}
+            enableScrollUp={true}
             animateOpacity
             scale={1.0}
             threshold={0.1}
           >
-            <h1 className="text-6xl md:text-8xl font-extrabold font-sans mb-8 leading-tight tracking-wide">
-              <span className="text-gray-900">Get </span>
+            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[8rem] 2xl:text-[9rem] 3xl:text-[10rem] font-normal font-hero mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 leading-[1.0] tracking-[-0.03em]">
+              <span className="luxury-text bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 bg-clip-text text-transparent font-semibold">Get </span>
               <AuroraText>Reliable</AuroraText>
               <br />
-              <span className="text-gray-900">Inboxes,</span>{" "}
-              <AuroraText colors={["#8206D4", "#FF0000", "#FCB045", "#FCB045"]}>
-                FAST
-              </AuroraText>
+              <span className="luxury-text bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 bg-clip-text text-transparent font-semibold">Inboxes, </span>
+              <span className="font-orpheus italic font-normal opacity-90">
+              <br />
+                <TypingAnimation 
+                  words={["FAST", "SECURE", "READY", "CLEAN"]}
+                  colors={["#8B5CF6", "#EC4899", "#F59E0B", "#10B981", "#3B82F6"]}
+                  typingSpeed={120}
+                  pauseDuration={2000}
+                />
+              </span>
             </h1>
           </AnimatedContent>
           <AnimatedContent
@@ -408,8 +426,9 @@ const SalesblastIndia = () => {
             scale={1.0}
             threshold={0.3}
             delay={130}
+            enableScrollUp={true}
           >
-            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-gray-600 mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 max-w-5xl mx-auto leading-relaxed">
               Scale up your outreach with a reseller
               <span className="font-semibold text-blue-600">
                 {" "}
@@ -427,52 +446,23 @@ const SalesblastIndia = () => {
             scale={1.0}
             threshold={0.3}
             delay={160}
+            enableScrollUp={true}
           >
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <button className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-5 rounded-2xl text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow">
-                Buy Now
-                <ArrowRight className="inline ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 lg:gap-8 justify-center items-center mb-4 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12">
+              <button className="group relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 sm:py-2.5 md:py-3 lg:py-3.5 xl:py-4 rounded-xl text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold hover:shadow-2xl hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300 border border-purple-500/20 backdrop-blur-sm w-full sm:w-auto">
+                <span className="relative z-10">Buy Now</span>
+                <ArrowRight className="inline ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
-              <button className="group bg-white text-black px-10 py-5 rounded-2xl text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow">
-                Book a call
-                <ArrowRight className="inline ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <button className="group relative overflow-hidden bg-transparent text-black px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 sm:py-2.5 md:py-3 lg:py-3.5 xl:py-4 rounded-xl text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold hover:shadow-2xl hover:shadow-blue-500/30 hover:scale-105 transition-all duration-300 border-2 border-blue-400 hover:border-blue-300 w-full sm:w-auto">
+                <span className="relative z-10">Book a call</span>
+                <ArrowRight className="inline ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
             </div>
           </AnimatedContent>
 
-          <AnimatedContent
-            distance={100}
-            direction="vertical"
-            reverse={false}
-            initialOpacity={0}
-            animateOpacity
-            scale={1.0}
-            threshold={0.3}
-            delay={190}
-          >
-            <div className="mt-16 grid grid-cols-3 gap-8  max-w-full mx-auto">
-              <div className="text-center">
-                <div className="text-lg md:text-3xl font-bold text-blue-600 mb-2">
-                  Quick
-                </div>
-                <div className="text-sm text-gray-600">Response</div>
-              </div>
-              <div className="text-center">
-                <div className="text-lg md:text-3xl font-bold text-purple-600 mb-2">
-                  Industry Best
-                </div>
-                <div className="text-sm text-gray-600 text-wrap">
-                  Customer Service
-                </div>
-              </div>
-              <div className="text-center w-full">
-                <div className="text-lg md:text-3xl font-bold text-green-600 mb-2">
-                  24 Hours
-                </div>
-                <div className="text-sm text-gray-600">Setup Time</div>
-              </div>
-            </div>
-          </AnimatedContent>
+          
         </div>
 
         {/* Floating Elements */}
@@ -487,40 +477,25 @@ const SalesblastIndia = () => {
         ></div>
       </section>
 
-      {/* // Auto-scrolling Logo Section */}
-      <section className="py-20 bg-gray-50 overflow-hidden">
+      {/* Auto-scrolling Logo Section */}
+      <section className="py-16 bg-white overflow-hidden relative border-t-2 border-b-2 border-gray-200 shadow-sm">
         <div className="relative">
-          {/* First set of logos */}
-          <div className="flex animate-scroll whitespace-nowrap">
-            {logos.map((logo, index) => (
+          {/* Single row - Left to Right */}
+          <div className="flex animate-scroll whitespace-nowrap" style={{ transform: 'translateZ(0)' }}>
+            {[...logos, ...logos, ...logos].map((logo, index) => (
               <div
-                key={`set1-${index}`}
-                className="flex items-center justify-center flex-shrink-0 px-8"
-                style={{ minWidth: "12rem" }} // Fixed width for consistency
+                key={`row1-${index}`}
+                className="flex items-center justify-center flex-shrink-0 mx-8 sm:mx-12 lg:mx-16 transition-all duration-300 ease-out hover:scale-105"
+                style={{ minWidth: "160px" }}
               >
-                <div className="w-32 h-18 flex items-center justify-center hover-lift">
-                  <img
-                    src={logo.imgSrc}
-                    alt={logo.name}
-                    className="max-h-12 max-w-full object-contain transition-all duration-5000"
-                  />
-                </div>
-              </div>
-            ))}
-            {/* Duplicate for seamless loop */}
-            {logos.map((logo, index) => (
-              <div
-                key={`set2-${index}`}
-                className="flex items-center justify-center flex-shrink-0 px-8"
-                style={{ minWidth: "12rem" }}
-              >
-                <div className="w-32 h-18 flex items-center justify-center hover-lift">
-                  <img
-                    src={logo.imgSrc}
-                    alt={logo.name}
-                    className="max-h-12 max-w-full object-contain transition-all duration-5000"
-                  />
-                </div>
+                <Image
+                  src={logo.imgSrc}
+                  alt={logo.name || 'Partner logo'}
+                  width={160}
+                  height={48}
+                  className="max-h-8 sm:max-h-10 lg:max-h-12 max-w-full object-contain transition-all duration-300 ease-out filter brightness-75 hover:brightness-100"
+                  style={{ backfaceVisibility: 'hidden' }}
+                />
               </div>
             ))}
           </div>
@@ -535,9 +510,10 @@ const SalesblastIndia = () => {
         animateOpacity
         scale={1.0}
         threshold={0.1}
+        enableScrollUp={true}
       >
         {/* Modern Features Section */}
-        <section id="features" className="py-32 bg-white relative">
+        <section id="features" className="py-24 bg-white relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
               <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -550,7 +526,7 @@ const SalesblastIndia = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               {features.map((feature, index) => (
                 <AnimatedContent
                   key={index}
@@ -561,21 +537,22 @@ const SalesblastIndia = () => {
                   animateOpacity
                   scale={1.0}
                   threshold={0.1}
-                  delay={index * 100} // ← Add delay for staggered animation
+                  delay={index * 100}
+                  enableScrollUp={true}
                 >
-                  <div className="group relative">
+                  <div className="group relative h-full">
                     <div
-                      className={`relative p-8 rounded-3xl border border-gray-100 hover:border-transparent hover:shadow-2xl transition-all duration-500 hover-lift bg-white`}
+                      className={`relative p-6 lg:p-8 rounded-3xl border border-gray-100 hover:border-transparent hover:shadow-2xl transition-all duration-500 hover-lift bg-white h-full flex flex-col`}
                     >
                       <div
-                        className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${feature.gradient} text-white mb-6`}
+                        className={`inline-flex p-3 lg:p-4 rounded-2xl bg-gradient-to-r ${feature.gradient} text-white mb-4 lg:mb-6 self-start`}
                       >
                         {feature.icon}
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 flex-shrink-0">
                         {feature.title}
                       </h3>
-                      <p className="text-gray-600 leading-relaxed">
+                      <p className="text-sm lg:text-base text-gray-600 leading-relaxed flex-grow">
                         {feature.subtitle}
                       </p>
                     </div>
@@ -589,7 +566,7 @@ const SalesblastIndia = () => {
 
       {/* Problem Statement with Modern Design */}
 
-      <section className="py-32 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-20"
           style={{
@@ -605,6 +582,7 @@ const SalesblastIndia = () => {
           animateOpacity
           scale={1.0}
           threshold={0.1}
+          enableScrollUp={true}
         >
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
@@ -615,7 +593,7 @@ const SalesblastIndia = () => {
               every conversation counts.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
               <AnimatedContent
                 distance={100}
                 direction="vertical"
@@ -624,20 +602,22 @@ const SalesblastIndia = () => {
                 animateOpacity
                 scale={1.0}
                 threshold={0.1}
+                enableScrollUp={true}
               >
-                <div className="glass-morphism p-8 rounded-2xl hover-lift">
-                  <div className="text-4xl font-bold  mb-4">
-                    Instant Response
-                  </div>
-                  <div className="relative w-[150px] h-[150px] mt-4 mx-auto">
-                    <Image
-                      src="/icons/iconreply6.png"
-                      width={150}
-                      height={150}
-                      alt=""
-                      className="my-8 mx-auto "
-                      // Adjust hue-rotate and saturate to shift black to your preferred tint
-                    />
+                <div className="glass-morphism p-6 lg:p-8 rounded-2xl hover-lift h-full flex flex-col justify-between min-h-[320px]">
+                  <div className="flex flex-col items-center flex-grow">
+                    <div className="text-3xl lg:text-4xl font-bold mb-4 flex-shrink-0">
+                      Instant Response
+                    </div>
+                    <div className="relative w-[120px] lg:w-[150px] h-[120px] lg:h-[150px] mt-4 mx-auto flex-grow flex items-center justify-center">
+                      <Image
+                        src="/icons/iconreply6.png"
+                        width={150}
+                        height={150}
+                        alt=""
+                        className="max-w-full max-h-full object-contain"
+                      />
+                    </div>
                   </div>
                 </div>
               </AnimatedContent>
@@ -652,18 +632,20 @@ const SalesblastIndia = () => {
                 threshold={0.1}
                 delay={160}
               >
-                <div className="glass-morphism p-8 rounded-2xl hover-lift bg-gradient-to-r from-green-500/20 to-blue-500/20">
-                  <div className="text-4xl font-bold  mb-4">
-                    Outstanding Service
-                  </div>
-                  <div className="relative w-[150px] h-[150px] mt-4 mx-auto">
-                    <Image
-                      src="/icons/outstandingicon2.png"
-                      width={150}
-                      height={150}
-                      alt=""
-                      className="my-8 mx-auto "
-                    />
+                <div className="glass-morphism p-6 lg:p-8 rounded-2xl hover-lift bg-gradient-to-r from-green-500/20 to-blue-500/20 h-full flex flex-col justify-between min-h-[320px]">
+                  <div className="flex flex-col items-center flex-grow">
+                    <div className="text-3xl lg:text-4xl font-bold mb-4 flex-shrink-0">
+                      Outstanding Service
+                    </div>
+                    <div className="relative w-[120px] lg:w-[150px] h-[120px] lg:h-[150px] mt-4 mx-auto flex-grow flex items-center justify-center">
+                      <Image
+                        src="/icons/outstandingicon2.png"
+                        width={150}
+                        height={150}
+                        alt=""
+                        className="max-w-full max-h-full object-contain"
+                      />
+                    </div>
                   </div>
                 </div>
               </AnimatedContent>
@@ -678,18 +660,20 @@ const SalesblastIndia = () => {
                 threshold={0.1}
                 delay={210}
               >
-                <div className="glass-morphism p-8 rounded-2xl hover-lift">
-                  <div className="text-4xl font-bold mb-4">
-                    Consistency that builds Trust
-                  </div>
-                  <div className="relative w-[150px] h-[150px] mt-4 mx-auto">
-                    <Image
-                      src="/icons/handshake1.png"
-                      width={150}
-                      height={150}
-                      alt=""
-                      className="my-8 mx-auto "
-                    />
+                <div className="glass-morphism p-6 lg:p-8 rounded-2xl hover-lift h-full flex flex-col justify-between min-h-[320px]">
+                  <div className="flex flex-col items-center flex-grow">
+                    <div className="text-3xl lg:text-4xl font-bold mb-4 flex-shrink-0">
+                      Consistency that builds Trust
+                    </div>
+                    <div className="relative w-[120px] lg:w-[150px] h-[120px] lg:h-[150px] mt-4 mx-auto flex-grow flex items-center justify-center">
+                      <Image
+                        src="/icons/handshake1.png"
+                        width={150}
+                        height={150}
+                        alt=""
+                        className="max-w-full max-h-full object-contain"
+                      />
+                    </div>
                   </div>
                 </div>
               </AnimatedContent>
@@ -714,6 +698,7 @@ const SalesblastIndia = () => {
               scale={1.0}
               threshold={0.1}
               delay={100}
+              enableScrollUp={true}
             >
               <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
                 <span className="text-gradient">3 Simple Steps</span> to Success
@@ -728,6 +713,7 @@ const SalesblastIndia = () => {
               scale={1.0}
               threshold={0.1}
               delay={160}
+              enableScrollUp={true}
             >
               <p className="text-xl text-gray-600 mb-4">
                 Get more emails per month in just days
@@ -735,46 +721,42 @@ const SalesblastIndia = () => {
             </AnimatedContent>
           </div>
 
-          <div className="flex flex-col items-center gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {steps.map((step, index) => (
-              <div key={index} className="relative w-full max-w-xl">
-                <AnimatedContent
-                  distance={100}
-                  direction="vertical"
-                  reverse={false}
-                  initialOpacity={0}
-                  animateOpacity
-                  scale={1.0}
-                  threshold={0.1}
-                  delay={210}
-                >
-                  <div className="relative">
-                    <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl animate-pulse-glow z-10">
+              <AnimatedContent
+                key={index}
+                distance={100}
+                direction="vertical"
+                reverse={false}
+                initialOpacity={0}
+                animateOpacity
+                scale={1.0}
+                threshold={0.1}
+                delay={index * 150}
+                enableScrollUp={true}
+              >
+                <div className="relative group h-full">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                  <div className="relative bg-white p-6 lg:p-8 rounded-2xl border border-gray-100 hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+                    <div className="flex items-center justify-center w-10 lg:w-12 h-10 lg:h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl text-white font-bold text-base lg:text-lg mb-4 lg:mb-6 flex-shrink-0">
                       {step.number}
                     </div>
-                    <div className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover-lift border border-gray-100 h-full">
-                      <div className="flex items-center mb-6 mt-4">
-                        <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl text-white mr-4">
-                          {step.icon}
-                        </div>
-                        <h3 className="text-2xl font-bold text-gray-900">
-                          {step.title}
-                        </h3>
-                      </div>
-                      <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                        {step.description}
-                      </p>
-                    </div>
+                    <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 flex-shrink-0">
+                      {step.title}
+                    </h3>
+                    <p className="text-sm lg:text-base text-gray-600 leading-relaxed flex-grow">
+                      {step.description}
+                    </p>
                   </div>
-                </AnimatedContent>
-              </div>
+                </div>
+              </AnimatedContent>
             ))}
           </div>
         </div>
       </section>
 
       {/* Modern FAQ Section */}
-      <section id="faq" className="py-32 bg-white">
+      <section id="faq" className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <AnimatedContent
@@ -786,6 +768,7 @@ const SalesblastIndia = () => {
               scale={1.0}
               threshold={0.1}
               delay={100}
+              enableScrollUp={true}
             >
               <h2 className="text-5xl font-bold text-gray-900 mb-6">
                 <span className="text-gradient">Frequently Asked</span>{" "}
@@ -801,6 +784,7 @@ const SalesblastIndia = () => {
               scale={1.0}
               threshold={0.1}
               delay={160}
+              enableScrollUp={true}
             >
               <p className="text-xl text-gray-600">
                 Everything you need to know about Salesblast India
@@ -823,20 +807,21 @@ const SalesblastIndia = () => {
                   scale={1.0}
                   threshold={0.1}
                   delay={100}
+                  enableScrollUp={true}
                 >
                   <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300">
                     <button
-                      className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-white/50 transition-colors rounded-2xl"
+                      className="w-full px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-left flex justify-between items-center hover:bg-white/50 transition-colors rounded-2xl"
                       onClick={() => setOpenFAQ(isOpen ? null : index)}
                     >
-                      <span className="font-semibold text-gray-900 text-lg">
+                      <span className="font-semibold text-gray-900 text-base sm:text-lg pr-4">
                         {faq.question}
                       </span>
                       <div className="ml-4 flex-shrink-0">
                         {isOpen ? (
-                          <ChevronUp className="w-6 h-6 text-blue-600 transition-transform duration-300 ease-in-out" />
+                          <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 transition-transform duration-300 ease-in-out" />
                         ) : (
-                          <ChevronDown className="w-6 h-6 text-gray-400 transition-transform duration-300 ease-in-out" />
+                          <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 transition-transform duration-300 ease-in-out" />
                         )}
                       </div>
                     </button>
@@ -845,12 +830,12 @@ const SalesblastIndia = () => {
                     <div
                       className={`grid transition-all duration-500 ease-in-out ${
                         isOpen
-                          ? "grid-rows-[1fr] opacity-100 pb-6"
+                          ? "grid-rows-[1fr] opacity-100 pb-4 sm:pb-6"
                           : "grid-rows-[0fr] opacity-0 pb-0"
-                      } px-8 overflow-hidden`}
+                      } px-4 sm:px-6 lg:px-8 overflow-hidden`}
                     >
                       <div className="overflow-hidden">
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                           {faq.answer}
                         </p>
                       </div>
@@ -864,7 +849,7 @@ const SalesblastIndia = () => {
       </section>
 
       {/* Modern CTA Section */}
-      <section className="py-32 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-20"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedContent
@@ -876,8 +861,9 @@ const SalesblastIndia = () => {
             scale={1.0}
             threshold={0.1}
             delay={100}
+            enableScrollUp={true}
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8">
               Ready to{" "}
               <span className="text-gradient animate-gradient">Scale?</span>
             </h2>
@@ -890,9 +876,10 @@ const SalesblastIndia = () => {
             animateOpacity
             scale={1.0}
             threshold={0.1}
-            delay={160}
+            delay={220}
+            enableScrollUp={true}
           >
-            <p className="text-2xl text-blue-100 mb-12 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl lg:text-2xl text-blue-100 mb-8 sm:mb-10 lg:mb-12 max-w-3xl mx-auto">
               Join thousands of businesses generating predictable revenue with
               Salesblast India
             </p>
@@ -906,13 +893,16 @@ const SalesblastIndia = () => {
             scale={1.0}
             threshold={0.1}
             delay={160}
+            enableScrollUp={true}
           >
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-12 py-6 rounded-2xl text-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow">
-                Buy Now
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+              <button className="group relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold hover:shadow-2xl hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300 border border-purple-500/20 backdrop-blur-sm w-full sm:w-auto">
+                <span className="relative z-10">Buy Now</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
-              <button className="glass-morphism text-white px-12 py-6 rounded-2xl text-xl font-semibold hover:bg-white/20 transition-all duration-300">
-                Book a call
+              <button className="group relative overflow-hidden bg-white/10 backdrop-blur-md text-white px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold hover:shadow-2xl hover:shadow-white/10 hover:scale-105 transition-all duration-300 border border-white/20 hover:bg-white/20 w-full sm:w-auto">
+                <span className="relative z-10">Book a call</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
             </div>
           </AnimatedContent>
@@ -920,28 +910,28 @@ const SalesblastIndia = () => {
       </section>
 
       {/* Modern Footer */}
-      <footer className="bg-black text-white py-20">
+      <footer className="bg-black text-white py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-            <div className="md:col-span-2">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-white" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8 lg:mb-12">
+            <div className="sm:col-span-2 lg:col-span-2">
+              <div className="flex items-center space-x-3 mb-4 sm:mb-6">
+                <div className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+                  <Mail className="w-4 sm:w-6 h-4 sm:h-6 text-white" />
                 </div>
-                <span className="text-3xl font-bold">Salesblast India</span>
+                <span className="text-xl sm:text-2xl lg:text-3xl font-bold">Salesblast India</span>
               </div>
-              <p className="text-gray-400 text-lg max-w-md leading-relaxed">
+              <p className="text-gray-400 text-base sm:text-lg max-w-md leading-relaxed">
                 Fast and reliable cold email infrastructure for ambitious
                 businesses ready to scale.
               </p>
             </div>
             <div>
-              <h3 className="font-bold text-lg mb-6 text-white">Product</h3>
-              <ul className="space-y-4">
+              <h3 className="font-bold text-base sm:text-lg mb-4 sm:mb-6 text-white">Product</h3>
+              <ul className="space-y-3 sm:space-y-4">
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base"
                   >
                     Features
                   </a>
@@ -949,7 +939,7 @@ const SalesblastIndia = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base"
                   >
                     Pricing
                   </a>
@@ -957,7 +947,7 @@ const SalesblastIndia = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base"
                   >
                     API
                   </a>
@@ -965,7 +955,7 @@ const SalesblastIndia = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base"
                   >
                     Integrations
                   </a>
@@ -973,12 +963,12 @@ const SalesblastIndia = () => {
               </ul>
             </div>
             <div>
-              <h3 className="font-bold text-lg mb-6 text-white">Company</h3>
-              <ul className="space-y-4">
+              <h3 className="font-bold text-base sm:text-lg mb-4 sm:mb-6 text-white">Company</h3>
+              <ul className="space-y-3 sm:space-y-4">
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base"
                   >
                     About
                   </a>
@@ -986,7 +976,7 @@ const SalesblastIndia = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base"
                   >
                     Blog
                   </a>
@@ -994,7 +984,7 @@ const SalesblastIndia = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base"
                   >
                     Careers
                   </a>
@@ -1002,7 +992,7 @@ const SalesblastIndia = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base"
                   >
                     Contact
                   </a>
@@ -1010,26 +1000,26 @@ const SalesblastIndia = () => {
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400">
+          <div className="border-t border-gray-800 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-400 text-sm sm:text-base text-center md:text-left">
               &copy; 2025 Salesblast India. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
+            <div className="flex space-x-4 sm:space-x-6">
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base"
               >
                 Privacy
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base"
               >
                 Terms
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base"
               >
                 Security
               </a>

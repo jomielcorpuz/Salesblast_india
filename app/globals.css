@@ -7,6 +7,11 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Luxury Typography Shadows */
+  --luxury-text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+  --luxury-text-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+  --luxury-text-shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.18), 0 6px 12px rgba(0, 0, 0, 0.12);
   @keyframes aurora {
   0% {
     background-position: 0% 50%;
@@ -28,6 +33,50 @@
     background-position: 0% 50%;
     transform: rotate(-5deg) scale(0.9);
     }
+  }
+  
+  /* Luxury Hero Typography */
+  .luxury-hero {
+    text-shadow: var(--luxury-text-shadow-xl);
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+  }
+  
+  .luxury-text {
+     text-shadow: var(--luxury-text-shadow);
+     color: #1a1a1a;
+     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+  }
+  
+  /* Modern Hero Typography */
+  .modern-hero-text {
+    font-weight: 800;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.2);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    letter-spacing: -0.05em;
+    position: relative;
+  }
+  
+  .modern-hero-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+    border-radius: 8px;
+    z-index: -1;
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .modern-hero-text:hover::before {
+    opacity: 1;
   }
 }
 

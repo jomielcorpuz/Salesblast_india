@@ -521,8 +521,7 @@ const SalesblastIndia = () => {
                 <span className="text-gradient">Salesblast India?</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                We focus on what matters: stable email systems, deliverability
-                best practices, and support you can count on.
+              We build inbox systems that work — stable, optimized for deliverability, and backed by responsive support you can rely on.
               </p>
             </div>
 

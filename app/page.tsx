@@ -17,6 +17,137 @@ import { TypingAnimation } from "@/components/magicui/typing-animation";
 
 const SalesblastIndia = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const [showOrderForm, setShowOrderForm] = useState(false);
+  const [orderData, setOrderData] = useState({
+    clientName: '',
+    masterInboxDomain: '',
+    masterInboxAddress: '',
+    masterInboxPassword: '',
+    mainWebsite: '',
+    godaddyUsername: '',
+    godaddyPassword: '',
+    porkbunUsername: '',
+    porkbunPassword: '',
+    namecheapUsername: '',
+    namecheapPassword: '',
+    otherRegistrarName: '',
+    otherRegistrarUsername: '',
+    otherRegistrarPassword: '',
+    instantlyUsername: '',
+    instantlyPassword: '',
+    smartleadUsername: '',
+    smartleadPassword: '',
+    piplUsername: '',
+    piplPassword: '',
+    emailBisonUrl: '',
+    emailBisonUsername: '',
+    emailBisonPassword: '',
+    otherSequencerName: '',
+    otherSequencerUsername: '',
+    otherSequencerPassword: '',
+    enableWarmup: '',
+    smartleadWarmupEmailsPerDay: '',
+    smartleadDailyRampup: '',
+    smartleadRandomiseEmails: '',
+    smartleadReplyRate: '',
+    instantlyIncreasePerDay: '',
+    instantlyDailyWarmupLimit: '',
+    instantlyReplyRate: '',
+    additionalNote: '',
+    
+    // Domain management
+    domains: [''],
+    preferredPassword: '',
+    usersPerDomain: '',
+    emailPatterns: '',
+    userFullName: '',
+    profilePictureLink: ''
+  });
+
+  const handleOrderSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const orderSheet = `CLIENT AND SETUP INFO
+
+Order Name (Client Name): ${orderData.clientName}
+Master Inbox Domain: ${orderData.masterInboxDomain}
+Master Inbox Address: ${orderData.masterInboxAddress}
+Master Inbox Password: ${orderData.masterInboxPassword}
+Main website to forward to: ${orderData.mainWebsite}
+
+REGISTRAR INFO
+Please complete only the applicable section.
+
+Godaddy Username: ${orderData.godaddyUsername}
+Godaddy Password: ${orderData.godaddyPassword}
+
+Porkbun Username: ${orderData.porkbunUsername}
+Porkbun Password: ${orderData.porkbunPassword}
+
+Namecheap Username: ${orderData.namecheapUsername}
+Namecheap Password: ${orderData.namecheapPassword}
+
+Other Registrar Name: ${orderData.otherRegistrarName}
+Other Registrar Username: ${orderData.otherRegistrarUsername}
+Other Registrar Password: ${orderData.otherRegistrarPassword}
+
+SEQUENCER INFO
+Only fill in the one you intend to use:
+
+Instantly Username: ${orderData.instantlyUsername}
+Instantly Password: ${orderData.instantlyPassword}
+
+Smartlead Username: ${orderData.smartleadUsername}
+Smartlead Password: ${orderData.smartleadPassword}
+
+Pipl Username: ${orderData.piplUsername}
+Pipl Password: ${orderData.piplPassword}
+
+EmailBison URL: ${orderData.emailBisonUrl}
+EmailBison Username: ${orderData.emailBisonUsername}
+EmailBison Password: ${orderData.emailBisonPassword}
+
+Other Sequencer Name: ${orderData.otherSequencerName}
+Other Sequencer Username: ${orderData.otherSequencerUsername}
+Other Sequencer Password: ${orderData.otherSequencerPassword}
+
+WARM UP SETTING (OPTIONAL)
+ENABLE WARM UP (YES/NO): ${orderData.enableWarmup}
+Please complete only the applicable section.
+
+SMARTLEAD
+Total number of warm up emails per day: ${orderData.smartleadWarmupEmailsPerDay}
+Daily Rampup: ${orderData.smartleadDailyRampup}
+Randomise number of warm up emails per day: ${orderData.smartleadRandomiseEmails}
+Reply rate: ${orderData.smartleadReplyRate}
+
+INSTANTLY
+Increase per day: ${orderData.instantlyIncreasePerDay}
+Daily warmup limit: ${orderData.instantlyDailyWarmupLimit}
+Reply rate: ${orderData.instantlyReplyRate}
+
+ADDITIONAL NOTE: ${orderData.additionalNote}
+
+DOMAIN LIST
+${orderData.domains.map((domain, index) => `Domain #${String(index + 1).padStart(3, '0')}: ${domain}`).filter(line => line.split(': ')[1].trim() !== '').join('\n')}
+
+Preferred Password: ${orderData.preferredPassword}
+
+# of users per domain: ${orderData.usersPerDomain}
+
+Email Patterns: ${orderData.emailPatterns}
+
+User Full Name: ${orderData.userFullName}
+
+Profile Picture Link: ${orderData.profilePictureLink}`;
+    
+    return orderSheet;
+  };
+
+
+
+  const handleInputChange = (field: string, value: string) => {
+    setOrderData(prev => ({ ...prev, [field]: value }));
+  };
 
   const faqs = [
     {
@@ -458,7 +589,10 @@ const SalesblastIndia = () => {
             enableScrollUp={true}
           >
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 lg:gap-8 justify-center items-center mb-4 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12">
-              <button className="group relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 sm:py-2.5 md:py-3 lg:py-3.5 xl:py-4 rounded-xl text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold hover:shadow-2xl hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300 border border-purple-500/20 backdrop-blur-sm w-full sm:w-auto">
+              <button 
+                onClick={() => setShowOrderForm(true)}
+                className="group relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 sm:py-2.5 md:py-3 lg:py-3.5 xl:py-4 rounded-xl text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold hover:shadow-2xl hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300 border border-purple-500/20 backdrop-blur-sm w-full sm:w-auto"
+              >
                 <span className="relative z-10">Buy Now</span>
                 <ArrowRight className="inline ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -888,7 +1022,10 @@ const SalesblastIndia = () => {
             enableScrollUp={true}
           >
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-              <button className="group relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold hover:shadow-2xl hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300 border border-purple-500/20 backdrop-blur-sm w-full sm:w-auto">
+              <button 
+                onClick={() => setShowOrderForm(true)}
+                className="group relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold hover:shadow-2xl hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300 border border-purple-500/20 backdrop-blur-sm w-full sm:w-auto"
+              >
                 <span className="relative z-10">Buy Now</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
@@ -1019,6 +1156,730 @@ const SalesblastIndia = () => {
           </div>
         </div>
       </footer>
+
+      {/* Order Form Modal */}
+      {showOrderForm && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-6xl w-full max-h-[95vh] overflow-hidden flex flex-col">
+            {/* Sticky Header */}
+            <div className="sticky top-0 bg-white z-10 p-8 pb-4 border-b border-gray-100 shadow-sm">
+              <div className="flex justify-between items-center">
+                <h2 className="text-3xl font-bold text-gray-900 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Create Order</h2>
+                <button
+                  onClick={() => setShowOrderForm(false)}
+                  className="text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-full p-3 transition-all duration-200 text-3xl font-bold w-12 h-12 flex items-center justify-center"
+                >
+                  ×
+                </button>
+              </div>
+            </div>
+            
+            {/* Scrollable Content */}
+            <div className="flex-1 overflow-y-auto p-8 pt-4">
+              
+              <form onSubmit={handleOrderSubmit} className="space-y-8">
+                {/* Client and Setup Information */}
+                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-white font-bold text-sm">1</span>
+                    </div>
+                    Client and Setup Information
+                  </h3>
+                  
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-3">
+                        Order Name (Client Name) *
+                      </label>
+                      <input
+                        type="text"
+                        value={orderData.clientName}
+                        onChange={(e) => handleInputChange('clientName', e.target.value)}
+                        className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm"
+                        placeholder="Enter client name"
+                        required
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-3">
+                        Master Inbox Domain *
+                      </label>
+                      <input
+                        type="text"
+                        value={orderData.masterInboxDomain}
+                        onChange={(e) => handleInputChange('masterInboxDomain', e.target.value)}
+                        className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm"
+                        placeholder="example.com"
+                        required
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-3">
+                        Master Inbox Address *
+                      </label>
+                      <input
+                        type="email"
+                        value={orderData.masterInboxAddress}
+                        onChange={(e) => handleInputChange('masterInboxAddress', e.target.value)}
+                        className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm"
+                        placeholder="admin@example.com"
+                        required
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-3">
+                        Master Inbox Password *
+                      </label>
+                      <input
+                        type="password"
+                        value={orderData.masterInboxPassword}
+                        onChange={(e) => handleInputChange('masterInboxPassword', e.target.value)}
+                        className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm"
+                        placeholder="Enter password"
+                        required
+                      />
+                    </div>
+                    
+                    <div className="lg:col-span-2">
+                      <label className="block text-sm font-semibold text-gray-700 mb-3">
+                        Main Website to Forward To *
+                      </label>
+                      <input
+                        type="url"
+                        value={orderData.mainWebsite}
+                        onChange={(e) => handleInputChange('mainWebsite', e.target.value)}
+                        className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm"
+                        placeholder="https://yourwebsite.com"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Registrar Information Section */}
+                <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-100">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-white font-bold text-sm">2</span>
+                    </div>
+                    Registrar Information
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-6 bg-white/50 p-3 rounded-lg border border-green-200">Please complete only the applicable section.</p>
+                  
+                  {/* GoDaddy Section */}
+                  <div className="mb-6">
+                    <h4 className="text-lg font-medium text-gray-700 mb-4 pb-2 border-b border-green-200">GoDaddy</h4>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          GoDaddy Username
+                        </label>
+                        <input
+                          type="text"
+                          value={orderData.godaddyUsername}
+                          onChange={(e) => handleInputChange('godaddyUsername', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="GoDaddy username"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          GoDaddy Password
+                        </label>
+                        <input
+                          type="password"
+                          value={orderData.godaddyPassword}
+                          onChange={(e) => handleInputChange('godaddyPassword', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="GoDaddy password"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Porkbun Section */}
+                  <div className="mb-6">
+                    <h4 className="text-lg font-medium text-gray-700 mb-4 pb-2 border-b border-green-200">Porkbun</h4>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Porkbun Username
+                        </label>
+                        <input
+                          type="text"
+                          value={orderData.porkbunUsername}
+                          onChange={(e) => handleInputChange('porkbunUsername', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="Porkbun username"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Porkbun Password
+                        </label>
+                        <input
+                          type="password"
+                          value={orderData.porkbunPassword}
+                          onChange={(e) => handleInputChange('porkbunPassword', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="Porkbun password"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Namecheap Section */}
+                  <div className="mb-6">
+                    <h4 className="text-lg font-medium text-gray-700 mb-4 pb-2 border-b border-green-200">Namecheap</h4>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Namecheap Username
+                        </label>
+                        <input
+                          type="text"
+                          value={orderData.namecheapUsername}
+                          onChange={(e) => handleInputChange('namecheapUsername', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="Namecheap username"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Namecheap Password
+                        </label>
+                        <input
+                          type="password"
+                          value={orderData.namecheapPassword}
+                          onChange={(e) => handleInputChange('namecheapPassword', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="Namecheap password"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Other Registrar Section */}
+                  <div className="mb-6">
+                    <h4 className="text-lg font-medium text-gray-700 mb-4 pb-2 border-b border-green-200">Other Registrar</h4>
+                    <div className="space-y-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Other Registrar Name
+                        </label>
+                        <input
+                          type="text"
+                          value={orderData.otherRegistrarName}
+                          onChange={(e) => handleInputChange('otherRegistrarName', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="Registrar name (e.g., Cloudflare, Domain.com)"
+                        />
+                      </div>
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Other Registrar Username
+                          </label>
+                          <input
+                            type="text"
+                            value={orderData.otherRegistrarUsername}
+                            onChange={(e) => handleInputChange('otherRegistrarUsername', e.target.value)}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                            placeholder="Username"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Other Registrar Password
+                          </label>
+                          <input
+                            type="password"
+                            value={orderData.otherRegistrarPassword}
+                            onChange={(e) => handleInputChange('otherRegistrarPassword', e.target.value)}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                            placeholder="Password"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Sequencer Information Section */}
+                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-white font-bold text-sm">3</span>
+                    </div>
+                    Sequencer Information
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-4">Only fill in the one you intend to use.</p>
+                  
+                  {/* Instantly Section */}
+                  <div className="mb-4">
+                    <h4 className="text-md font-medium text-gray-700 mb-3">Instantly</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Instantly Username
+                        </label>
+                        <input
+                          type="text"
+                          value={orderData.instantlyUsername}
+                          onChange={(e) => handleInputChange('instantlyUsername', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="Instantly username"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Instantly Password
+                        </label>
+                        <input
+                          type="password"
+                          value={orderData.instantlyPassword}
+                          onChange={(e) => handleInputChange('instantlyPassword', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="Instantly password"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Smartlead Section */}
+                  <div className="mb-4">
+                    <h4 className="text-md font-medium text-gray-700 mb-3">Smartlead</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Smartlead Username
+                        </label>
+                        <input
+                          type="text"
+                          value={orderData.smartleadUsername}
+                          onChange={(e) => handleInputChange('smartleadUsername', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="Smartlead username"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Smartlead Password
+                        </label>
+                        <input
+                          type="password"
+                          value={orderData.smartleadPassword}
+                          onChange={(e) => handleInputChange('smartleadPassword', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="Smartlead password"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Pipl Section */}
+                  <div className="mb-4">
+                    <h4 className="text-md font-medium text-gray-700 mb-3">Pipl</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Pipl Username
+                        </label>
+                        <input
+                          type="text"
+                          value={orderData.piplUsername}
+                          onChange={(e) => handleInputChange('piplUsername', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="Pipl username"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Pipl Password
+                        </label>
+                        <input
+                          type="password"
+                          value={orderData.piplPassword}
+                          onChange={(e) => handleInputChange('piplPassword', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="Pipl password"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* EmailBison Section */}
+                  <div className="mb-4">
+                    <h4 className="text-md font-medium text-gray-700 mb-3">EmailBison</h4>
+                    <div className="space-y-3">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          EmailBison URL
+                        </label>
+                        <input
+                          type="url"
+                          value={orderData.emailBisonUrl}
+                          onChange={(e) => handleInputChange('emailBisonUrl', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="https://emailbison.com"
+                        />
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            EmailBison Username
+                          </label>
+                          <input
+                            type="text"
+                            value={orderData.emailBisonUsername}
+                            onChange={(e) => handleInputChange('emailBisonUsername', e.target.value)}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                            placeholder="EmailBison username"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            EmailBison Password
+                          </label>
+                          <input
+                            type="password"
+                            value={orderData.emailBisonPassword}
+                            onChange={(e) => handleInputChange('emailBisonPassword', e.target.value)}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                            placeholder="EmailBison password"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Other Sequencer Section */}
+                  <div className="mb-4">
+                    <h4 className="text-md font-medium text-gray-700 mb-3">Other Sequencer</h4>
+                    <div className="space-y-3">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Other Sequencer Name
+                        </label>
+                        <input
+                          type="text"
+                          value={orderData.otherSequencerName}
+                          onChange={(e) => handleInputChange('otherSequencerName', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="Sequencer name (e.g., Apollo, Outreach)"
+                        />
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Other Sequencer Username
+                          </label>
+                          <input
+                            type="text"
+                            value={orderData.otherSequencerUsername}
+                            onChange={(e) => handleInputChange('otherSequencerUsername', e.target.value)}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                            placeholder="Username"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Other Sequencer Password
+                          </label>
+                          <input
+                            type="password"
+                            value={orderData.otherSequencerPassword}
+                            onChange={(e) => handleInputChange('otherSequencerPassword', e.target.value)}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                            placeholder="Password"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Warm-up Settings Section */}
+                <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-100">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-white font-bold text-sm">4</span>
+                    </div>
+                    Warm Up Setting (Optional)
+                  </h3>
+                  
+                  {/* Enable Warm Up */}
+                  <div className="mb-6">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Enable Warm Up (Yes/No)
+                    </label>
+                    <select
+                      value={orderData.enableWarmup}
+                      onChange={(e) => handleInputChange('enableWarmup', e.target.value)}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                    >
+                      <option value="">Select option</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                  
+                  <p className="text-sm text-gray-600 mb-4">Please complete only the applicable section.</p>
+                  
+                  {/* Smartlead Warm-up Settings */}
+                  <div className="mb-6">
+                    <h4 className="text-md font-medium text-gray-700 mb-3">Smartlead</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Total number of warm up emails per day
+                        </label>
+                        <input
+                          type="number"
+                          value={orderData.smartleadWarmupEmailsPerDay}
+                          onChange={(e) => handleInputChange('smartleadWarmupEmailsPerDay', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="e.g., 50"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Daily Rampup
+                        </label>
+                        <input
+                          type="number"
+                          value={orderData.smartleadDailyRampup}
+                          onChange={(e) => handleInputChange('smartleadDailyRampup', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="e.g., 5"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Randomise number of warm up emails per day
+                        </label>
+                        <select
+                          value={orderData.smartleadRandomiseEmails}
+                          onChange={(e) => handleInputChange('smartleadRandomiseEmails', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                        >
+                          <option value="">Select option</option>
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Reply rate (%)
+                        </label>
+                        <input
+                          type="number"
+                          value={orderData.smartleadReplyRate}
+                          onChange={(e) => handleInputChange('smartleadReplyRate', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="e.g., 30"
+                          min="0"
+                          max="100"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Instantly Warm-up Settings */}
+                  <div className="mb-6">
+                    <h4 className="text-md font-medium text-gray-700 mb-3">Instantly</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Increase per day
+                        </label>
+                        <input
+                          type="number"
+                          value={orderData.instantlyIncreasePerDay}
+                          onChange={(e) => handleInputChange('instantlyIncreasePerDay', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="e.g., 3"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Daily warmup limit
+                        </label>
+                        <input
+                          type="number"
+                          value={orderData.instantlyDailyWarmupLimit}
+                          onChange={(e) => handleInputChange('instantlyDailyWarmupLimit', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="e.g., 40"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Reply rate (%)
+                        </label>
+                        <input
+                          type="number"
+                          value={orderData.instantlyReplyRate}
+                          onChange={(e) => handleInputChange('instantlyReplyRate', e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                          placeholder="e.g., 25"
+                          min="0"
+                          max="100"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Additional Note */}
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Additional Note
+                    </label>
+                    <textarea
+                      value={orderData.additionalNote}
+                      onChange={(e) => handleInputChange('additionalNote', e.target.value)}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                      placeholder="Any additional notes or special requirements..."
+                      rows={4}
+                    />
+                  </div>
+                </div>
+                
+                {/* Domain Management Section */}
+                <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl p-6 border border-orange-100">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-white font-bold text-sm">5</span>
+                    </div>
+                    Domain List
+                  </h3>
+                  
+                  <div className="mb-6">
+                    <label className="block text-sm font-medium text-gray-700 mb-3">
+                      Domain List
+                    </label>
+                    <p className="text-sm text-gray-600 mb-3 bg-orange-50 p-3 rounded-lg border border-orange-200">
+                      📝 <strong>Instructions:</strong> Paste your domains here in any format (comma-separated, space-separated, or one per line). They will automatically be formatted with one domain per line. Perfect for bulk domain lists (100+ domains).
+                    </p>
+                    <textarea
+                      value={orderData.domains.join('\n')}
+                      onChange={(e) => {
+                        // Split by multiple delimiters: newlines, commas, semicolons, spaces, tabs
+                        const domainList = e.target.value
+                          .split(/[\n,;\s\t]+/)
+                          .map(domain => domain.trim())
+                          .filter(domain => domain !== '');
+                        setOrderData(prev => ({ ...prev, domains: domainList.length > 0 ? domainList : [''] }));
+                      }}
+                      className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md resize-vertical"
+                      placeholder="example001.com, example002.com, example003.com&#10;or&#10;example001.com example002.com&#10;or&#10;example001.com;example002.com&#10;...paste domains in any format - they'll auto-format to one per line"
+                      rows={8}
+                      style={{ minHeight: '200px' }}
+                    />
+                    <div className="mt-2 text-sm text-gray-500 flex items-center justify-between">
+                      <span>💡 Tip: You can copy and paste from Excel/CSV files</span>
+                      <span className="font-medium text-orange-600">
+                        {orderData.domains.filter(d => d.trim() !== '').length} domains
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Preferred Password
+                      </label>
+                      <input
+                        type="password"
+                        value={orderData.preferredPassword}
+                        onChange={(e) => handleInputChange('preferredPassword', e.target.value)}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                        placeholder="Enter preferred password"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        # of users per domain
+                      </label>
+                      <input
+                        type="number"
+                        value={orderData.usersPerDomain}
+                        onChange={(e) => handleInputChange('usersPerDomain', e.target.value)}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                        placeholder="e.g., 10"
+                        min="1"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Email Patterns
+                      </label>
+                      <input
+                        type="text"
+                        value={orderData.emailPatterns}
+                        onChange={(e) => handleInputChange('emailPatterns', e.target.value)}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                        placeholder="e.g., firstname.lastname, firstname_lastname"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        User Full Name
+                      </label>
+                      <input
+                        type="text"
+                        value={orderData.userFullName}
+                        onChange={(e) => handleInputChange('userFullName', e.target.value)}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                        placeholder="John Doe"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Profile Picture Link
+                    </label>
+                    <input
+                      type="url"
+                      value={orderData.profilePictureLink}
+                      onChange={(e) => handleInputChange('profilePictureLink', e.target.value)}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white shadow-sm hover:shadow-md"
+                      placeholder="https://example.com/profile-picture.jpg"
+                    />
+                  </div>
+                </div>
+                
+              </form>
+            </div>
+            
+            {/* Sticky Footer with Action Buttons */}
+            <div className="sticky bottom-0 bg-white z-10 p-8 pt-4 border-t border-gray-100 shadow-lg">
+              <div className="flex flex-col sm:flex-row gap-3">
+                <button
+                  type="button"
+                  className="flex-1 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                >
+                  Send to WhatsApp
+                </button>
+                <button
+                  type="button"
+                  className="flex-1 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                >
+                  Send to Gmail
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

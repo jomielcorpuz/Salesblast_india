@@ -114,7 +114,10 @@ const SalesblastIndia = () => {
       title: (
         <>
           Reliable
-          <br />
+          <span className="hidden md:inline lg:inline xl:inline">
+            <br />
+          </span>
+          <span className="inline md:hidden lg:hidden xl:hidden"> </span>
           Deployment
         </>
       ),
@@ -556,17 +559,19 @@ const SalesblastIndia = () => {
               'url(\'data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')',
           }}
         ></div>
-        <AnimatedContent
-          distance={100}
-          direction="vertical"
-          reverse={false}
-          initialOpacity={0}
-          animateOpacity
-          scale={1.0}
-          threshold={0.1}
-          enableScrollUp={true}
-        >
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+          <AnimatedContent
+            distance={100}
+            direction="vertical"
+            reverse={false}
+            initialOpacity={0}
+            animateOpacity
+            scale={1.0}
+            threshold={0.1}
+            enableScrollUp={true}>
+
             <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
               Speed that Satisfies. Service that Delivers.
             </h2>
@@ -575,96 +580,99 @@ const SalesblastIndia = () => {
               every conversation counts.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-              <AnimatedContent
-                distance={100}
-                direction="vertical"
-                reverse={false}
-                initialOpacity={0}
-                animateOpacity
-                scale={1.0}
-                threshold={0.1}
-                enableScrollUp={true}
-              >
-                <div className="glass-morphism p-6 lg:p-8 rounded-2xl hover-lift h-full flex flex-col justify-between min-h-[320px]">
-                  <div className="flex flex-col items-center flex-grow">
-                    <div className="text-3xl lg:text-4xl font-bold mb-4 flex-shrink-0 leading-tight text-center">
-                      Lightening Fast
-                      Response
-                      <br />
-                      Time
-                    </div>
-                    <div className="relative w-[120px] lg:w-[150px] h-[120px] lg:h-[150px] mt-4 mx-auto flex-grow flex items-center justify-center">
-                      <Image
-                        src="/icons/iconreply6.png"
-                        width={150}
-                        height={150}
-                        alt=""
-                        className="max-w-full max-h-full object-contain"
-                      />
-                    </div>
+          </AnimatedContent>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+            <AnimatedContent
+              distance={100}
+              direction="vertical"
+              reverse={false}
+              initialOpacity={0}
+              animateOpacity
+              scale={1.0}
+              threshold={0.1}
+              delay={60}
+              enableScrollUp={true}
+            >
+              <div className="glass-morphism p-6 lg:p-8 rounded-2xl hover-lift h-full flex flex-col justify-between min-h-[320px]">
+                <div className="flex flex-col items-center flex-grow">
+                  <div className="text-3xl lg:text-4xl font-bold mb-4 flex-shrink-0 leading-tight text-center">
+                    Lightening Fast
+                    Response
+                    <br />
+                    Time
+                  </div>
+                  <div className="relative w-[120px] lg:w-[150px] h-[120px] lg:h-[150px] mt-4 mx-auto flex-grow flex items-center justify-center">
+                    <Image
+                      src="/icons/iconreply6.png"
+                      width={150}
+                      height={150}
+                      alt=""
+                      className="max-w-full max-h-full object-contain"
+                    />
                   </div>
                 </div>
-              </AnimatedContent>
+              </div>
+            </AnimatedContent>
 
-              <AnimatedContent
-                distance={100}
-                direction="vertical"
-                reverse={false}
-                initialOpacity={0}
-                animateOpacity
-                scale={1.0}
-                threshold={0.1}
-                delay={160}
-              >
-                <div className="glass-morphism p-6 lg:p-8 rounded-2xl hover-lift bg-gradient-to-r from-green-500/20 to-blue-500/20 h-full flex flex-col justify-between min-h-[320px]">
-                  <div className="flex flex-col items-center flex-grow">
-                    <div className="text-3xl lg:text-4xl font-bold mb-8 pb-8 flex-shrink-0">
-                      Outstanding Service
-                    </div>
-                    <div className="relative w-[120px] lg:w-[150px] h-[120px] lg:h-[150px] mt-4 mx-auto flex-grow flex items-center justify-center">
-                      <Image
-                        src="/icons/outstandingicon2.png"
-                        width={150}
-                        height={150}
-                        alt=""
-                        className="max-w-full max-h-full object-contain"
-                      />
-                    </div>
+            <AnimatedContent
+              distance={100}
+              direction="vertical"
+              reverse={false}
+              initialOpacity={0}
+              animateOpacity
+              scale={1.0}
+              threshold={0.1}
+              delay={120}
+              enableScrollUp={true}
+            >
+              <div className="glass-morphism p-6 lg:p-8 rounded-2xl hover-lift bg-gradient-to-r from-green-500/20 to-blue-500/20 h-full flex flex-col justify-between min-h-[320px]">
+                <div className="flex flex-col items-center flex-grow">
+                  <div className="text-3xl lg:text-4xl font-bold mb-8 pb-8 flex-shrink-0">
+                    Outstanding Service
+                  </div>
+                  <div className="relative w-[120px] lg:w-[150px] h-[120px] lg:h-[150px] mt-4 mx-auto flex-grow flex items-center justify-center">
+                    <Image
+                      src="/icons/outstandingicon2.png"
+                      width={150}
+                      height={150}
+                      alt=""
+                      className="max-w-full max-h-full object-contain"
+                    />
                   </div>
                 </div>
-              </AnimatedContent>
+              </div>
+            </AnimatedContent>
 
-              <AnimatedContent
-                distance={100}
-                direction="vertical"
-                reverse={false}
-                initialOpacity={0}
-                animateOpacity
-                scale={1.0}
-                threshold={0.1}
-                delay={210}
-              >
-                <div className="glass-morphism p-6 lg:p-8 rounded-2xl hover-lift h-full flex flex-col justify-between min-h-[320px]">
-                  <div className="flex flex-col items-center flex-grow">
-                    <div className="text-3xl lg:text-4xl font-bold mb-4 flex-shrink-0">
-                      Consistency That Builds Trust
-                    </div>
-                    <div className="relative w-[120px] lg:w-[150px] h-[120px] lg:h-[150px] mt-4 mx-auto flex-grow flex items-center justify-center">
-                      <Image
-                        src="/icons/handshake1.png"
-                        width={150}
-                        height={150}
-                        alt=""
-                        className="max-w-full max-h-full object-contain"
-                      />
-                    </div>
+            <AnimatedContent
+              distance={100}
+              direction="vertical"
+              reverse={false}
+              initialOpacity={0}
+              animateOpacity
+              scale={1.0}
+              threshold={0.1}
+              delay={210}
+              enableScrollUp={true}
+            >
+              <div className="glass-morphism p-6 lg:p-8 rounded-2xl hover-lift h-full flex flex-col justify-between min-h-[320px]">
+                <div className="flex flex-col items-center flex-grow">
+                  <div className="text-3xl lg:text-4xl font-bold mb-4 flex-shrink-0">
+                    Consistency That Builds Trust
+                  </div>
+                  <div className="relative w-[120px] lg:w-[150px] h-[120px] lg:h-[150px] mt-4 mx-auto flex-grow flex items-center justify-center">
+                    <Image
+                      src="/icons/handshake1.png"
+                      width={150}
+                      height={150}
+                      alt=""
+                      className="max-w-full max-h-full object-contain"
+                    />
                   </div>
                 </div>
-              </AnimatedContent>
-            </div>
+              </div>
+            </AnimatedContent>
           </div>
-        </AnimatedContent>
+        </div>
       </section>
 
       {/* Modern 4 Steps Section */}

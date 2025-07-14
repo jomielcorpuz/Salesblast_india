@@ -99,7 +99,7 @@ const SalesblastIndia = () => {
       icon: <Shield className="w-12 h-12" />,
       title: "Universal Platform Mastery",
       subtitle:
-        "As an authorized indirect reseller of Google Workspace and Microsoft 365, we help you launch on trusted platforms with properly configured accounts.",
+        "As an authorized reseller of Google Workspace and Microsoft 365, we help you launch on trusted platforms with properly configured accounts.",
       gradient: "from-blue-500 to-cyan-500",
     },
     {
@@ -111,7 +111,13 @@ const SalesblastIndia = () => {
     },
     {
       icon: <Zap className="w-12 h-12" />,
-      title: "Reliable Deployment",
+      title: (
+        <>
+          Reliable
+          <br />
+          Deployment
+        </>
+      ),
       subtitle:
         "We configure your accounts and warm them up properly, so you're ready to start sending once everything is verified and stable.",
       gradient: "from-yellow-500 to-orange-500",
@@ -385,7 +391,7 @@ const SalesblastIndia = () => {
               <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-6 sm:mb-8">
                 <Sparkles className="w-3 sm:w-4 h-3 sm:h-4 text-blue-600 mr-2" />
                 <span className="text-xs sm:text-sm font-medium text-gray-700">
-                  Trusted by multiple businesses worldwide
+                  Trusted By Business Worldwide
                 </span>
               </div>
             </div>
@@ -582,8 +588,11 @@ const SalesblastIndia = () => {
               >
                 <div className="glass-morphism p-6 lg:p-8 rounded-2xl hover-lift h-full flex flex-col justify-between min-h-[320px]">
                   <div className="flex flex-col items-center flex-grow">
-                    <div className="text-3xl lg:text-4xl font-bold mb-4 flex-shrink-0">
-                      Instant Response
+                    <div className="text-3xl lg:text-4xl font-bold mb-4 flex-shrink-0 leading-tight text-center">
+                      Lightening Fast
+                      Response
+                      <br />
+                      Time
                     </div>
                     <div className="relative w-[120px] lg:w-[150px] h-[120px] lg:h-[150px] mt-4 mx-auto flex-grow flex items-center justify-center">
                       <Image
@@ -610,7 +619,7 @@ const SalesblastIndia = () => {
               >
                 <div className="glass-morphism p-6 lg:p-8 rounded-2xl hover-lift bg-gradient-to-r from-green-500/20 to-blue-500/20 h-full flex flex-col justify-between min-h-[320px]">
                   <div className="flex flex-col items-center flex-grow">
-                    <div className="text-3xl lg:text-4xl font-bold mb-4 flex-shrink-0">
+                    <div className="text-3xl lg:text-4xl font-bold mb-8 pb-8 flex-shrink-0">
                       Outstanding Service
                     </div>
                     <div className="relative w-[120px] lg:w-[150px] h-[120px] lg:h-[150px] mt-4 mx-auto flex-grow flex items-center justify-center">
@@ -639,7 +648,7 @@ const SalesblastIndia = () => {
                 <div className="glass-morphism p-6 lg:p-8 rounded-2xl hover-lift h-full flex flex-col justify-between min-h-[320px]">
                   <div className="flex flex-col items-center flex-grow">
                     <div className="text-3xl lg:text-4xl font-bold mb-4 flex-shrink-0">
-                      Consistency that builds Trust
+                      Consistency That Builds Trust
                     </div>
                     <div className="relative w-[120px] lg:w-[150px] h-[120px] lg:h-[150px] mt-4 mx-auto flex-grow flex items-center justify-center">
                       <Image

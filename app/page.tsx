@@ -99,7 +99,7 @@ const SalesblastIndia = () => {
       icon: <Shield className="w-12 h-12" />,
       title: "Universal Platform Mastery",
       subtitle:
-        "As an authorized indirect reseller of Google Workspace and Microsoft 365, we help you launch on trusted platforms with properly configured accounts.",
+        "As an authorized reseller of Google Workspace and Microsoft 365, we help you launch on trusted platforms with properly configured accounts.",
       gradient: "from-blue-500 to-cyan-500",
     },
     {
@@ -111,7 +111,13 @@ const SalesblastIndia = () => {
     },
     {
       icon: <Zap className="w-12 h-12" />,
-      title: "Reliable Deployment",
+      title: (
+        <>
+          Reliable
+          <br />
+          Deployment
+        </>
+      ),
       subtitle:
         "We configure your accounts and warm them up properly, so you're ready to start sending once everything is verified and stable.",
       gradient: "from-yellow-500 to-orange-500",
@@ -385,7 +391,7 @@ const SalesblastIndia = () => {
               <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-6 sm:mb-8">
                 <Sparkles className="w-3 sm:w-4 h-3 sm:h-4 text-blue-600 mr-2" />
                 <span className="text-xs sm:text-sm font-medium text-gray-700">
-                  Trusted by multiple businesses worldwide
+                  Trusted By Business Worldwide
                 </span>
               </div>
             </div>
@@ -407,8 +413,8 @@ const SalesblastIndia = () => {
               <br />
               <span className="luxury-text bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 bg-clip-text text-transparent font-semibold">Inboxes, </span>
               <span className="font-orpheus italic font-normal opacity-90">
-              <br />
-                <TypingAnimation 
+                <br />
+                <TypingAnimation
                   words={["FAST", "SECURE", "READY", "CLEAN"]}
                   colors={["#8B5CF6", "#EC4899", "#F59E0B", "#10B981", "#3B82F6"]}
                   typingSpeed={120}
@@ -462,7 +468,7 @@ const SalesblastIndia = () => {
             </div>
           </AnimatedContent>
 
-          
+
         </div>
 
         {/* Floating Elements */}
@@ -477,30 +483,7 @@ const SalesblastIndia = () => {
         ></div>
       </section>
 
-      {/* Auto-scrolling Logo Section */}
-      <section className="py-16 bg-white overflow-hidden relative border-t-2 border-b-2 border-gray-200 shadow-sm">
-        <div className="relative">
-          {/* Single row - Left to Right */}
-          <div className="flex animate-scroll whitespace-nowrap" style={{ transform: 'translateZ(0)' }}>
-            {[...logos, ...logos, ...logos].map((logo, index) => (
-              <div
-                key={`row1-${index}`}
-                className="flex items-center justify-center flex-shrink-0 mx-8 sm:mx-12 lg:mx-16 transition-all duration-300 ease-out hover:scale-105"
-                style={{ minWidth: "160px" }}
-              >
-                <Image
-                  src={logo.imgSrc}
-                  alt={logo.name || 'Partner logo'}
-                  width={160}
-                  height={48}
-                  className="max-h-8 sm:max-h-10 lg:max-h-12 max-w-full object-contain transition-all duration-300 ease-out filter brightness-75 hover:brightness-100"
-                  style={{ backfaceVisibility: 'hidden' }}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       <AnimatedContent
         distance={100}
@@ -521,7 +504,7 @@ const SalesblastIndia = () => {
                 <span className="text-gradient">Salesblast India?</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We build inbox systems that work — stable, optimized for deliverability, and backed by responsive support you can rely on.
+                We build inbox systems that work — stable, optimized for deliverability, and backed by responsive support you can rely on.
               </p>
             </div>
 
@@ -605,8 +588,11 @@ const SalesblastIndia = () => {
               >
                 <div className="glass-morphism p-6 lg:p-8 rounded-2xl hover-lift h-full flex flex-col justify-between min-h-[320px]">
                   <div className="flex flex-col items-center flex-grow">
-                    <div className="text-3xl lg:text-4xl font-bold mb-4 flex-shrink-0">
-                      Instant Response
+                    <div className="text-3xl lg:text-4xl font-bold mb-4 flex-shrink-0 leading-tight text-center">
+                      Lightening Fast
+                      Response
+                      <br />
+                      Time
                     </div>
                     <div className="relative w-[120px] lg:w-[150px] h-[120px] lg:h-[150px] mt-4 mx-auto flex-grow flex items-center justify-center">
                       <Image
@@ -633,7 +619,7 @@ const SalesblastIndia = () => {
               >
                 <div className="glass-morphism p-6 lg:p-8 rounded-2xl hover-lift bg-gradient-to-r from-green-500/20 to-blue-500/20 h-full flex flex-col justify-between min-h-[320px]">
                   <div className="flex flex-col items-center flex-grow">
-                    <div className="text-3xl lg:text-4xl font-bold mb-4 flex-shrink-0">
+                    <div className="text-3xl lg:text-4xl font-bold mb-8 pb-8 flex-shrink-0">
                       Outstanding Service
                     </div>
                     <div className="relative w-[120px] lg:w-[150px] h-[120px] lg:h-[150px] mt-4 mx-auto flex-grow flex items-center justify-center">
@@ -662,7 +648,7 @@ const SalesblastIndia = () => {
                 <div className="glass-morphism p-6 lg:p-8 rounded-2xl hover-lift h-full flex flex-col justify-between min-h-[320px]">
                   <div className="flex flex-col items-center flex-grow">
                     <div className="text-3xl lg:text-4xl font-bold mb-4 flex-shrink-0">
-                      Consistency that builds Trust
+                      Consistency That Builds Trust
                     </div>
                     <div className="relative w-[120px] lg:w-[150px] h-[120px] lg:h-[150px] mt-4 mx-auto flex-grow flex items-center justify-center">
                       <Image
@@ -827,11 +813,10 @@ const SalesblastIndia = () => {
 
                     {/* Animated Answer Block */}
                     <div
-                      className={`grid transition-all duration-500 ease-in-out ${
-                        isOpen
-                          ? "grid-rows-[1fr] opacity-100 pb-4 sm:pb-6"
-                          : "grid-rows-[0fr] opacity-0 pb-0"
-                      } px-4 sm:px-6 lg:px-8 overflow-hidden`}
+                      className={`grid transition-all duration-500 ease-in-out ${isOpen
+                        ? "grid-rows-[1fr] opacity-100 pb-4 sm:pb-6"
+                        : "grid-rows-[0fr] opacity-0 pb-0"
+                        } px-4 sm:px-6 lg:px-8 overflow-hidden`}
                     >
                       <div className="overflow-hidden">
                         <p className="text-sm sm:text-base text-gray-600 leading-relaxed">

@@ -27,17 +27,17 @@ const SalesblastIndia = () => {
     {
       question: "Do I need to warm up the inboxes first?",
       answer:
-        "Yes, we recommend warming up for at least 2 weeks. We can help warm them up directly through your sequencer.",
+        "We recommend a warm-up period of at least two weeks to gradually build sending reputation and avoid deliverability issues. As part of our setup, we’ll configure the warm-up schedule directly within your sequencer so everything is properly aligned from day one to ensure optimal inbox placement.",
     },
     {
       question: "Can I reuse old domains, or do I need new ones?",
       answer:
-        "You can reuse domains, but if they've been used for bulk sending before, deliverability might be affected. Either way, old or new, we can work with what you have.",
+        "You can reuse domains, but if they've been used for bulk sending before, deliverability might be affected and we don’t recommend it. Either way, old or new, we can work with what you have.",
     },
     {
       question: "Why is there a limit on users per domain?",
       answer:
-        "Platforms like Google and Microsoft have built-in limits to help prevent abuse. We follow the best practices to make sure your sending reputation stays clean.",
+        "Platforms like Google and Microsoft have built-in limits to help prevent abuse. We follow best practices to keep your sending reputation safe. While we suggest using three accounts for the best results, there’s technically no hard limit.",
     },
     {
       question: "Do you support Google and Microsoft accounts?",
@@ -52,7 +52,7 @@ const SalesblastIndia = () => {
     {
       question: "How does your deliverability compare to others?",
       answer:
-        "We follow deliverability best practices from day one, SPF, DKIM, DMARC, warm-up, and ongoing monitoring, so your emails land in the inbox, not spam.",
+        "Anyone can claim best practices — we actually deliver. From day one, we set up SPF, DKIM, DMARC, and warming strategies, then monitor continuously to ensure your emails hit the inbox.",
     },
   ];
 
@@ -81,7 +81,7 @@ const SalesblastIndia = () => {
       number: "02",
       title: "White Glove Setup",
       description:
-        "Our expert team handles the complete configuration of your domains with Google and Microsoft inboxes, including all technical DNS settings.",
+        "Our expert team handles the complete setup and configuration of your domains and inboxes, including all technical DNS settings.",
 
       icon: <Users className="w-8 h-8" />,
     },

@@ -13,7 +13,6 @@ import {
 import Image from "next/image";
 import AnimatedContent from "@/components/ui/animatedcontent";
 import { AuroraText } from "@/components/magicui/aurora-text";
-import { TypingAnimation } from "@/components/magicui/typing-animation";
 
 
 
@@ -548,14 +547,16 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                             <AuroraText>Reliable</AuroraText>
                             <br />
                             <span className="luxury-text bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 bg-clip-text text-transparent font-semibold">Inboxes, </span>
-                            <span className="font-orpheus italic font-normal opacity-90">
+                            <span className="font-orpheus font-normal opacity-90">
                                 <br />
-                                <TypingAnimation
-                                    words={["FAST", "SECURE", "READY", "CLEAN"]}
-                                    colors={["#8B5CF6", "#EC4899", "#F59E0B", "#10B981", "#3B82F6"]}
-                                    typingSpeed={120}
-                                    pauseDuration={2000}
-                                />
+                                <div className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] 2xl:text-[14rem] font-medium tracking-tighter px-8 py-4 overflow-visible">
+                                    <AuroraText
+                                        colors={["#8B5CF6", "#EC4899", "#F59E0B", "#10B981", "#3B82F6"]}
+                                        speed={1}
+                                    >
+                                        FAST
+                                    </AuroraText>
+                                </div>
                             </span>
                         </h1>
                     </AnimatedContent>

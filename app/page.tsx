@@ -15,6 +15,12 @@ import AnimatedContent from "@/components/ui/animatedcontent";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 
+export const metadata = {
+  title: "Salesblast India",
+  description: "SalesBlast India streamlines email outreach with expert DNS configuration (SPF, DKIM, DMARC), inbox warm-up, and scalable Gmail/M365 infrastructure—built for growth-focused teams."
+
+}
+
 const SalesblastIndia = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [showOrderForm, setShowOrderForm] = useState(false);
@@ -54,7 +60,7 @@ const SalesblastIndia = () => {
     instantlyDailyWarmupLimit: '',
     instantlyReplyRate: '',
     additionalNote: '',
-    
+
     // Domain management
     domains: [''],
     preferredPassword: '',
@@ -139,7 +145,7 @@ Email Patterns: ${orderData.emailPatterns}
 User Full Name: ${orderData.userFullName}
 
 Profile Picture Link: ${orderData.profilePictureLink}`;
-    
+
     return orderSheet;
   };
 
@@ -589,7 +595,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
             enableScrollUp={true}
           >
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 lg:gap-8 justify-center items-center mb-4 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12">
-              <button 
+              <button
                 onClick={() => setShowOrderForm(true)}
                 className="group relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 sm:py-2.5 md:py-3 lg:py-3.5 xl:py-4 rounded-xl text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold hover:shadow-2xl hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300 border border-purple-500/20 backdrop-blur-sm w-full sm:w-auto"
               >
@@ -1022,7 +1028,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
             enableScrollUp={true}
           >
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-              <button 
+              <button
                 onClick={() => setShowOrderForm(true)}
                 className="group relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold hover:shadow-2xl hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300 border border-purple-500/20 backdrop-blur-sm w-full sm:w-auto"
               >
@@ -1173,10 +1179,10 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                 </button>
               </div>
             </div>
-            
+
             {/* Scrollable Content */}
             <div className="flex-1 overflow-y-auto p-8 pt-4">
-              
+
               <form onSubmit={handleOrderSubmit} className="space-y-8">
                 {/* Client and Setup Information */}
                 <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
@@ -1186,7 +1192,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                     </div>
                     Client and Setup Information
                   </h3>
-                  
+
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-3">
@@ -1201,7 +1207,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                         required
                       />
                     </div>
-                    
+
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-3">
                         Master Inbox Domain *
@@ -1215,7 +1221,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                         required
                       />
                     </div>
-                    
+
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-3">
                         Master Inbox Address *
@@ -1229,7 +1235,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                         required
                       />
                     </div>
-                    
+
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-3">
                         Master Inbox Password *
@@ -1243,7 +1249,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                         required
                       />
                     </div>
-                    
+
                     <div className="lg:col-span-2">
                       <label className="block text-sm font-semibold text-gray-700 mb-3">
                         Main Website to Forward To *
@@ -1259,7 +1265,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Registrar Information Section */}
                 <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-100">
                   <h3 className="text-xl font-semibold text-gray-800 mb-6 flex items-center">
@@ -1269,7 +1275,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                     Registrar Information
                   </h3>
                   <p className="text-sm text-gray-600 mb-6 bg-white/50 p-3 rounded-lg border border-green-200">Please complete only the applicable section.</p>
-                  
+
                   {/* GoDaddy Section */}
                   <div className="mb-6">
                     <h4 className="text-lg font-medium text-gray-700 mb-4 pb-2 border-b border-green-200">GoDaddy</h4>
@@ -1300,7 +1306,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Porkbun Section */}
                   <div className="mb-6">
                     <h4 className="text-lg font-medium text-gray-700 mb-4 pb-2 border-b border-green-200">Porkbun</h4>
@@ -1331,7 +1337,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Namecheap Section */}
                   <div className="mb-6">
                     <h4 className="text-lg font-medium text-gray-700 mb-4 pb-2 border-b border-green-200">Namecheap</h4>
@@ -1362,7 +1368,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Other Registrar Section */}
                   <div className="mb-6">
                     <h4 className="text-lg font-medium text-gray-700 mb-4 pb-2 border-b border-green-200">Other Registrar</h4>
@@ -1408,7 +1414,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Sequencer Information Section */}
                 <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
                   <h3 className="text-xl font-semibold text-gray-800 mb-6 flex items-center">
@@ -1418,7 +1424,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                     Sequencer Information
                   </h3>
                   <p className="text-sm text-gray-600 mb-4">Only fill in the one you intend to use.</p>
-                  
+
                   {/* Instantly Section */}
                   <div className="mb-4">
                     <h4 className="text-md font-medium text-gray-700 mb-3">Instantly</h4>
@@ -1449,7 +1455,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Smartlead Section */}
                   <div className="mb-4">
                     <h4 className="text-md font-medium text-gray-700 mb-3">Smartlead</h4>
@@ -1480,7 +1486,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Pipl Section */}
                   <div className="mb-4">
                     <h4 className="text-md font-medium text-gray-700 mb-3">Pipl</h4>
@@ -1511,7 +1517,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* EmailBison Section */}
                   <div className="mb-4">
                     <h4 className="text-md font-medium text-gray-700 mb-3">EmailBison</h4>
@@ -1556,7 +1562,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Other Sequencer Section */}
                   <div className="mb-4">
                     <h4 className="text-md font-medium text-gray-700 mb-3">Other Sequencer</h4>
@@ -1602,7 +1608,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Warm-up Settings Section */}
                 <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-100">
                   <h3 className="text-xl font-semibold text-gray-800 mb-6 flex items-center">
@@ -1611,7 +1617,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                     </div>
                     Warm Up Setting (Optional)
                   </h3>
-                  
+
                   {/* Enable Warm Up */}
                   <div className="mb-6">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -1627,9 +1633,9 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                       <option value="No">No</option>
                     </select>
                   </div>
-                  
+
                   <p className="text-sm text-gray-600 mb-4">Please complete only the applicable section.</p>
-                  
+
                   {/* Smartlead Warm-up Settings */}
                   <div className="mb-6">
                     <h4 className="text-md font-medium text-gray-700 mb-3">Smartlead</h4>
@@ -1688,7 +1694,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Instantly Warm-up Settings */}
                   <div className="mb-6">
                     <h4 className="text-md font-medium text-gray-700 mb-3">Instantly</h4>
@@ -1733,7 +1739,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Additional Note */}
                   <div className="mb-4">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -1748,7 +1754,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                     />
                   </div>
                 </div>
-                
+
                 {/* Domain Management Section */}
                 <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl p-6 border border-orange-100">
                   <h3 className="text-xl font-semibold text-gray-800 mb-6 flex items-center">
@@ -1757,7 +1763,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                     </div>
                     Domain List
                   </h3>
-                  
+
                   <div className="mb-6">
                     <label className="block text-sm font-medium text-gray-700 mb-3">
                       Domain List
@@ -1787,7 +1793,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                       </span>
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -1815,7 +1821,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                       />
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -1842,7 +1848,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                       />
                     </div>
                   </div>
-                  
+
                   <div className="mb-4">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Profile Picture Link
@@ -1856,10 +1862,10 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                     />
                   </div>
                 </div>
-                
+
               </form>
             </div>
-            
+
             {/* Sticky Footer with Action Buttons */}
             <div className="sticky bottom-0 bg-white z-10 p-8 pt-4 border-t border-gray-100 shadow-lg">
               <div className="flex flex-col sm:flex-row gap-3">

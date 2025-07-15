@@ -1,4 +1,4 @@
-
+"use client";
 import React, { useState } from "react";
 import {
   ChevronDown,
@@ -15,11 +15,7 @@ import AnimatedContent from "@/components/ui/animatedcontent";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 
-export const metadata = {
-  title: "Salesblast India",
-  description: "SalesBlast India streamlines email outreach with expert DNS configuration (SPF, DKIM, DMARC), inbox warm-up, and scalable Gmail/M365 infrastructure—built for growth-focused teams."
 
-}
 
 const SalesblastIndia = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);

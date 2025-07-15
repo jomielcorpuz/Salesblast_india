@@ -39,9 +39,9 @@ const cormorantItalic = Cormorant({
 export const metadata: Metadata = {
   title: "Salesblast India",
   description:
-    "Connect with your customers like never before with Salesblast India, the ultimate sales and marketing platform designed to help you grow your business.",
+    "SalesBlast India streamlines email outreach with expert DNS configuration (SPF, DKIM, DMARC), inbox warm-up, and scalable Gmail/M365 infrastructure—built for growth-focused teams.",
   icons: {
-    icon: "/icons/favicon-32x32.png", // Already in 'public' folder, so no /public prefix
+    icon: "/icons/logo1.png",
   },
 };
 

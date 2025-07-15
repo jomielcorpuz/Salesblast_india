@@ -590,7 +590,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
           >
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 lg:gap-8 justify-center items-center mb-4 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12">
               <button 
-                onClick={() => setShowOrderForm(true)}
+                /*onClick={() => setShowOrderForm(true)}*/
                 className="group relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 sm:py-2.5 md:py-3 lg:py-3.5 xl:py-4 rounded-xl text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold hover:shadow-2xl hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300 border border-purple-500/20 backdrop-blur-sm w-full sm:w-auto"
               >
                 <span className="relative z-10">Buy Now</span>

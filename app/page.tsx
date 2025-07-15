@@ -14,6 +14,11 @@ import Image from "next/image";
 import AnimatedContent from "@/components/ui/animatedcontent";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
+export const metadata = {
+  title: "SalesBlast India",
+  description:
+    "SalesBlast India delivers plug‑and‑play email outreach infrastructure—expert DNS setup (SPF, DKIM, DMARC), reliable Gmail & Microsoft 365 accounts, inbox warm‑up, and ongoing deliverability support to help teams scale outreach with confidence.",
+};
 
 const SalesblastIndia = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);

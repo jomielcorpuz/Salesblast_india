@@ -549,7 +549,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                             <span className="luxury-text bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 bg-clip-text text-transparent font-semibold">Inboxes, </span>
                             <span className="font-orpheus font-normal opacity-90">
                                 <br />
-                                <div className="text-5xl sm:text-6xl md:text-7xl lg:text-[8rem] xl:text-[9rem] 2xl:text-[11rem] font-medium tracking-tighter py-4 px-16 mx-4 overflow-visible">
+                                <div className="text-6xl sm:text-7xl md:text-7xl lg:text-[8rem] xl:text-[9rem] 2xl:text-[11rem] font-medium tracking-tighter py-4 px-16 mx-4 overflow-visible">
                                     <AuroraText
                                         colors={["#8B5CF6", "#EC4899", "#F59E0B", "#10B981", "#3B82F6"]}
                                         speed={1}

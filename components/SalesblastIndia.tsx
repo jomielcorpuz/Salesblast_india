@@ -542,14 +542,14 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                         scale={1.0}
                         threshold={0.1}
                     >
-                        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[8rem] 2xl:text-[9rem] 3xl:text-[10rem] font-normal font-hero mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 leading-[1.0] tracking-[-0.03em]">
+                        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[8rem] 2xl:text-[9rem] 3xl:text-[10rem] font-normal font-hero mb-4 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12 leading-[1.0] tracking-[-0.03em]">
                             <span className="luxury-text bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 bg-clip-text text-transparent font-semibold">Get </span>
                             <AuroraText>Reliable</AuroraText>
                             <br />
                             <span className="luxury-text bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 bg-clip-text text-transparent font-semibold">Inboxes, </span>
                             <span className="font-orpheus font-normal opacity-90">
                                 <br />
-                                <div className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] 2xl:text-[14rem] font-medium tracking-tighter px-8 py-4 overflow-visible">
+                                <div className="text-5xl sm:text-6xl md:text-7xl lg:text-[8rem] xl:text-[9rem] 2xl:text-[11rem] font-medium tracking-tighter py-4 px-16 mx-4 overflow-visible">
                                     <AuroraText
                                         colors={["#8B5CF6", "#EC4899", "#F59E0B", "#10B981", "#3B82F6"]}
                                         speed={1}
@@ -571,7 +571,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                         delay={130}
                         enableScrollUp={true}
                     >
-                        <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-gray-600 mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 max-w-5xl mx-auto leading-relaxed">
+                        <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-gray-600 mb-2 sm:mb-3 md:mb-4 lg:mb-4 xl:mb-5 max-w-5xl mx-auto leading-relaxed">
                             Scale up your outreach with a reseller
                             <span className="font-semibold text-blue-600">
                                 {" "}
@@ -591,7 +591,7 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                         delay={160}
                         enableScrollUp={true}
                     >
-                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 lg:gap-8 justify-center items-center mb-4 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12">
+                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 lg:gap-8 justify-center items-center mb-4 sm:mb-6 md:mb-6 lg:mb-8 xl:mb-10">
                             <button
                                 /*onClick={() => setShowOrderForm(true)}*/
                                 className="group relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 sm:py-2.5 md:py-3 lg:py-3.5 xl:py-4 rounded-xl text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold hover:shadow-2xl hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300 border border-purple-500/20 backdrop-blur-sm w-full sm:w-auto"

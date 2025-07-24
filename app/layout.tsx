@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   description:
     "SalesBlast India streamlines email outreach with expert DNS configuration (SPF, DKIM, DMARC), inbox warm-up, and scalable Gmail/M365 infrastructure—built for growth-focused teams.",
   icons: {
-    icon: "/icons/logo1.png",
+    icon: "/icons/logo2.png",
   },
 };
 

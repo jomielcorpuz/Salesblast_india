@@ -471,10 +471,10 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                     <div className="flex justify-between items-center py-4">
                         <div className="flex items-center space-x-2">
                             <Image
-                                src="/icons/logo1.png"
+                                src="/icons/logo2.png"
                                 alt="Salesblast Logo"
-                                width={29}
-                                height={29}
+                                width={75}
+                                height={75}
                                 className="rounded-full"
                             />
                             <span className="text-2xl font-bold text-gray-900">
@@ -1047,9 +1047,13 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8 lg:mb-12">
                         <div className="sm:col-span-2 lg:col-span-2">
                             <div className="flex items-center space-x-3 mb-4 sm:mb-6">
-                                <div className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-                                    <Mail className="w-4 sm:w-6 h-4 sm:h-6 text-white" />
-                                </div>
+                                <Image
+                                    src="/icons/logo2.png"
+                                    alt="Salesblast Logo"
+                                    width={75}
+                                    height={75}
+                                    className="rounded-full"
+                                />
                                 <span className="text-xl sm:text-2xl lg:text-3xl font-bold">Salesblast India</span>
                             </div>
                             <p className="text-gray-400 text-base sm:text-lg max-w-md leading-relaxed">

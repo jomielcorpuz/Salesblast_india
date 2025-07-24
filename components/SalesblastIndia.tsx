@@ -473,8 +473,8 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                             <Image
                                 src="/icons/logo2.png"
                                 alt="Salesblast Logo"
-                                width={75}
-                                height={75}
+                                width={50}
+                                height={50}
                                 className="rounded-full"
                             />
                             <span className="text-2xl font-bold text-gray-900">
@@ -1050,8 +1050,8 @@ Profile Picture Link: ${orderData.profilePictureLink}`;
                                 <Image
                                     src="/icons/logo2.png"
                                     alt="Salesblast Logo"
-                                    width={75}
-                                    height={75}
+                                    width={56}
+                                    height={56}
                                     className="rounded-full"
                                 />
                                 <span className="text-xl sm:text-2xl lg:text-3xl font-bold">Salesblast India</span>

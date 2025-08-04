@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, Poppins, Cormorant } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import { Analytics } from "@vercel/analytics/next"
 
 // Font configs
 const geistSans = Geist({
@@ -59,6 +60,7 @@ export default function RootLayout({
       <body className="antialiased">
         <ThemeProvider attribute="class" defaultTheme="system">
           {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
